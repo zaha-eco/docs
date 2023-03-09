@@ -53,3 +53,7 @@
 .theme-doc-sidebar-item-category {
   margin-bottom: 1.5em;
 }
+
+.container {
+  max-width:65%;
+}

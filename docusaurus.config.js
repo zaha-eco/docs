@@ -89,11 +89,11 @@ const config = {
           { to: "/blog", label: "Reference", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },
           { to: "/blog", label: "Changelog", position: "right" },
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          {
+            href: "https://app-v2.printtrackerpro.com/download",
+            label: "Download",
+            position: "right",
+          },
         ],
       },
       footer: {
