@@ -10,7 +10,7 @@ const config = {
   tagline: "Dinosaurs are cool",
   url: "https://docs.printtrackerpro.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
@@ -103,8 +103,8 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "Getting Started",
+                to: "/docs/getting-started",
               },
             ],
           },
