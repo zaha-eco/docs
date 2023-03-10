@@ -84,7 +84,7 @@ const config = {
             type: "doc",
             docId: "start",
             position: "left",
-            label: "Getting Started",
+            label: "Guides",
           },
           { to: "/blog", label: "Reference", position: "left" },
           { to: "/blog", label: "Blog", position: "left" },

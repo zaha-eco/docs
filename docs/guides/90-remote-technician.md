@@ -1,6 +1,6 @@
 ---
 slug: remote-technician
-sidebar_position: 7
+sidebar_position: 90
 ---
 
 # Remote Technician
