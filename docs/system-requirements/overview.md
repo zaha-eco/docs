@@ -12,7 +12,7 @@ Many of the following system requirements depend on the number of devices that a
 
 || Minimum          | Recommended                         |     |
 |------------------|-------------------------------------|------------|
-| Operating System | Windows[^1] or macOS |     |
+| Operating System | Windows[^1], macOS, or Linux[^2] |     |
 | CPU              | 1 GHz x 2 Cores                     | 3 GHz x 4 Cores |
 | Memory           | 2 GB                                | 4 GB |
 | Disk             | 2 GB HDD                            | 10 GB SSD|
@@ -39,3 +39,4 @@ Data collection requires internet connectivity in order for meters and alerts to
 [//]: # (If [Advanced Troubleshooting Mode]&#40;../security/advanced-troubleshooting-mode.md&#41; is enabled, you will need to make sure your network is compatible with the [Tailscale]&#40;https://tailscale.com/kb/1082/firewall-ports/#what-if-i-really-really-want-to-specify-the-hostnames-that-tailscale-uses-to-operate-its-service&#41; network requirements.)
 
 [^1]: Print Tracker Pro runs on all versions of Windows that are actively supported by Microsoft and have not reached end-of-life.
+[^2]: Print Tracker Pro has beta support for Linux. It has been tested on Ubuntu 18, Debian 10, and Raspbian 10.
