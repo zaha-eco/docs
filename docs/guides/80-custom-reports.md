@@ -172,7 +172,7 @@ ORDER BY COUNT(*) DESC
 ### Install
 The install report contains information about the Print Tracker data collection agent. The install report contains the following columns:
 
-| Column Name               | Data Type  | Description                                                                                                       |                                                                                                                           
+| Column Name               | Data Type  | Description                                                                                                       |                                                                                                                  
 |---------------------------|------------|-------------------------------------------------------------------------------------------------------------------|
 | `id`                      | `varchar`  | The unique identifier for the install                                                                             |
 | `entity_id`               | `varchar`  | The unique identifier for the entity that this install belongs to (the entity directly above the install)         |
@@ -223,13 +223,91 @@ WHERE status = 1
 ORDER BY last_check_in_timestamp DESC
 ```
 
-
 ### Current Meter
+The current meter read report allows you to view your devices and the latest values of all their meters. The current meter report contains the following columns:
+
+| Column Name              | Data Type  | Description                                                                                                                                                                                                                                                                                                  |
+|--------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `device_id`              | `varchar`  | The unique identifier for the device                                                                                                                                                                                                                                                                         |
+| `entity_id`              | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                                                                                                                                                                                      |
+| `entity_name`            | `varchar`  | The name of the entity that this device belongs to                                                                                                                                                                                                                                                           |
+| `integration_id`         | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)                                                                                                                                                                          |
+| `asset_id`               | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business                                                                                                                                                                   |
+| `make`                   | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                                                                                                                                                                                            |
+| `model`                  | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                                                                                                                                                                                                |
+| `serial_number`          | `varchar`  | The serial number of device collected during the latest meter read. This should always match the `device_serial number`                                                                                                                                                                                      |
+| `device_serial_number`   | `varchar`  | The serial number of the device as specified by the device                                                                                                                                                                                                                                                   |
+| `custom_serial_number`   | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                                                                                                                                                                                       |
+| `location`               | `varchar`  | The location of the device as specified by the device                                                                                                                                                                                                                                                        |
+| `custom_location`        | `varchar`  | The location of the device as configured by a user in the webadmin                                                                                                                                                                                                                                           |
+| `ip_address`             | `varchar`  | The IP address of the device                                                                                                                                                                                                                                                                                 |
+| `mac_address`            | `varchar`  | The MAC address of the device                                                                                                                                                                                                                                                                                |
+| `hostname`               | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                                                                                                                                                                                         |
+| `system_name`            | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                                                                                                                                                                                     |
+| `firmware`               | `varchar`  | The firmware version or datecode currently installed on the device                                                                                                                                                                                                                                           |
+| `latest_meter_timestamp` | `datetime` | The timestamp of the most recently uploaded meter                                                                                                                                                                                                                                                            |
+| `managed`                | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                                                                                                                                                                                      |
+| `pageCounts_*`           |            | All available counter columns start with the prefix `pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                                 |
+| `supplies_*`             |            | All available supply columns start with the prefix `supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns) |
+
+Here are some examples of how you might utilize the current meter report type:
+
+#### Current Counter Values by Device
+This report returns the current values of all the counters for each device.
+
+```sql
+SELECT
+    entity_name as 'Entity',
+    make as Make,
+    model as Model,
+    serial_number as 'Serial Number',
+    asset_id as 'Asset ID',
+    ip_address as 'IP Address',
+    DATETIME(latest_meter_timestamp) as 'Latest Meter Timestamp',
+    pageCounts_default_total as 'Total',
+    pageCounts_default_totalBlack as 'Total Black',
+    pageCounts_default_totalColor as 'Total Color'
+FROM meters
+WHERE managed = true
+ORDER BY latest_meter_timestamp desc
+```
+
 ### Volume Analysis
 ### Billing Period
 ### Estimated Depletion
 ### Monthly Volume
 ### Supplies
+
+## Meter and Supply Columns
+:::tip
+Questions? Our support team is ready and willing to help you configure your custom reports. [support@printtrackerpro.com](mailto:support@printtrackerpro.com)
+:::
+
+Custom reports supports over 450 different page count columns and over 375 different supply columns. We are always adding meter-related columns to our custom reports so the list of supported columns is always changing. If you're wondering what columns are available to you, try searching "pageCounts" in the [schema viewer](#schema-viewer).)
+
+The general structure of the columns follows this pattern:
+```
+pageCounts_<format>_<counter>
+supplies_<supply>_<attribute>
+```
+
+* Format: The format represents the format that the counter is measured in. Common formats are equivalent, engine, and life (otherwise known as non-equivalent).
+* Counter: The actual name of the counter. Common counters are Total, Total Black, Total Color, Total Copies, Total Prints, etc.
+* Supply: The name of the supply. Common supplies are Black Toner, Magenta Toner, Yellow Toner, Cyan Toner, Waste Toner, etc.
+* Attribute: The attribute on the supply. Supported attributes vary by device. Most devices support the Percent Remaining, Description, and Type attributes, while other devices might provide Fill Rate, Estimated Depletion Date, etc.
+
+Here are some examples of the most commonly used columns
+* `pageCount_equiv_total`
+* `pageCount_equiv_totalBlack`
+* `pageCount_equiv_totalColor`
+* `pageCount_life_total`
+* `pageCount_life_totalBlack`
+* `pageCount_life_totalColor`
+* `supplies_blackToner_pctRemaining`
+* `supplies_blackToner_type`
+* `supplies_blackToner_color`
+* `supplies_blackToner_description`
+* `supplies_waste_pctRemaining`
 
 ## Caveats
 
