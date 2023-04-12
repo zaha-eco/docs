@@ -50,19 +50,180 @@ The query editor is where you will build, customize, and test your reports. Each
 Whenever you click the **Run** button in the [query editor](#query-editor), the results will be displayed below the editor. The results are only a sample of your data which allows you to quickly test your reports on a small subset of your data without having to wait for the entire report to run.
 
 :::info No results?
-When adding `WHERE` clauses to your query, you might find that no results are returned when you test your query. This is because when testing the report by clicking **Run**, the query is only run on a sample of your data, and there's no garuntee that the rows in the sample will also match the `WHERE` clause. For these types of queries, you can use the **Export** button to export the entire report to a CSV file and then open the file in a spreadsheet application to view the results.
+When adding `WHERE` clauses to your query, you might find that no results are returned when you test your query. This is because when testing the report by clicking **Run**, the query is only run on a sample of your data, and there's no guarantee that the rows in the sample will also match the `WHERE` clause. For these types of queries, you can use the **Export** button to export the entire report to a CSV file and then open the file in a spreadsheet application to view the results.
 :::
 
-## Editing Reports
+## Editing and Saving Reports
+![](../images/custom-reports-saving.gif)
+
+You can change your report type, the name, description, or query at anytime. To save your changes, click the **Save** button in the bottom right-hand corner.
 
 ## Scheduling Reports
+![](../images/custom-reports-new-schedule.gif)
 
-### Billing Period Report
+You have the flexibility to run ad-hoc reports whenever you need to access specific information quickly. However, you may need to receive a report on a predetermined schedule, such as a monthly billing report. Print Tracker allows you to attach any number of schedules to a custom report. By scheduling a report, you can pick the interval, time of day, the entities where the report should run and Print Tracker will automatically generate the report and send it to your email. This way, you receive the most up-to-date report directly in your inbox without having to manually run it each time.
+
+To schedule a custom report:
+1. Using the sidebar, click **Insights > Reports**
+2. Click on the report you want to schedule
+3. Click on the **Schedules** tab
+4. Click **New schedule**
+
+### Schedule Configuration
+![](../images/custom-reports-edit-schedule-report.png)
+
+There are several options available when scheduling a report:
+* Entity: You can create a single custom report, but create scheduled reports that run on different schedules, and for different entities. For example, you may want to create a current meter report for each of your customers. In this case you'd [create a single report](#creating-reports) and then create a schedule for each one of your customer entities.
+* Enabled: In some cases, you may want to prevent a scheduled report from being sent without having to delete the report, or the schedule. In this case you can disable the **Enabled** toggle, and the report will no longer be sent.
+* Report schedule: You can configure the report to run on any interval you'd like. Refer to [Choosing the Report Schedule](#choosing-the-report-schedule) for more information on how to pick the correct schedule for your report.
+* Timezone: Many printer fleets are distributed across multiple timezones. To ensure that the report is sent at the correct time, you can select the timezone that the report should be sent in.
+* Email: You can configure the report to be sent to any number of email addresses.
+* Subject: You can customize the subject of the email. See [Email Template Variables](#email-template-variables) for a list of variables that you can use in the subject line.
+* Body: You can customize the body of the email.  See [Email Template Variables](#email-template-variables) for a list of variables that you can use in the body.
+
+### Choosing the Report Schedule
+The right report schedule depends on the [report type](#report-types) that you're using. Understanding how schedules work in conjunction with the report type will help you pick the correct schedule for your report.
+
+### Email Template Variables
+Scheduled custom report emails can be configured with a custom subject and body line. In order to make it easier to customize these fields, you can use variables in the subject and body. The following variables are available:
+
+| Variable          | Description                                                                              |
+|-------------------|------------------------------------------------------------------------------------------|
+| `{{.ReportName}}` | The name of the report. In the example screenshots above, the report name is "My Report" |
+
+:::info
+Email template variables are a newer feature. Please reach out to [support@printtrackerpro.com](mailto:support@printtrackerpro.com) if you'd like to see additional variables supported.
+:::
+
+[//]: # (### Billing Period Report)
 
 ## Report Types
+Each custom report must specify a report type. A report type determines the data that is available for use in your custom report. For example, the [Device](#device) report type will only have columns that are related to devices, whereas the [Volume Analysis](#volume-analysis) report type will have columns comparing meter reads between two different dates. When creating a custom report, you'll pick the report type that best fits your needs.
 
 ### Device
+Device reports contain only information about the device. These reports are often useful for understanding your fleet. The device report contains the following columns:
+
+| Column Name                         | Data Type  | Description                                                                                                                                |
+|-------------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                                | `varchar`  | The unique identifier for the device                                                                                                       |
+| `dealer_id`                         | `varchar`  | The unique identifier for the dealer entity (if you're a dealer, this would be your root-level entity)                                     |
+| `dealer_name`                       | `varchar`  | The name of the dealer entity                                                                                                              |
+| `entity_id`                         | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                    |
+| `entity_name`                       | `varchar`  | The name of the entity that this device belongs to                                                                                         |
+| `integration_id`                    | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`                          | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
+| `make`                              | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
+| `model`                             | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                              |
+| `serial_number`                     | `varchar`  | The serial number of the device as specified by the device                                                                                 |
+| `custom_serial_number`              | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                     |
+| `location`                          | `varchar`  | The location of the device as specified by the device                                                                                      |
+| `custom_location`                   | `varchar`  | The location of the device as configured by a user in the webadmin                                                                         |
+| `ip_address`                        | `varchar`  | The IP address of the device                                                                                                               |
+| `mac_address`                       | `varchar`  | The MAC address of the device                                                                                                              |
+| `hostname`                          | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
+| `system_name`                       | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
+| `firmware`                          | `varchar`  | The firmware version or datecode currently installed on the device                                                                         |
+| `note`                              | `varchar`  | The notes attached to the device. Notes can be added within Print Tracker                                                                  |
+| `source_install_name`               | `varchar`  | The machine name of the computer running the Print Tracker data collection agent that is managing this device                              |
+| `source_install_private_ip_address` | `varchar`  | The private IP address of the computer running the Print Tracker data collection agent.                                                    |
+| `source_install_public_ip_address`  | `varchar`  | The public IP address of the computer running the Print Tracker data collection agent.                                                     |
+| `created_timestamp`                 | `datetime` | The timestamp when this device was created in Print Tracker                                                                                |
+| `modified_timestamp`                | `datetime` | The timestamp when this device was modified in Print Tracker                                                                               |
+| `latest_meter_timestamp`            | `datetime` | The timestamp of the most recently uploaded meter                                                                                          |
+| `managed`                           | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                    |
+
+Here are some examples of how you might utilize the device report type:
+
+#### Number of Days Since Last Meter by Device
+This report returns the number of days since the last meter was uploaded for each device. This is useful for identifying devices that are stale and may need to be reviewed manually.
+
+```sql
+SELECT
+    entity_name as 'Entity',
+    make as Make,
+    model as Model,
+    serial_number as 'Serial Number',
+    asset_id as 'Asset ID',
+    ip_address as 'IP Address',
+    mac_address as 'Mac Address',
+    DATETIME(latest_meter_timestamp) as 'Latest Meter Timestamp',
+
+    -- Calculates the number of days between the current day and the latest meter
+    ROUND(JULIANDAY(datetime()) - JULIANDAY(latest_meter_timestamp)) as 'Days Since Last Meter',
+    managed as 'Managed'
+FROM devices
+WHERE managed = true
+ORDER BY latest_meter_timestamp desc
+```
+
+#### Number of Devices by Make and Model
+This report returns the number of devices by make and model, ordered by the most popular model.
+
+```sql
+SELECT
+    make as Make,
+    model as Model,
+    COUNT(*) as 'Number of Devices'
+FROM devices
+GROUP BY make, model
+ORDER BY COUNT(*) DESC
+```
+
 ### Install
+The install report contains information about the Print Tracker data collection agent. The install report contains the following columns:
+
+| Column Name               | Data Type  | Description                                                                                                       |                                                                                                                           
+|---------------------------|------------|-------------------------------------------------------------------------------------------------------------------|
+| `id`                      | `varchar`  | The unique identifier for the install                                                                             |
+| `entity_id`               | `varchar`  | The unique identifier for the entity that this install belongs to (the entity directly above the install)         |
+| `entity_name`             | `varchar`  | The name of the entity that this install belongs to                                                               |
+| `hostname`                | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                              |
+| `created_timestamp`       | `datetime` | The timestamp when this install was registered in Print Tracker                                                   |
+| `modified_timestamp`      | `datetime` | The timestamp when this install was modified in Print Tracker                                                     |
+| `last_check_in_timestamp` | `datetime` | The last time this install checked in with Print Tracker                                                          |
+| `ip_address`              | `varchar`  | The private IP address of the install                                                                             |
+| `public_ip_address`       | `varchar`  | The public IP address of the install                                                                              |
+| `version`                 | `varchar`  | The version of the Print Tracker data collection agent                                                            |
+| `os`                      | `varchar`  | The operating system of the computer (e.g. Microsoft Windows 10 Pro)                                              |
+| `os_family`               | `varchar`  | The operating system family of the computer (e.g. Standalone Workstation)                                         |
+| `os_version`              | `varchar`  | The operating system version of the computer (e.g. 10.0.19045 Build 19045)                                        |
+| `cpu_architecture`        | `varchar`  | The CPU architecture of the computer (e.g. 64 or 32)                                                              |
+| `antivirus`               | `varchar`  | The antivirus application installed on this computer                                                              |
+| `is_laptop`               | `boolean`  | Indicates whether the agent is installed on a laptop computer                                                     |
+| `is_local`                | `boolean`  | Indicates whether the agent is configured to track USB-connected devices (Windows only)                           |
+| `reporting_devices`       | `integer`  | The number of managed devices tracked by this install that have reported a meter this month                       |
+| `active_devices`          | `integer`  | The number of managed devices tracked by this install regardless of whether they have reported a meter this month |
+
+Here are some examples of how you might utilize the install report type:
+
+#### Stale Installs
+This report returns all the installs that have not checked-in in more than 24 hours.
+
+```sql
+SELECT
+    entity_name as 'Entity Name',
+    hostname as 'Hostname',
+    version as 'Version',
+    os as 'Operating System',
+    antivirus as 'Antivirus',
+    is_laptop as 'Laptop',
+    ip_address as 'IP Address',
+    DATETIME(created_timestamp) as 'Created',
+    DATETIME(last_check_in_timestamp) as 'Check-in',
+
+    -- Count the number of days since this install last checked in
+    printf('%d days', ROUND(JULIANDAY(DATE('now')) - JULIANDAY(last_check_in_timestamp), 0)) as 'Offline',
+
+    -- Add a column with a link to the install so that it's easy to find
+    printf('https://app.printtrackerpro.com/entity/%s/installs/list?searchTerm=%s', entity_id, id) as 'Link'
+FROM installs
+WHERE status = 1
+    -- Only return installs that haven't checked in in more than 24 hours
+    AND last_check_in_timestamp < DATE('now', '-24 hours')
+ORDER BY last_check_in_timestamp DESC
+```
+
+
 ### Current Meter
 ### Volume Analysis
 ### Billing Period
