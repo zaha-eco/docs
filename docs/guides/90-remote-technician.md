@@ -22,7 +22,7 @@ To open a Remote Technician session:
 A new browser tab will appear. It may take a few seconds to connect to the device. Once connected, you will be able to access the device's embedded webserver.
 
 :::caution Note
-Remote Technician will not be able to connect to the device in the following cases:
+Remote Technician will not be able to connect to the device if:
 * The device is turned off
 * The device is not connected to the local network
 * The data collection agent is not on the same network as the device (for example, if the data collection agent is on a laptop, and the laptop is taken home)
