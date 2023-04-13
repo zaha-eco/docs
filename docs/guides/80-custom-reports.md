@@ -273,7 +273,72 @@ ORDER BY latest_meter_timestamp desc
 ```
 
 ### Volume Analysis
+The volume analysis report allows you to compare the meter reads between two dates. The default volume analysis report calculates additional volume columns by subtracting the current counters from the previous counters. The volume analysis report contains the following columns:
+
+| Column Name              | Data Type  | Description                                                                                                                                                                                                                                                                                                                                |
+|--------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `device_id`              | `varchar`  | The unique identifier for the device                                                                                                                                                                                                                                                                                                       |
+| `entity_id`              | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                                                                                                                                                                                                                    |
+| `entity_name`            | `varchar`  | The name of the entity that this device belongs to                                                                                                                                                                                                                                                                                         |
+| `integration_id`         | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)                                                                                                                                                                                                        |
+| `asset_id`               | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business                                                                                                                                                                                                 |
+| `make`                   | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                                                                                                                                                                                                                          |
+| `model`                  | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                                                                                                                                                                                                                              |
+| `serial_number`          | `varchar`  | The serial number of device collected during the latest meter read. This should always match the `device_serial number`                                                                                                                                                                                                                    |
+| `device_serial_number`   | `varchar`  | The serial number of the device as specified by the device                                                                                                                                                                                                                                                                                 |
+| `custom_serial_number`   | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                                                                                                                                                                                                                     |
+| `location`               | `varchar`  | The location of the device as specified by the device                                                                                                                                                                                                                                                                                      |
+| `custom_location`        | `varchar`  | The location of the device as configured by a user in the webadmin                                                                                                                                                                                                                                                                         |
+| `ip_address`             | `varchar`  | The IP address of the device                                                                                                                                                                                                                                                                                                               |
+| `mac_address`            | `varchar`  | The MAC address of the device                                                                                                                                                                                                                                                                                                              |
+| `hostname`               | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                                                                                                                                                                                                                       |
+| `system_name`            | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                                                                                                                                                                                                                   |
+| `firmware`               | `varchar`  | The firmware version or datecode currently installed on the device                                                                                                                                                                                                                                                                         |
+| `latest_meter_timestamp` | `datetime` | The timestamp of the most recently uploaded meter                                                                                                                                                                                                                                                                                          |
+| `managed`                | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                                                                                                                                                                                                                    |
+| `first_pageCounts_*`     |            | All available counter columns from the first/earliest meter read start with the prefix `first_pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                      |
+| `last_pageCounts_*`      |            | All available counter columns from the last/latest meter read start with the prefix `last_pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                          |
+| `first_supplies_*`       |            | All available supply columns from the first/earliest start with the prefix `first_supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns) |
+| `last_supplies_*`        |            | All available supply columns from the last/latest start with the prefix `first_supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)    |
+
+#### Total Volume by Device
+This example query returns the total number of pages printed for each device:
+```sql
+SELECT
+    entity_name as 'Entity',
+    make as 'Make',
+    model as 'Model',
+    serial_number as 'Serial Number',
+    asset_id as 'Asset ID',
+    ip_address as 'IP Address',
+    mac_address as 'Mac Address',
+    location as 'Location',
+    DATETIME(first_meter_timestamp) as 'First Timestamp',
+    DATETIME(last_meter_timestamp) as 'Last Timestamp',
+    ROUND(JULIANDAY(last_meter_timestamp) - JULIANDAY(first_meter_timestamp), 2) as 'Days Between Meters',
+    last_pageCounts_default_total - first_pageCounts_default_total as 'Total Volume'
+FROM meters
+```
+
 ### Billing Period
+The billing period report has the same schema (columns) as the [volume analysis report](#volume-analysis), however instead of picking a start date and an end date like you would for a volume analysis report, you specify only a **billing date**. This report is based on a [device's billing schedule](./20-configuring-settings.md#schedules). Device's will be included in this report, as long as the device's billing schedule aligns with your chosen billing date.
+
+Billing periods are sometimes tricky to understand, so let's walk through an example. Let's assume that we have the following devices each with a different billing schedule:
+
+| Device            | Billing Schedule                 |
+|-------------------|----------------------------------|
+| HP LaserJet M477  | 1st Day of the Month, Bi-monthly |
+| HP OfficeJet 8700 | 1st Day of the Month, Monthly    |
+
+You may notice that while these two devices have differing billing schedules, they actually both need to be billed on the same day, every other month. In the following diagram, notice how in month 1 (first blue circle) we only bill the customer for the HP OfficeJet 8600 device. However in the second month (second blue circle) we bill the customer for both devices, since once of the devices should only be billed bi-monthly.
+
+![](../images/custom-reports-billing-schedules.png)
+
+The billing period report takes into consideration this idea of differing billing schedules by device and allows you to create a single report that includes all devices whose billing schedules land on the date that you select when configuring the report regardless of the interval of each device's billing schedule. 
+
+We mentioned previously that the billing period report has all the same columns as the volume analysis report, which means that the report gives us access to meter read columns from both the first and the last meters in the billing period. While the last meter read timestamps will almost always be the same date across your devices (the report's billing date), the first meter read can vary from device to device. In the previous example, when we receive our billing period report, the first meter read of the HP LaserJet M477 will be two months ago, and the first meter read of the HP OfficeJet 8700 will be one month ago. 
+
+
 ### Estimated Depletion
 ### Monthly Volume
 ### Supplies
