@@ -1,0 +1,9 @@
+.label {
+  font-weight: bold;
+  font-size: 12px;
+  background-color: var(--ifm-color-orange);
+  border-radius: 3px;
+  padding: 2px 8px;
+  color: white;
+  vertical-align: middle;
+}
