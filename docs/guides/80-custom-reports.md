@@ -11,6 +11,13 @@ Having access to the right data can help businesses find answers to important qu
 ## Overview
 Custom reports supports a variety of report types, such as device, install, and meter reports, making it versatile for different types of business questions. This flexibility allows you to focus on specific aspects of your operations. To build and customize these reports, the feature utilizes [SQLite](#structured-query-language-sql), a variant of SQL that is lightweight and efficient. By leveraging SQLite, you can easily manage and manipulate their data, creating tailored reports that help you better understand their business and make data-driven decisions.
 
+## Structured Query Language (SQL)
+In order to allow you to customize your reports, custom reports utilizes SQL, or Structured Query Language, a programming language specifically designed to help you access and retrieve information. SQL allows you to select and filter the precise pieces of information, while also enabling you to sort, group, and perform calculations on that data. This makes it a powerful and user-friendly tool to quickly obtain and analyze information stored in a structured format, meeting your specific requirements or interests.
+
+:::info
+Custom reports utilizes a variant of SQL called [SQLite](https://www.sqlite.org/lang.html).
+:::
+
 ## Creating Reports
 ![](../images/custom-reports-creating-report.gif)
 
@@ -423,11 +430,32 @@ WHERE DATE(black_toner_estimated_depletion) < DATE('now', '+42 days')
 ```
 
 ### Monthly Volume <BetaLabel/>
-The monthly volume report is helpful for getting a month-over-month view of the number of pages printed by each device, over the last year. The default query for this report is exported as a CSV, and it's usually most helpful to combine the CSV data with a pivot table in Excel. This report does not support including children. The following columns are supported by this report:
+The monthly volume report is helpful for getting a month-over-month view of the number of pages printed by each device, over the last year. You can think of this report as aggregating all daily meter reads into monthly **buckets** which can then be used to analyze volume over time. The default query for this report is exported as a CSV, and it's usually most helpful to combine the CSV data with a pivot table in Excel. This report does not support including children. The following columns are supported by this report:
 
-| Column Name | Column Type | Description |
-|-------------|-------------|-------------|
-
+| Column Name            | Column Type | Description                                                                                                                                |
+|------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                   | `varchar`   | The unique identifier for the device                                                                                                       |
+| `integration_id`       | `varchar`   | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`             | `varchar`   | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
+| `make`                 | `varchar`   | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
+| `model`                | `varchar`   | The model of the device (e.g. OfficeJet 8600)                                                                                              |
+| `serial_number`        | `varchar`   | The serial number of the device as specified by the device                                                                                 |
+| `location`             | `varchar`   | The location of the device as specified by the device                                                                                      |
+| `ip_address`           | `varchar`   | The IP address of the device                                                                                                               |
+| `mac_address`          | `varchar`   | The MAC address of the device                                                                                                              |
+| `hostname`             | `varchar`   | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
+| `system_name`          | `varchar`   | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
+| `firmware`             | `varchar`   | The firmware version or datecode currently installed on the device                                                                         |                        
+| `year`                 | `integer`   | The year number associated with this volume bucket (e.g. 2023)                                                                             |                        
+| `month_number`         | `integer`   | The month number associated with this volume bucket (e.g. 1)                                                                               |                        
+| `month`                | `integer`   | The month in string form (e.g. January)                                                                                                    |                        
+| `meter_read_timestamp` | `datetime`  | The latest meter read uploaded within this volume bucket                                                                                   |                        
+| `total`                | `integer`   | The latest value of the total counter within this volume bucket                                                                            |                        
+| `total_black`          | `integer`   | The latest value of the total black counter within this volume bucket                                                                      |                        
+| `total_color`          | `integer`   | The latest value of the total color counter within this volume bucket                                                                      |                        
+| `total_volume`         | `integer`   | The total number of pages printed during the timeframe of this bucket                                                                      |                        
+| `total_black_volume`   | `integer`   | The total number of monochrome pages printed during the timeframe of this bucket                                                           |                        
+| `total_color_volume`   | `integer`   | The total number of color pages printed during the timeframe of this bucket                                                                |                        
 
 When parsed using an Excel pivot table, this report can help give you a quick overview about the volume of your devices over time, for a particular entity.
 
@@ -471,6 +499,35 @@ The supplies report provides data about every supply (currently installed, and r
 | `actual_cost_per_page`     | `integer`   | If a supply cost is specified in Print Tracker, this value is the cost of each page printed on the supply.                                                                                                                                           |
 | `lost_pages`               | `integer`   | When a supply is replaced, this is the difference between the expected yield of the supply, and the number of pages printed on the supply.                                                                                                           |
 
+#### All Supplies from All Devices
+This example query returns all supply information for all devices.
+
+```sql
+SELECT
+    entity_name as 'Entity',
+    device_make as 'Device Make',
+    device_model as 'Device Model',
+    device_serial_number as 'Device Serial Number',
+    device_asset_id as 'Device Asset ID',
+    name as 'Name',
+    type as 'Type',
+    color as 'Color',
+    serial_number as 'Serial Number',
+    part_number as 'Part Number',
+    DATETIME(installed_date) as 'Installed Date',
+    DATETIME(replaced_date) as 'Replaced Date',
+    DATETIME(estimated_depletion_date) as 'Estimated Depletion Date',
+    ROUND(JULIANDAY(estimated_depletion_date) - JULIANDAY(DATETIME()), 0) as 'Estimated Days Remaining',
+    remaining_at_install as '% Remaining at Install',
+    remaining as '% Remaining',
+    pages_printed as 'Pages Printed',
+    expected_yield as 'Expected Yield',
+    fill_rate as 'Fill Rate',
+    lost_pages as 'Lost Pages',
+    actual_cost_per_page as 'Actual Cost/Page'
+FROM supplies;
+```
+
 ## Meter and Supply Columns
 :::tip
 Questions? Our support team is ready and willing to help you configure your custom reports. [support@printtrackerpro.com](mailto:support@printtrackerpro.com)
@@ -501,8 +558,3 @@ Here are some examples of the most commonly used columns
 * `supplies_blackToner_color`
 * `supplies_blackToner_description`
 * `supplies_waste_pctRemaining`
-
-## Caveats
-
-## Structured Query Language (SQL)
-Print Tracker utilizes a variant of SQL called [SQLite](https://www.sqlite.org/lang.html).
