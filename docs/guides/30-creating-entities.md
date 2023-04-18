@@ -79,8 +79,8 @@ To delete an entity:
 3. Click **Settings**
 4. Click **Delete entity** at the bottom of the page
 5. Follow the instructions to confirm you want to delete the entity
-   :::tip danger
-   Deleting an entity will also delete all of its descendants and their contents, including child entities, installs, users, devices, and device data.
+   :::danger
+   Deleting an entity will also delete **all** of its descendants and their contents, including child entities, installs, users, devices, and device data. This action cannot be undone.
    :::
 
 ## Moving an Entity
