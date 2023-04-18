@@ -9,11 +9,11 @@ You can control how and where you collect data, and when you receive alerts abou
 
 ## Settings Inheritance
 
-Print Tracker settings are inherited through [hierarchy](./entities#Hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#Parent-entity) in its hierarchy with an setting value explicitly set.
+Print Tracker settings are inherited through [hierarchy](./entities#Hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#Parent-entity) in its hierarchy with a setting value explicitly set.
 
 ### Inheriting Settings
 
-Settings natively flow from the top down, according to [hierarchy](./entities#Hierarchy). Custom settings that you want to apply to your entire fleet should be set one time at your [top level entity](./entities#Top-Level-Entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
+Settings natively flow from the top down, according to [hierarchy](./entities#Hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./entities#Top-Level-Entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
 
 ### Overriding Settings
 
