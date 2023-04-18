@@ -5,42 +5,303 @@ sidebar_position: 20
 
 # Configuring Settings and Alerts
 
+You can control how and where you collect data, and when you receive alerts about that data by configuring settings. Settings can be set and managed from the [top level entity](./entities#Top-Level-Entity), any individual entity, or an individual device. This gives you maximum flexibility while also providing efficient management of standard settings.
+
 ## Settings Inheritance
+
+Print Tracker settings are inherited through [hierarchy](./entities#Hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#Parent-entity) in its hierarchy with a setting value explicitly set.
 
 ### Inheriting Settings
 
+Settings natively flow from the top down, according to [hierarchy](./entities#Hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./entities#Top-Level-Entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
+
 ### Overriding Settings
+
+When a new entity or device is created, it will automatically inherit its settings through its hierarchy.
+
+![](../images/configuring-settings-entity-alert-emails.gif)
+To override an inherited setting at the entity level:
+
+1. Navigate to the desired entity
+2. Click on **Admin > Manage entity** on the side navigation bar
+3. Click on the **Settings** tab
+4. Change the setting(s)
+5. Click **Save setting** at the bottom of the screen
+
+![](../images/configuring-settings-device-alert-emails.gif)
+To override an inherited setting at the device level:
+
+1. Navigate to the desired entity
+2. Click on **Devices > View devices** on the side navigation bar
+3. Click on the device
+4. Click on the **Settings** tab
+5. Change the setting(s)
+6. Click **Save setting** at the bottom of the screen
 
 ### Resetting Settings
 
+After a settings has been explicityly set, it will no longer automatically inherit that setting's value through its hierarchy.
+
+![](../images/configuring-settings-device-reset.gif)
+To reset a setting so it will inherit its value:
+
+1. Clicking on the settings tab of any entity or device
+2. Navigating to the correct setting
+3. Click on **Reset** on the right side of the setting input.
+4. Click **Save setting** at the bottom of the screen
+
+#### Reset for all children
+
+When resetting a setting for an entity, you also have the choice to reset a setting for the [active entity](./entities#Active-Entity) and all of its children. This is typically done when you want to standardize a setting.
+
+![](../images/configuring-settings-entity-bulk-reset.gif)
+To reset a setting for all children:
+
+1. Navigate to the the entity highest in the hierarchy where you want the change to take effect
+2. Click on **Admin > Manage entity** on the side navigation bar
+3. Click on the **Settings** tab
+4. Go to the setting
+5. Click on the down arrow at the right side of the setting input and select **Reset for all children**
+6. Click **Save setting** at the bottom of the screen
+
+:::caution
+When you **Reset for all children**, this will reset the setting to its inherited value for the active entity, all child entities, and those entites' devices.
+:::
+
 ## Supply Alerts
+
+Supply alerts are pre-defined conditions printing supplies reach that can trigger notifications be sent to a user or group of users.
 
 ### Low Supply Alerts
 
+A low supply alert is triggered when a supply level crosses a user-defined minimum threshold and can be configured separately for black and color supplies.
+
+<!-- TO DO- INSERT GIF -->
+
+To configure a low supply alert:
+
+1. Open the **Device alerts > Supply alerts** section
+2. Enable the **Low supply alerts**
+3. Enter the email address(es) you want alerts sent to
+4. Choose to include potential alerts that require human confirmation by enabling **Suspected alerts**
+5. Enter a percentage value at the threshold where you want the alert to trigger
+6. Choose to create a separate threshold level for color supplies by enabling the **Separate color threshold**
+7. Click **Save setting** at the bottom of the screen
+
 ### Replacement Alerts
+
+A replacement alert is triggered when a supply is replaced. Some dealers want to be notified when a supply is replaced in order to keep track of on-site inventory.
+
+<!-- TO DO- INSERT GIF -->
+
+To enable replacement alerts:
+
+1. Open the **Device alerts > Supply alerts** section
+2. Enable the **Replacement** toggle
+3. Enter the email address(es) you want alerts sent to
+4. Click **Save setting** at the bottom of the screen
 
 ### Premature Replacement Alerts
 
+A premature replacement alert is triggered when a supply is replaced before it drops below the threshold set for a low supply alert. Some dealers want to be notified when a supply is replaced too early in order to better manage supply costs and prevent preamture replacements in the future.
+
+<!-- TO DO- INSERT GIF -->
+
+To enable premature replacement alerts:
+
+1. Open the **Device alerts > Supply alerts** section
+2. Enable the **Premature replacement** toggle
+3. Enter the email address(es) you want alerts sent to
+4. Click **Save setting** at the bottom of the screen
+
 ## Service Alerts
+
+Printing devices wear out, break down, or enter into a state where printing cannot continue without some sort of human intervention. A service alert is triggered when different service needs are required by a device.
+
+<!-- TO DO- Need clarification here -->
+
+To only receive alerts for low fusers, drums, waste toners etc:
+
+1. Open the **Device alerts > Service alerts** section
+2. Enable the **Maintenance supply alert** toggle
+3. Enter a percentage value at the threshold where you want the alert to trigger
+4. Enter the email address(es) you want alerts sent to
+5. Click **Save setting** at the bottom of the screen
 
 ### Maintenance Alerts
 
+<!-- TO DO- Need clarification here -->
+
 ## Skip Alerts
+
+Skip alerts allow you to choose to temporarily ignore low supply alerts. This is typically used by dealers who know how many supplies of a parcticular type they have at a customer's site and do not want to send more of that supply until the current inventoy has been depleted.
+
+<!-- TO DO: INSERT GIF -->
+
+To set a skip alert:
+
+1. Open the **Skip alerts** section
+2. Click **Add supply**
+3. Select the supply you want to create a skip alert for
+4. Click on the edit icon and select how many future low supply alerts you want to skip
+5. Click **Save setting** at the bottom of the screen
 
 ## Volume Alerts
 
+A volume alert is triggered when a device has printed a certain volume of pages. This is typically used in cases where a device supply is unable to report page count information and the dealer wants to send a new supply after a certain number of pages have been printed.
+
+<!-- TO DO: INSERT GIF -->
+
+To set a volume alert:
+
+1. Open the **Device alerts > Volume alerts\*** section
+2. Enable the **Volume alerts** toggle
+3. Enable the **Recurring** toggle if you want a volume alert to be sent each time the device prints the desired number of pages
+4. Enter a value into the **Next alert at** field to set the first time you want a volume alert sent
+5. Enter a value into the **Frequency** field to set the recurring number of pages you want a volume alert sent at
+6. Enter the email address(es) you want alerts sent to
+7. Click **Save setting** at the bottom of the screen
+
 ## Install Alerts
+
+A user can receive alerts when the state of an install changes.
+
+### New Install Alert
+
+A new install alert is triggered anytime a new [agent](./installation#Installing-And-Managing-Agents) is installed at a customer location.
+
+<!-- TO DO: INSERT GIF -->
+
+To configure a new install alert:
+
+1. Navigate to the desired entity
+2. From the side bar, click **Admin > Manage entity > Setings > Install Alerts**
+3. Enable the **New install alerts** toggle
+4. Enter the email address(es) you want alerts sent to
+5. Click **Save setting** at the bottom of the screen
+
+### Stale Install Alert
+
+A stale install alert is triggered anytime an [agent](./installation#Installing-And-Managing-Agents) fails to check in for more than the specified number of days.
+
+<!-- TO DO: INSERT GIF -->
+
+To configure a stale install alert:
+
+1. Navigate to the desired entity
+2. From the side bar, click **Admin > Manage entity > Setings > Install Alerts**
+3. Enable the **Stale install** toggle
+4. Enter the email address(es) you want alerts sent to
+5. Enter into the **Stale days** field how many days the install has to fail to check in before it becomes stale
+6. Click **Save setting** at the bottom of the screen
+
+### Stale Install Back Online Alert
+
+A stale install back online alert is triggered anytime a stale [install](./installation#Installing-And-Managing-Agents) check in after having failed to check in for more than the specified number of days.
+
+<!-- TO DO: INSERT GIF -->
+
+To configure a stale install back online alert:
+
+1. Navigate to the desired entity
+2. From the side bar, click **Admin > Manage entity > Setings > Install Alerts**
+3. Enable the **Stale install back online** toggle
+4. Enter the email address(es) you want alerts sent to
+5. Enter into the **Stale days** field how many days the install has to fail to check in before it comes back online
+6. Click **Save setting** at the bottom of the screen
 
 ## Network Scans
 
+Network scan settings set defaults for how an [agent](./installation#Installing-And-Managing-Agents) scans the network where it is installed.
+
 ### IP Addresses to Scan
+
+You can set the default IP addresses you want to have scanned by the agent.
+
+<!-- TO DO: INSERT GIF -->
+
+To manage IP addresses:
+
+1. Navigate to the desired entity or install
+2. Click **Settings > Network discovery**
+3. Add IP adresses in a valid format and press **Return** or **Tab** on your keyboard after each entry
+   :::info
+   Print Tracker supports values formatted as an individual IP addresses (10.0.0.1), a range of IP addresses (10.0.0.1-10), using a wild card (10.0.0.\*), or using [Cider notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) (10.0.0.1/24)
+   :::
 
 ### Scanning Schedule
 
+You can manage when the agent scans your network.
+
+<!-- TO DO: INSERT GIF -->
+
+To change your scanning schedule:
+
+1. Navigate to the desired entity or install
+2. Click **Settings > Data Collection Agent**
+3. Change how often the agents scans the network for alert by changing the value in the **Check for alert frequency (in minutes)** field
+4. Change what time of days meters are uploaded by seleting a time range in the **Upload daily meter read** field
+5. Change what day(s) the network will be scanned for newly added devices by checking boxes in the **Scan for new device on days** options
+6. Click **Save setting** at the bottom of the screen
+
 ## SNMP Settings
+
+You can manage the settings that determine how SNMP data is collected.
+
+<!-- TO DO: INSERT GIF -->
+
+To adjust your SNMP settings:
+
+1. In the **Settings** tab, click **SNMP**
+2. Enter the number of times you want to retry pinging an OID by changing the value in **Max retries**
+3. Change the amount of time (in milliseconds) to wait before timing out a request by changing the value in **Timout**
+4. Change the value for the SNMP community by changing the value in **Community**
+5. Change the connection settings and what version of SNMP is being used by chainging the value in **Version**
+6. Click **Save setting** at the bottom of the screen
 
 ## Billing
 
+You can manage when and which page count formats you want to use for billing.
+
 ### Meters
 
-### Schedules
+A meter is a page count collected from a device for a specific format of counter. For example, a printing device might report a total value for both an equivalent format and a squre feet format. Choosing which meter type you want to bill off allows the flexibility to collect all the reportble meter formats from a device, but to choose which format will be used to bill the customer. Because different devices collect different page count formats, Print Tracker gives you the flexibility to specifiy an order of priority.
+
+<!-- TO DO: INSERT GIF -->
+
+To configure billing meter preferences by entity:
+
+1. Navigate to the desired entity
+   :::tip Tip
+   If all your devices use the same meters for billing, setup your default preferences at your dealer entity and all your child entities and devices will inherit these defaults.
+   :::
+2. Using the sidebar, click **Admin > Manage entity**
+3. Click on the **Settings** tab
+4. Open the **Billing preferences** section
+5. Enable the **Toggle billing schedule** setting
+6. Enter your formats in order of preference in the _Formats_ setting
+   :::info Info
+   The order in which you enter your preferences matters. For example, if your preference lists **Equivalent** then **Life**, Print Tracker will use the equivalent meter if the device reports it. If the device does not report equivalent meters, Print Tracker will use the life meter.
+   :::
+7. Enter the counters you want to use for billing and see throughout the Web Admin in the **Counters** setting
+8. Click the **Save settings** button at the bottom of the page
+
+### Schedule
+
+The billing schedule is used to set the timing and frequency of when you bill your customers. For example, if Entity A has a billing schedule of "every 1 month on the 15th day of the month", Print Tracker will create a billing period that can be used to calculate all the volume printed at Entity A from January 15 through February 15 then February 15 through March 15, etc.
+
+<!-- TO DO: INSERT GIF -->
+
+To configure this setting:
+
+1. Navigate to the desired entity
+   :::tip Tip
+   If all your devices use the same schedule for billing, setup your default schedule at your dealer entity and all your child entities and devices will inherit these defaults.
+   :::
+2. Using the sidebar, click **Admin > Manage entity**
+3. Click on the **Settings** tab
+4. Open the **Billing preferences** section
+5. Enable the **Toggle billing schedule** setting
+6. Change the **Current schedule** to the desired frequency for billing
+7. Set the desired **Schedule timezone**
+8. Click the **Save settings** button at the bottom of the page
