@@ -7,6 +7,12 @@ sidebar_position: 30
 
 ## Hierarchy
 
+### Top Level Entity
+
+### Parent Entity
+
+### Active Entity
+
 ## Organization Strategies
 
 ### Physical Locations
