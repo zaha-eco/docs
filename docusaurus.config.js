@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Print Tracker",
-  tagline: "Dinosaurs are cool",
+  title: "The simple way to manage printers and copiers.",
+  // tagline: "The simple way to manage printers and copiers.",
   url: "https://docs.printtrackerpro.com",
   baseUrl: "/",
   onBrokenLinks: "warn",
@@ -86,9 +86,9 @@ const config = {
             position: "left",
             label: "Guides",
           },
-          { to: "/blog", label: "Reference", position: "left" },
-          { to: "/blog", label: "Blog", position: "left" },
-          { to: "/blog", label: "Changelog", position: "right" },
+          // { to: "/blog", label: "Reference", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Changelog", position: "right" },
           {
             href: "https://app-v2.printtrackerpro.com/download",
             label: "Download",
@@ -97,47 +97,63 @@ const config = {
         ],
       },
       footer: {
-        style: "dark",
+        style: "light",
         links: [
           {
-            title: "Docs",
+            title: "Hot Topics",
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/getting-started",
+                to: "/docs/start",
+              },
+              {
+                label: "Remote Technician",
+                to: "/docs/guides/remote-technician",
+              },
+              {
+                label: "Custom Reports",
+                to: "/docs/guides/reports",
+              },
+              {
+                label: "Integrations",
+                to: "/docs/guides/integrations",
               },
             ],
           },
           {
-            title: "Community",
+            title: "Helpful Guides",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Configuring Settings",
+                to: "/docs/guides/settings",
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: "Adding Users",
+                to: "/docs/guides/adding-more-users",
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "Managing Supplies",
+                to: "/docs/guides/supplies",
+              },
+              {
+                label: "Entities & Hierarchy",
+                to: "/docs/guides/entities",
               },
             ],
           },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
+          // {
+          //   title: "More",
+          //   items: [
+          //     {
+          //       label: "Blog",
+          //       to: "/blog",
+          //     },
+          //     {
+          //       label: "GitHub",
+          //       href: "https://github.com/facebook/docusaurus",
+          //     },
+          //   ],
+          // },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Print Tracker`,
       },

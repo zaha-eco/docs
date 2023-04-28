@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 250">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-size: 53.59px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-4 {
+        font-family: Roboto-Black, Roboto;
+        font-weight: 800;
+      }
+
+      .cls-5 {
+        fill: #0e85c8;
+      }
+
+      .cls-4 {
+        fill: #86d0f0;
+        font-size: 27.91px;
+      }
+
+      .cls-6 {
+        letter-spacing: .05em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: .09em;
+      }
+
+      .cls-9 {
+        letter-spacing: .11em;
+      }
+
+      .cls-10 {
+        letter-spacing: .1em;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" width="1100" height="250" rx="34.82" ry="34.82"/>
+  <g>
+    <text class="cls-2" transform="translate(219.59 126.8)"><tspan class="cls-8" x="0" y="0">T</tspan><tspan class="cls-9" x="38.68" y="0">OP FE</tspan><tspan class="cls-6" x="211.33" y="0">A</tspan><tspan class="cls-10" x="250.32" y="0">TURES</tspan></text>
+    <text class="cls-4" transform="translate(222.47 164.53)"><tspan x="0" y="0">Always inn</tspan><tspan class="cls-1" x="136.61" y="0">ov</tspan><tspan class="cls-7" x="166.29" y="0">ating.</tspan></text>
+  </g>
+  <path id="path6" class="cls-3" d="m154.8,88.17h-37.59v77.33h.1l18.82-16.42h15.95c16.2,0,29.49-12.7,30.43-28.65v-3.56c-.84-15.16-11.81-28.71-27.71-28.71Z"/>
+</svg>
