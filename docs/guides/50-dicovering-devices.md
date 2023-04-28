@@ -6,6 +6,10 @@ sidebar_position: 50
 # Discovering and Managing Devices
 Print Tracker's primary purpose is to discover your devices and collect [meters](./60-meters-and-supplies.md) from those devices. Once discovered, you can view and manage your devices remotely from anywhere in the world. Managing your devices includes configuring device settings, cleaning up old devices, reviewing device statistics, and more.
 
+:::caution Under Construction
+This guide is currently under construction. Please check back soon for updates.
+:::
+
 ## Discovering Devices
 The process of discovering devices on your network involves scanning every IP address to detect whether there's a printer located at that address. By default, Print Tracker will periodically scan your network automatically to discover new devices. You can also manually trigger a scan at any time. 
 
