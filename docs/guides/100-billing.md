@@ -5,8 +5,8 @@ sidebar_position: 100
 
 # Billing and Payments
 
-:::caution Note
-Print Tracker does not manage billing your customers
+:::caution Under Construction
+This guide is currently under construction. Please check back soon for updates.
 :::
 
 ## How Does Billing Work?
