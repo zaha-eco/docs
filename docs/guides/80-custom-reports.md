@@ -528,6 +528,64 @@ SELECT
 FROM supplies;
 ```
 
+### Billable Devices <BetaLabel/>
+:::info
+Print Tracker does not bill your customers. The billable devices report can help you understand _your_ Print Tracker costs, and how your customers are contributing to those costs.
+:::
+
+The billable devices report can help you better understand your Print Tracker costs. It contains device information for each month where Print Tracker billed you for the device. 
+
+The following columns are available in the billable devices report:
+
+| Column Name      | Data Type | Description                                                                                                                                |
+|------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| `entity_name`    | `varchar` | The name of the entity where the device is located                                                                                         |
+| `entity_id`      | `varchar` | The id of the entity where the device is located                                                                                           |
+| `dealer_name`    | `varchar` | The name of the dealer entity                                                                                                              |
+| `dealer_id`      | `varchar` | The id of the dealer entity                                                                                                                |
+| `id`             | `varchar` | The unique identifier for the device                                                                                                       |
+| `integration_id` | `varchar` | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`       | `varchar` | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
+| `make`           | `varchar` | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
+| `model`          | `varchar` | The model of the device (e.g. OfficeJet 8600)                                                                                              |
+| `serial_number`  | `varchar` | The serial number of the device as specified by the device                                                                                 |
+| `location`       | `varchar` | The location of the device as specified by the device                                                                                      |
+| `ip_address`     | `varchar` | The IP address of the device                                                                                                               |
+| `mac_address`    | `varchar` | The MAC address of the device                                                                                                              |
+| `hostname`       | `varchar` | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
+| `system_name`    | `varchar` | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
+| `firmware`       | `varchar` | The firmware version or datecode currently installed on the device                                                                         |                        
+| `year`           | `integer` | The year number associated with this record when this device was billed                                                                    |                        
+| `month_number`   | `integer` | The month number associated with this record when this device was billed                                                                   |                        
+| `month`          | `integer` | The month in string form (e.g. January)                                                                                                    |                        
+
+#### Billable Devices Grouped by Entity
+This query is helpful for understanding which of your customers are most significantly contributing to your Print Tracker costs.
+```sql
+SELECT
+    entity_name as 'Entity',
+    month as 'Month',
+    year as 'Year',
+    count() as 'Billable Devices'
+FROM billable_devices
+GROUP BY entity_id, year, month
+ORDER BY entity, year, month_number;
+```
+
+#### Billable Devices Grouped by Dealer
+This example groups billable devices by dealer. If you are a Print Tracker authorized reseller, this query will help you understand which of your customers are most significantly contributing to your Print Tracker costs.
+
+```sql
+SELECT
+    dealer_name as 'Dealer',
+    month as 'Month',
+    year as 'Year',
+    count() as 'Billable Devices'
+FROM billable_devices
+GROUP BY dealer_id, year, month
+ORDER BY dealer_name, year, month_number;
+```
+
 ## Meter and Supply Columns
 :::tip
 Questions? Our support team is ready and willing to help you configure your custom reports. [support@printtrackerpro.com](mailto:support@printtrackerpro.com)
