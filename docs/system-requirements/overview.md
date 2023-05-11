@@ -26,15 +26,15 @@ Print Tracker Pro does not require any port-forwarding rules or special networki
 
 Data collection requires internet connectivity in order for meters and alerts to be uploaded to app.printtrackerpro.com. Our agents require access to the following domains which may need to be whitelisted in your network configuration:
 
-|Domain|Protocol|Port|Purpose|
-|--|--|--|--|
-|dcam.printtrackerpro.com|gRPC streaming (uses HTTP/2 as a transport)|443|Allows data collection agents to receive jobs, upload meters, and fire alerts.|
-|csr.printtrackerpro.com|gRPC (uses HTTP/2 as a transport)|443|Allows data collection agents to register under entities that you configure.|
-|hc.printtrackerpro.com|HTTP|443|Allows data collection agents to report their health status.|
-|api.printtrackerpro.com|HTTP|443|Allows data collection agents to upload trouble reports.|
-|www.cdn.printtrackerpro.com|HTTP|443|Allows data collection agents to automatically upgrade themselves.|
-|www.googleapis.com|HTTP|443|Allows data collection agents to download Chromium, the browser used for web-based data collection.|
-|remotetechnician.printtrackerpro.com|Proprietary|6000|Allows authenticated users to remotely access device embedded webservers if the feature is enabled.|
+| Domain                               | Protocol                                    | Port | Purpose                                                                                             |
+|--------------------------------------|---------------------------------------------|------|-----------------------------------------------------------------------------------------------------|
+| dcam.printtrackerpro.com             | gRPC streaming (uses HTTP/2 as a transport) | 443  | Allows data collection agents to receive jobs, upload meters, and fire alerts.                      |
+| csr.printtrackerpro.com              | gRPC (uses HTTP/2 as a transport)           | 443  | Allows data collection agents to register under entities that you configure.                        |
+| hc.printtrackerpro.com               | HTTP                                        | 443  | Allows data collection agents to report their health status.                                        |
+| api.printtrackerpro.com              | HTTP                                        | 443  | Allows data collection agents to upload trouble reports.                                            |
+| www.cdn.printtrackerpro.com          | HTTP                                        | 443  | Allows data collection agents to automatically upgrade themselves.                                  |
+| www.googleapis.com                   | HTTP                                        | 443  | Allows data collection agents to download Chromium, the browser used for web-based data collection. |
+| remotetechnician.printtrackerpro.com | Proprietary                                 | 7000 | Allows authenticated users to remotely access device embedded webservers if the feature is enabled. |
 
 [//]: # (If [Advanced Troubleshooting Mode]&#40;../security/advanced-troubleshooting-mode.md&#41; is enabled, you will need to make sure your network is compatible with the [Tailscale]&#40;https://tailscale.com/kb/1082/firewall-ports/#what-if-i-really-really-want-to-specify-the-hostnames-that-tailscale-uses-to-operate-its-service&#41; network requirements.)
 
