@@ -122,10 +122,19 @@ datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/in
 </TabItem>
 </Tabs>
 
-## Clustering and Redundancy
-Clustering is the idea of installing multiple agents on the same network so that if one agent goes down, another agent can take over. Print Tracker automatically clusters agents that are registered using the same [datalink code](#datalink-code). This means that if you have multiple agents installed at the same entity, they will automatically cluster together without requiring any additional configuring from you.
+:::caution macOS Installer
+Some macOS devices may pop up a warning indicating that the .pkg cannot be opened. This is because Print Tracker is not notarized by Apple and made available via the Apple App Store.
 
-When multiple agents are installed on the same network, devices, meters, and all other collected data is de-duplicated automatically.
+![](../images/installing-agents-macos-error.png)
+
+To bypass this warning:
+1. Right-click on the file in your Finder window.
+2. Click **Open**
+3. Click **Open** again
+4. Follow the installation prompts.
+
+![](../images/installing-agents-macos.gif)
+:::
 
 ## Installation
 Once the agent has been [downloaded and installed](#download-and-install), the last step is activation. Activation connects your Print Tracker account to the agent installed within your customer's network. An agent that is not activated to your account will not appear in Print Tracker.
@@ -138,6 +147,11 @@ To activate an agent, make sure the agent has been downloaded and installed usin
 3. Click **Activate**
 
 [//]: # (### Network Discovery)
+
+## Clustering and Redundancy
+Clustering is the idea of installing multiple agents on the same network so that if one agent goes down, another agent can take over. Print Tracker automatically clusters agents that are registered using the same [datalink code](#datalink-code). This means that if you have multiple agents installed at the same entity, they will automatically cluster together without requiring any additional configuring from you.
+
+When multiple agents are installed on the same network, devices, meters, and all other collected data is de-duplicated automatically.
 
 ## Stale Agents
 A stale agent is an agent that is no longer connected to Print Tracker. Installs usually check-in every 30-minutes, however, some installs may not check in for longer periods of time if the computer is shutdown, or enters sleep mode. Installs that are offline for extended periods of time (several days) can be problematic. For example asn agent that is offline for an extended period of time may have missed critical device alerts, such as a supply being replaced. When a [stale agent comes back online](./20-configuring-settings.md#stale-install-back-online-alert) it is important to review all your devices to make sure you haven't missed any critical events.
