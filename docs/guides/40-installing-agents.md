@@ -122,7 +122,9 @@ datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/in
 </TabItem>
 </Tabs>
 
-:::caution macOS Installer
+### Troubleshooting
+#### macOS Installer
+
 Some macOS devices may pop up a warning indicating that the .pkg cannot be opened. This is because Print Tracker is not notarized by Apple and made available via the Apple App Store.
 
 ![](../images/installing-agents-macos-error.png)
@@ -134,7 +136,6 @@ To bypass this warning:
 4. Follow the installation prompts.
 
 ![](../images/installing-agents-macos.gif)
-:::
 
 ## Installation
 Once the agent has been [downloaded and installed](#download-and-install), the last step is activation. Activation connects your Print Tracker account to the agent installed within your customer's network. An agent that is not activated to your account will not appear in Print Tracker.
