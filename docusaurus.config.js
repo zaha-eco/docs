@@ -24,7 +24,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
-    locales: ["en"],
+    locales: ["en", "pt-br"],
   },
 
   themes: [
@@ -51,6 +51,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           sidebarCollapsible: false,
+          editLocalizedFiles: true,
+          editUrl: "https://github.com/printtracker/docs/blob/main/",
         },
         blog: {
           showReadingTime: true,
@@ -84,6 +86,10 @@ const config = {
           {
             href: "https://app-v2.printtrackerpro.com/download",
             label: "Download Print Tracker",
+            position: "right",
+          },
+          {
+            type: "localeDropdown",
             position: "right",
           },
         ],
