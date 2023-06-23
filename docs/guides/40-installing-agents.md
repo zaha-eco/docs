@@ -210,7 +210,7 @@ source <(curl -fsSL printtrackerpro.com/uninstall.sh)
 </Tabs>
 
 ## Troubleshooting
-For more details on troubleshooting issues with your agents, see the [Troubleshooting](../troubleshooting/20-installs.md) section.
+For more details on troubleshooting issues with your agents, see the [Troubleshooting](../troubleshooting/20-installs.mdx) section.
 
 ### macOS Installer Packages
 
