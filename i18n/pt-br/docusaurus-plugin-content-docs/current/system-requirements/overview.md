@@ -1,14 +1,14 @@
-# Overview
-Print Tracker has several different components that work together to provide you with access to your printer data. Some of these components are web-based, others are installed within customer networks. You can find the system requirements for each component below.
+# Visão Geral
+O Print Tracker possui vários componentes diferentes que trabalham em conjunto para lhe fornecer acesso aos dados da impressora. Alguns desses componentes são baseados na Web, outros são instalados na rede dos clientes. Você pode encontrar os requisitos do sistema para cada componente abaixo.
 
 ## Webadmin
-The webadmin is the web-based interface that you use to manage your Print Tracker account. It is available at [https://app.printtrackerpro.com](https://app.printtrackerpro.com). The webadmin is available on all major browsers and operating systems except Safari. We recommend using the latest version of Chrome, Firefox.
+O webadmin é a interface na Web que você usa para gerenciar sua conta do Print Tracker. Ela está disponível em [https://app.printtrackerpro.com]. O webadmin é suportado em todos os principais navegadores e sistemas operacionais, exceto no Safari. Recomendamos usar a versão mais recente do Chrome, Firefox.
 
-## Data Collection Agent
-The data collection agent is a lightweight application that runs as a Windows service inside an end-customer network. It is completely self-contained and does not require any third-party applications or services to come pre-installed on the machine.
+## Agente de Coleta de Dados
+O agente de coleta de dados é um aplicativo leve que é executado como um serviço do Windows dentro da rede do cliente final. Ele é completamente autônomo e não requer nenhum aplicativo ou serviço de terceiros pré-instalado na máquina.
 
-### System Requirements
-Many of the following system requirements depend on the number of devices that are going to be tracked by this data collection agent. For networks with less than 100 devices, the minimum system requirements should be sufficient. For all other network sizes, we recommend that you install the data collection agent on a machine that meets the recommended system requirements.
+### Requisitos do sistema
+Muitos dos requisitos de sistema a seguir dependem do número de dispositivos que serão rastreados por esse agente de coleta de dados. Para redes com menos de 100 dispositivos, os requisitos mínimos do sistema devem ser suficientes. Para todos os outros tamanhos de rede, recomendamos que você instale o agente de coleta de dados em uma máquina que atenda aos requisitos de sistema recomendados.
 
 || Minimum          | Recommended                         |     |
 |------------------|-------------------------------------|------------|
@@ -19,24 +19,24 @@ Many of the following system requirements depend on the number of devices that a
 | Browser          | Chrome, Firefox                     | Chrome, Firefox |
 |Other Considerations | The data collection agent should not be installed on a laptop or any other machine that frequently shuts down, or the reliability may be affected.||
 
-### Network Requirements
-:::info
-Print Tracker Pro does not require any port-forwarding rules or special networking configurations in order to operate normally. All network traffic regardless of protocol is at least TLS encrypted, while the majority of network traffic is encrypted using mTLS.
+### Requisitos de rede
+:::informação
+O Print Tracker Pro não requer regras de encaminhamento de portas ou configurações de rede especiais para operar normalmente. Todo o tráfego de rede, independentemente do protocolo, é criptografado em TLS, enquanto a maioria do tráfego de rede é criptografado usando mTLS.
 :::
 
-Data collection requires internet connectivity in order for meters and alerts to be uploaded to app.printtrackerpro.com. Our agents require access to the following domains which may need to be whitelisted in your network configuration:
+A coleta de dados requer conectividade com a Internet para que os medidores e alertas sejam enviados para app.printtrackerpro.com. Nossos agentes de coleta exigem acesso aos seguintes domínios, que talvez precisem ser permitidos em sua configuração de rede:
 
 | Domain                               | Protocol                                    | Port | Purpose                                                                                             |
 |--------------------------------------|---------------------------------------------|------|-----------------------------------------------------------------------------------------------------|
-| dcam.printtrackerpro.com             | gRPC streaming (uses HTTP/2 as a transport) | 443  | Allows data collection agents to receive jobs, upload meters, and fire alerts.                      |
-| csr.printtrackerpro.com              | gRPC (uses HTTP/2 as a transport)           | 443  | Allows data collection agents to register under entities that you configure.                        |
-| hc.printtrackerpro.com               | HTTP                                        | 443  | Allows data collection agents to report their health status.                                        |
-| api.printtrackerpro.com              | HTTP                                        | 443  | Allows data collection agents to upload trouble reports.                                            |
-| www.cdn.printtrackerpro.com          | HTTP                                        | 443  | Allows data collection agents to automatically upgrade themselves.                                  |
-| www.googleapis.com                   | HTTP                                        | 443  | Allows data collection agents to download Chromium, the browser used for web-based data collection. |
-| remotetechnician.printtrackerpro.com | Proprietary                                 | 7000 | Allows authenticated users to remotely access device embedded webservers if the feature is enabled. |
+| dcam.printtrackerpro.com             | gRPC streaming (uses HTTP/2 as a transport) | 443  | Permite que os agentes de coleta de dados recebam trabalhos, enviem medidores e disparem alertas.  |
+| csr.printtrackerpro.com              | gRPC (uses HTTP/2 as a transport)           | 443  | Permite que os agentes de coleta de dados se registrem em contas configuradas.                         |
+| hc.printtrackerpro.com               | HTTP                                        | 443  | Permite que os agentes de coleta de dados reportem seu status de integridade.                       |
+| api.printtrackerpro.com              | HTTP                                        | 443  | Permite que os agentes de coleta de dados carreguem relatórios de problemas.                      |
+| www.cdn.printtrackerpro.com          | HTTP                                        | 443  | Permite que os agentes de coleta de dados se atualizem automaticamente.                             |
+| www.googleapis.com                   | HTTP                                        | 443  | Permite que os agentes de coleta de dados baixem o Chromium, o usado para coleta de dados.         |
+| remotetechnician.printtrackerpro.com | Proprietary                                 | 7000 | Permite usuários autenticados acessarem remotamente a interface Web do dispositivo se o recurso estiver habilitado. |
 
 [//]: # (If [Advanced Troubleshooting Mode]&#40;../security/advanced-troubleshooting-mode.md&#41; is enabled, you will need to make sure your network is compatible with the [Tailscale]&#40;https://tailscale.com/kb/1082/firewall-ports/#what-if-i-really-really-want-to-specify-the-hostnames-that-tailscale-uses-to-operate-its-service&#41; network requirements.)
 
-[^1]: Print Tracker Pro runs on all versions of Windows that are actively supported by Microsoft and have not reached end-of-life.
-[^2]: Print Tracker Pro has beta support for Linux. It has been tested on Ubuntu 18, Debian 10, and Raspbian 10.
+[^1]: O Print Tracker Pro é executado em todas as versões do Windows que são ativamente suportadas pela Microsoft e não atingiram o fim da vida útil.
+[^2]: O Print Tracker Pro tem suporte beta para Linux. Ele foi testado no Ubuntu 18, Debian 10 e Raspbian 10.
