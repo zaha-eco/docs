@@ -29,13 +29,13 @@ A coleta de dados requer conectividade com a Internet para que os medidores e al
 
 | Domain                               | Protocol                                    | Port | Purpose                                                                                             |
 |--------------------------------------|---------------------------------------------|------|-----------------------------------------------------------------------------------------------------|
-| dcam.printtrackerpro.com             | gRPC streaming (uses HTTP/2 as a transport) | 443  | Allows data collection agents to receive jobs, upload meters, and fire alerts.                      |
-| csr.printtrackerpro.com              | gRPC (uses HTTP/2 as a transport)           | 443  | Allows data collection agents to register under entities that you configure.                        |
-| hc.printtrackerpro.com               | HTTP                                        | 443  | Allows data collection agents to report their health status.                                        |
-| api.printtrackerpro.com              | HTTP                                        | 443  | Allows data collection agents to upload trouble reports.                                            |
-| www.cdn.printtrackerpro.com          | HTTP                                        | 443  | Allows data collection agents to automatically upgrade themselves.                                  |
-| www.googleapis.com                   | HTTP                                        | 443  | Allows data collection agents to download Chromium, the browser used for web-based data collection. |
-| remotetechnician.printtrackerpro.com | Proprietary                                 | 7000 | Allows authenticated users to remotely access device embedded webservers if the feature is enabled. |
+| dcam.printtrackerpro.com             | gRPC streaming (uses HTTP/2 as a transport) | 443  | Permite que os agentes de coleta de dados recebam trabalhos, carreguem medidores e disparem alertas.|
+| csr.printtrackerpro.com              | gRPC (uses HTTP/2 as a transport)           | 443  | Permite que os agentes de coleta de dados se registrem em contas configuradas.                         |
+| hc.printtrackerpro.com               | HTTP                                        | 443  | Permite que os agentes de coleta de dados reportem seu status de integridade.                       |
+| api.printtrackerpro.com              | HTTP                                        | 443  | Permite que os agentes de coleta de dados carreguem relatórios de problemas.                      |
+| www.cdn.printtrackerpro.com          | HTTP                                        | 443  | Permite que os agentes de coleta de dados atualizem automaticamente a si mesmos.                 |
+| www.googleapis.com                   | HTTP                                        | 443  | Permite que os agentes de coleta de dados baixem o Chromium, o navegador usado para coleta de dados baseada na Web.|
+| remotetechnician.printtrackerpro.com | Proprietary                                 | 7000 | Permite que usuários autenticados acessem remotamente servidores Web incorporados do dispositivo se o recurso estiver habilitado.|
 
 [//]: # (Se o [Modo de Solução de Problemas Avançado]&#40;.. /security/advanced-troubleshooting-mode.md&#41; está habilitado, você precisará verificar se sua rede é compatível com o [Tailscale]&#40;https://tailscale.com/kb/1082/firewall-ports/#what-if-i-really-really-want-to-specify-the-hostnames-that-tailscale-uses-to-operate-its-service&#41; requisitos de rede.)
 
