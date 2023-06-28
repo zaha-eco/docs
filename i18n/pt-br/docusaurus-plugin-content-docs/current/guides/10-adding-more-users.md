@@ -2,80 +2,80 @@
 sidebar_position: 10
 ---
 
-# Adding More Users
+# Adicionando mais usuários
 
-Creating and managing users allows you to grant and control access to other users depending on the role you need them to have within your organization(s).
+Criar e gerenciar usuários permite que você conceda e controle o acesso de outros usuários, inclusive a função que você precisa que eles tenham dentro de sua(s) organização(ões).
 
-## Creating a User
+## Criando um usuário
 
-To create a new user:
+Para criar um novo usuário:
 
-1. In the side navigation bar, click on **Admin > Manage users**
-2. On the **Manage users** page, click **Add user**
-3. On the **Contact info** tab, enter the required user information
-4. Click **Next**
-5. On the **Permissions** tab, select the Role or Roles this user will have
-6. Unless you know the entity where you want to add this new user to, leave the **Parent entity** as the default value
-7. Click **Create user**
+1. Na barra de navegação lateral, clique em **Admin > Gerenciar usuários**
+2. Na página **Gerenciar usuários**, clique em **Adicionar usuário**
+3. Na guia **Informações de contato**, insira as informações de usuário necessárias
+4. Clique em **Próximo**
+5. Na guia **Permissões**, selecione a Função ou Funções que este usuário terá
+6. A menos que você saiba a conta à qual deseja adicionar esse novo usuário, deixe a **Conta pai** como o valor padrão
+7. Clique em **Criar usuário**
 
-After a new user has been successfully completed, the new user will receive an email with instructions on how to set their own password the first time they login.
+Depois que o processo for concluído com sucesso, o novo usuário receberá um e-mail com instruções sobre como definir sua própria senha na primeira vez que efetuar login.
 
-## Changing Roles
+## Mudando de Função
 
 ![](../images/manage-users-change-roles.gif)
-To change a user's role or add an additional role to a user:
+Para alterar a função de um usuário ou adicionar uma função adicional a um usuário:
 
-1. On the side navigation bar, click **Admin > Manage users**
-2. Click the **Edit** icon of the user you want to move
-3. Click the **Permissions** tab
-4. In the **Role** input, select or unselect multiple roles as needed
-5. Click **Save changes**
+1. Na barra de navegação lateral, clique em **Admin > Gerenciar usuários**
+2. Clique no ícone **Editar** do usuário que você deseja mover
+3. Clique na guia **Permissões**
+4. Na entrada **Funções**, selecione ou desmarque várias funções conforme necessário
+5. Clique em **Salvar alterações**
 
-## Entity Assignment
+## Atribuição de Conta
 
-A user has access to the entity where the user is assigned (called the parent entity) and any of the chlidren entites of the parent entity.
+Um usuário tem acesso à conta na qual o usuário está atribuído (chamada de conta pai) e a qualquer uma da contas filhas da conta pai.
 
-### Moving Users Between Entities
+### Movendo usuários entre entidades
 
 ![](../images/manage-users-move-user.gif)
-You can move a user to any entity you have access to view. To move a user:
+É possível mover um usuário para qualquer conta que você tenha acesso para exibir. Para mover um usuário:
 
-1. On the side navigation bar, click **Admin > Manage users**
-2. Click the **Edit** icon of the user you want to move
-3. Click the **Permissions** tab
-4. In the **Parent entity** input, begin typing the name of the entity you want to move the user to
-5. Click **Save changes**
+1. Na barra de navegação lateral, clique em **Admin > Gerenciar usuários**
+2. Clique no ícone **Editar** do usuário que você deseja mover
+3. Clique na guia **Permissões**
+4. Na entrada **Conta pai**, comece a digitar o nome da conta para a qual você deseja mover o usuário
+5. Clique em **Salvar alterações**
 
-## Roles and Permissions
+## Funções e permissões
 
-| Permission                                | Master Admin | Admin | Buyer | User | Remote Technician Configurer | Remote Technician User |
+| Permissões                                | Master Admin | Admin | Buyer | User | Remote Technician Configurer | Remote Technician User |
 | ----------------------------------------- | ------------ | ----- | ----- | ---- | ---------------------------- | ---------------------- |
-| View user details                         | X            | X     | X     | X    |                              |                        |
-| Download Print Tracker installer          | X            | X     | X     | X    |                              |                        |
-| View alerts                               | X            | X     | X     | X    |                              |                        |
-| View devices                              | X            | X     | X     | X    |                              |                        |
-| Include children toggle on "View devices" | X            | X     | X     | X    |                              |                        |
-| View new devices                          | X            | X     | X     |      |                              |                        |
-| Bulk actions on "View devices"            | X            | X     | X     |      |                              |                        |
-| Bulk update alert status                  | X            | X     | X     |      |                              |                        |
-| Update alert status                       | X            | X     | X     |      |                              |                        |
-| Add devices                               | X            | X     | X     |      |                              |                        |
-| Update or delete users                    | X            | X     |       |      |                              |                        |
-| Create or delete entity                   | X            | X     |       |      |                              |                        |
-| Edit entity settings                      | X            | X     |       |      |                              |                        |
-| Manage entity                             | X            | X     |       |      |                              |                        |
-| Create new user                           | X            | X     |       |      |                              |                        |
-| Update device settings                    | X            | X     |       |      |                              |                        |
-| Change device tracking status             | X            | X     |       |      |                              |                        |
-| Send Print Tracker deployment email       | X            | X     |       |      |                              |                        |
-| Edit install settings                     | X            | X     |       |      |                              |                        |
-| Request meter reads                       | X            | X     |       |      |                              |                        |
-| View jobs run by installs                 | X            | X     |       |      |                              |                        |
-| Bulk import devices                       | X            | X     |       |      |                              |                        |
-| View meter history                        | X            | X     |       |      |                              |                        |
-| Create and manage reports                 | X            | X     |       |      |                              |                        |
-| View reports                              | X            | X     |       |      |                              |                        |
-| Move entity in hierarchy                  | X            |       |       |      |                              |                        |
-| Remove jobs from the jobs list            | X            |       |       |      |                              |                        |
-| Configure Remote Technician               | X            |       |       |      | X                            |                        |
-| Use Remote Technician                     | X            |       |       |      |                              | X                      |
+| Visualizar detalhes dos usuários          | X            | X     | X     | X    |                              |                        |
+| Download instalador Print Tracker         | X            | X     | X     | X    |                              |                        |
+| Visualizar alertas                        | X            | X     | X     | X    |                              |                        |
+| Visualizar dispositivos                   | X            | X     | X     | X    |                              |                        |
+| Incluir filhas em "Vis. dispositivos"     | X            | X     | X     | X    |                              |                        |
+| Visualizar novos dispositivos             | X            | X     | X     |      |                              |                        |
+| Ações em lote em "Vis. dispositivos"      | X            | X     | X     |      |                              |                        |
+| Atualizar status de alerta em lote        | X            | X     | X     |      |                              |                        |
+| Atualizar status de alerta                | X            | X     | X     |      |                              |                        |
+| Adicionar dispositivos                    | X            | X     | X     |      |                              |                        |
+| Atualizar ou deletar usuários             | X            | X     |       |      |                              |                        |
+| Criar ou deletar conta                    | X            | X     |       |      |                              |                        |
+| Editar configurações de conta             | X            | X     |       |      |                              |                        |
+| Gerenciar conta                           | X            | X     |       |      |                              |                        |
+| Criar novo usuário                        | X            | X     |       |      |                              |                        |
+| Atualizar configurações de dispositivo    | X            | X     |       |      |                              |                        |
+| Mudar status de rastreio do dispositiv    | X            | X     |       |      |                              |                        |
+| Enviar email de implantação Print Tracker | X            | X     |       |      |                              |                        |
+| Editar configurações de instalação        | X            | X     |       |      |                              |                        |
+| Solicitar leituras de medidores           | X            | X     |       |      |                              |                        |
+| Ver tarefas executadas por instalações    | X            | X     |       |      |                              |                        |
+| Importação em lote de dispositivos        | X            | X     |       |      |                              |                        |
+| Ver histórico de medidores                | X            | X     |       |      |                              |                        |
+| Criar e gerenciar relatórios              | X            | X     |       |      |                              |                        |
+| Visualizar relatórios                     | X            | X     |       |      |                              |                        |
+| Mover conta na hierarquia                 | X            |       |       |      |                              |                        |
+| Remover trabalhos da lista de trabalhos   | X            |       |       |      |                              |                        |
+| Configurar Técnico Remoto                 | X            |       |       |      | X                            |                        |
+| Utilizar Técnico Remoto                   | X            |       |       |      |                              | X                      |
