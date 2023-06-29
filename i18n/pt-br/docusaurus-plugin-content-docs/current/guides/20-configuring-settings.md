@@ -5,15 +5,15 @@ sidebar_position: 20
 
 # Configuring Settings and Alerts
 
-You can control how and where you collect data, and when you receive alerts about that data by configuring settings. Settings can be set and managed from the [top level entity](./entities#Top-Level-Entity), any individual entity, or an individual device. This gives you maximum flexibility while also providing efficient management of standard settings.
+You can control how and where you collect data, and when you receive alerts about that data by configuring settings. Settings can be set and managed from the [top level entity](./30-creating-entities.md#top-level-entity), any individual entity, or an individual device. This gives you maximum flexibility while also providing efficient management of standard settings.
 
 ## Settings Inheritance {#settings-inheritance}
 
-Print Tracker settings are inherited through [hierarchy](./entities#Hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#Parent-entity) in its hierarchy with a setting value explicitly set.
+Print Tracker settings are inherited through [hierarchy](./30-creating-entities.md#hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./30-creating-entities.md#parent-entity) in its hierarchy with a setting value explicitly set.
 
 ### Inheriting Settings {#inheriting-settings}
 
-Settings natively flow from the top down, according to [hierarchy](./entities#Hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./entities#Top-Level-Entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
+Settings natively flow from the top down, according to [hierarchy](./30-creating-entities.md#hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./30-creating-entities.md#top-level-entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
 
 ### Overriding Settings {#overriding-settings}
 
@@ -52,7 +52,7 @@ To reset a setting so it will inherit its value:
 
 #### Reset for all children {#reset-for-all-children}
 
-When resetting a setting for an entity, you also have the choice to reset a setting for the [active entity](./entities#Active-Entity) and all of its children. This is typically done when you want to standardize a setting.
+When resetting a setting for an entity, you also have the choice to reset a setting for the [active entity](./30-creating-entities.md#active-entity) and all of its children. This is typically done when you want to standardize a setting.
 
 :::danger
 When you **Reset for all children**, this will reset the setting to its inherited value for the active entity, all child entities, and those entites' devices.
@@ -288,7 +288,7 @@ To configure billing meter preferences by entity:
 
 1. Navigate to the desired entity
    :::tip
-   If all your devices use the same meters for billing, set your default preferences at your [top level entity](./entities#top-level-entity) so that all your child entities and devices will inherit these defaults.
+   If all your devices use the same meters for billing, set your default preferences at your [top level entity](./30-creating-entities.md#top-level-entity) so that all your child entities and devices will inherit these defaults.
    :::
 2. Using the sidebar, click **Admin > Manage entity**
 3. Click on the **Settings** tab
