@@ -8,16 +8,16 @@ sidebar_position: 10
 This guide is currently under construction. Please check back soon for updates.
 :::
 
-## Discovering Devices
+## Discovering Devices {#discovering-devices}
 
-## Meter Reads
-### Uploading Meter Reads
-### Missing/Incorrect Data
+## Meter Reads {#meter-reads}
+### Uploading Meter Reads {#uploading-meter-reads}
+### Missing/Incorrect Data {#missingincorrect-data}
 
-## Remote Technician
-### Connection Issues
+## Remote Technician {#remote-technician}
+### Connection Issues {#connection-issues}
 
-## ERP Integrations
-### Not Syncing
-### Missing Devices
-### Duplicate Devices
+## ERP Integrations {#erp-integrations}
+### Not Syncing {#not-syncing}
+### Missing Devices {#missing-devices}
+### Duplicate Devices {#duplicate-devices}

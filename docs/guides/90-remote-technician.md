@@ -10,7 +10,7 @@ Remote Technician allows remote access to a device's embedded webserver from any
 Wondering about security? Check out the [Remote Technician Security Overview](../security/remote-technician.md).
 :::
 
-## Opening a Session
+## Opening a Session {#opening-a-session}
 ![](../images/remote-technician-start.gif)
 
 To open a Remote Technician session:
@@ -28,10 +28,10 @@ Remote Technician will not be able to connect to the device if:
 * The data collection agent is not on the same network as the device (for example, if the data collection agent is on a laptop, and the laptop is taken home)
 :::
 
-## Restricting Access
+## Restricting Access {#restricting-access}
 For sensitive customers, you can restrict access to Remote Technician by user, by install, or even by entity. When you restrict access by install, or entity, even users that have the Remote Technician User role will not be able to access the device.
 
-### By User
+### By User {#by-user}
 ![](../images/remote-technician-restrict-access-user.gif)
 
 When you restrict access to Remote Technician at the user level, you are restricting the ability for that user to access any device through Remote Technician. This is the easiest way to prevent unauthorized personal from using Remote Technician without preventing other authorized users from using it.
@@ -43,7 +43,7 @@ To prevent a user from using Remote Technician:
 4. Click on the **Permissions** tab
 5. Deselect the **Remote Technician User** role
 
-### By Entity
+### By Entity {#by-entity}
 ![](../images/remote-technician-restrict-access-entity.gif)
 
 When you restrict access to Remote Technician at the entity level, you are restricting access to all devices that underneath that entity. This is the recommended way to restrict access to Remote Technician across an entire site.
@@ -55,7 +55,7 @@ To prevent users from using Remote Technician for a specific entity and its chil
 4. Expand the **Remote Technician** section
 5. Click on the **Enabled** toggle to disable Remote Technician
 
-### By Install
+### By Install {#by-install}
 ![](../images/remote-technician-restrict-access-install.gif)
 
 When you restrict access to Remote Technician at the install level, you are restricting access to all devices that are managed by that install[^2]. In most cases, you should restrict access to Remote Technician at the [entity level](#by-entity), however there may be some cases where you want to restrict access to a specific install (such as due to antivirus, or system network policy configurations on the specific install).
@@ -67,7 +67,7 @@ To prevent users from using Remote Technician for a specific install:
 4. Expand the **Remote Technician** section
 5. Click on the **Enabled** toggle to disable Remote Technician
 
-## Compatibility
+## Compatibility {#compatibility}
 Remote Technician is compatible with nearly all devices regardless of manufacturer, however for some devices, not all features are guaranteed to work. The following devices are known to have compatibility issues:
 
 | Device                                     | Issue                                                                                                                                                              |

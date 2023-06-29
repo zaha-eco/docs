@@ -9,34 +9,34 @@ sidebar_position: 70
 This guide is currently under construction. Please check back soon for updates.
 :::
 
-## Alert Types
+## Alert Types {#alert-types}
 
-### Supply Alerts
+### Supply Alerts {#supply-alerts}
 
-#### Low Supply Alert
+#### Low Supply Alert {#low-supply-alert}
 
-#### Replacement Alert
+#### Replacement Alert {#replacement-alert}
 
-#### Premature Replacement Alert
+#### Premature Replacement Alert {#premature-replacement-alert}
 
-### Service Alerts
+### Service Alerts {#service-alerts}
 
-### Volume Alerts
+### Volume Alerts {#volume-alerts}
 
-## Configuring Alerts
+## Configuring Alerts {#configuring-alerts}
 
-## Viewing Alerts
+## Viewing Alerts {#viewing-alerts}
 
-### Customizing Columns
+### Customizing Columns {#customizing-columns}
 
-### Including Children
+### Including Children {#including-children}
 
-### Filtering and Sorting
+### Filtering and Sorting {#filtering-and-sorting}
 
-### Pagination
+### Pagination {#pagination}
 
-### Exporting
+### Exporting {#exporting}
 
-## Managing Alerts
+## Managing Alerts {#managing-alerts}
 
-### Alert Status
+### Alert Status {#alert-status}

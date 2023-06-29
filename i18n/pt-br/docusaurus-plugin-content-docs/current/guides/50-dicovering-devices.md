@@ -10,10 +10,10 @@ Print Tracker's primary purpose is to discover your devices and collect [meters]
 This guide is currently under construction. Please check back soon for updates.
 :::
 
-## Discovering Devices
+## Discovering Devices {#discovering-devices}
 The process of discovering devices on your network involves scanning every IP address to detect whether there's a printer located at that address. By default, Print Tracker will periodically scan your network automatically to discover new devices. You can also manually trigger a scan at any time. 
 
-### On-demand Scans
+### On-demand Scans {#on-demand-scans}
 ![](../images/discovering-devices-scan-for-device.gif)
 
 To manually scan your network for devices:
@@ -33,7 +33,7 @@ To manually scan your network for devices:
 
 If the install is online, it will immediately begin scanning the network for devices. If the install is offline, the scan will begin the next time the install comes online.
 
-#### Viewing Scan Progress
+#### Viewing Scan Progress {#viewing-scan-progress}
 ![](../images/discovering-devices-scan-job.gif)
 
 To view the progress of the scan:
@@ -42,49 +42,49 @@ To view the progress of the scan:
 
 You can view the progress of the scan as well as the logs produced by the install during the scan.
 
-### Scheduled Scans
+### Scheduled Scans {#scheduled-scans}
 
-## Viewing Devices
+## Viewing Devices {#viewing-devices}
 
-### Customizing Columns
+### Customizing Columns {#customizing-columns}
 
-### Including Children
+### Including Children {#including-children}
 
-### Filtering and Sorting
+### Filtering and Sorting {#filtering-and-sorting}
 
-### Pagination
+### Pagination {#pagination}
 
-### Exporting
+### Exporting {#exporting}
 
-### New Devices
+### New Devices {#new-devices}
 
-## Device Details
+## Device Details {#device-details}
 
-### Supplies Overview
+### Supplies Overview {#supplies-overview}
 
-### Available Meters
+### Available Meters {#available-meters}
 
-### Supplies Details (beta)
+### Supplies Details (beta) {#supplies-details-beta}
 
-### Audit History
+### Audit History {#audit-history}
 
-### Alerts
+### Alerts {#alerts}
 
-### Settings
+### Settings {#settings}
 
-### Reports
+### Reports {#reports}
 
-### Remote Technician
+### Remote Technician {#remote-technician}
 
-## Managing Devices
+## Managing Devices {#managing-devices}
 
-### Enabling/Disabling Devices
+### Enabling/Disabling Devices {#enablingdisabling-devices}
 
-### Removing Devices
+### Removing Devices {#removing-devices}
 
-## Non-Managed Devices
+## Non-Managed Devices {#non-managed-devices}
 
-## Network Topology Scanner
+## Network Topology Scanner {#network-topology-scanner}
 
-## Troubleshooting
+## Troubleshooting {#troubleshooting}
 [Troubleshooting](../troubleshooting/10-devices.md)
