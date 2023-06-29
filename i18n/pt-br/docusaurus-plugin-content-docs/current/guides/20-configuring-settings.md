@@ -227,7 +227,7 @@ Para configurar um alerta Instalação sem atividade online novamente:
 
 ## Varredura de rede {#network-scans}
 
-As configurações de varredura de rede definem os padrões de como um [agente](./installation#Installing-And-Managing-Agents) verifica a rede onde ele está instalado.
+As configurações de varredura de rede definem os padrões de como um [agente](./40-installing-agents.md) verifica a rede onde ele está instalado.
 
 ### Endereços IP a serem verificados {#ip-addresses-to-scan}
 
