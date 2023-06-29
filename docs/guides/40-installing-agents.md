@@ -12,7 +12,7 @@ Print Tracker utilizes data collection agents -- lightweight software applicatio
 ## Datalink Code {#datalink-code}
 When an agent is installed inside your customers network, it needs to know how to upload that data to you. Print Tracker connects data collected from your customer's network to your account using a unique identifier called a **Datalink Code**. This code is a unique identifier that is generated for each entity in your account.
 
-![](../images/installing-agents-datalink-code.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-datalink-code.png)
 
 You can get the datalink code for an entity by:
 1. Navigating to the entity you'd like to get the datalink code for
@@ -27,7 +27,7 @@ Once the agent is installed, it also needs to be [activated](#activation). The a
 ### Deployment Email {#deployment-email}
 The deployment email strategy allows you to easily send a link to the installer directly to your customer, along with instructions on how to activate the agent.
 
-![](../images/installing-agents-send-deployment-email.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-send-deployment-email.gif)
 
 To send a deployment email:
 1. Select the entity that you'd like the install to be associated with.
@@ -150,7 +150,7 @@ Deactivated agents stop checking in to Print Tracker regularly, and instead, che
 You should only deactivate agents that you don't plan on using again. If you plan on using an agent again in the future, you should leave it activated.
 
 ### Deactivating {#deactivating}
-![](../images/installing-agents-deactivating.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-deactivating.gif)
 
 To deactivate an agent:
 1. Using the sidebar, click **Installs > View installs**
@@ -160,7 +160,7 @@ To deactivate an agent:
 5. Click **Disable selected**
 
 ### Reactivating {#reactivating}
-![](../images/installing-agents-reactivating.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-reactivating.gif)
 
 To reactivate an agent:
 1. Using the sidebar, click **Installs > View installs**
@@ -176,7 +176,7 @@ Uninstalling Print Tracker must be done directly on the computer where Print Tra
 <Tabs groupId="operating-system">
 <TabItem value="windows" label="Windows">
 
-![](../images/installing-agents-uninstalling.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-uninstalling.gif)
 
 1. Open the Windows **Start Menu**
 2. Search "Add or remove programs" and open it
@@ -216,7 +216,7 @@ For more details on troubleshooting issues with your agents, see the [Troublesho
 
 Some macOS devices may pop up a warning indicating that the .pkg cannot be opened. This is because Print Tracker is not notarized by Apple and made available via the Apple App Store.
 
-![](../images/installing-agents-macos-error.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-macos-error.png)
 
 To bypass this warning:
 1. Right-click on the file in your Finder window.
@@ -224,4 +224,4 @@ To bypass this warning:
 3. Click **Open** again
 4. Follow the installation prompts.
 
-![](../images/installing-agents-macos.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/installing-agents-macos.gif)

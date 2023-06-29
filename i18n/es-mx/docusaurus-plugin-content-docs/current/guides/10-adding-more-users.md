@@ -22,7 +22,7 @@ After a new user has been successfully completed, the new user will receive an e
 
 ## Changing Roles {#changing-roles}
 
-![](../images/manage-users-change-roles.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/manage-users-change-roles.gif)
 To change a user's role or add an additional role to a user:
 
 1. On the side navigation bar, click **Admin > Manage users**
@@ -37,7 +37,7 @@ A user has access to the entity where the user is assigned (called the parent en
 
 ### Moving Users Between Entities {#moving-users-between-entities}
 
-![](../images/manage-users-move-user.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/manage-users-move-user.gif)
 You can move a user to any entity you have access to view. To move a user:
 
 1. On the side navigation bar, click **Admin > Manage users**

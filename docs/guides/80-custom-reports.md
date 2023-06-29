@@ -19,7 +19,7 @@ Custom reports utilizes a variant of SQL called [SQLite](https://www.sqlite.org/
 :::
 
 ## Creating Reports {#creating-reports}
-![](../images/custom-reports-creating-report.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-creating-report.gif)
 
 To create a custom report:
 1. Using the sidebar, click **Insights > Reports**
@@ -30,7 +30,7 @@ To create a custom report:
 6. Click on your new report to open it
 
 ### Report Configuration {#report-configuration}
-![img.png](../images/custom-reports-report-configuration.png)
+![img.png](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-report-configuration.png)
 
 You can configure a report using the report editor. The report editor allows you to:
 * Change the name and description of the report
@@ -43,18 +43,18 @@ You can configure a report using the report editor. The report editor allows you
 For more information on the report types that are available, see [Report Types](#report-types).
 
 ### Schema Viewer {#schema-viewer}
-![](../images/custom-reports-table-schema.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-table-schema.png)
 
 Each [report type](#report-types) has its own schema. The schema determines which columns are available for use in your custom report. Each column has a name and a particular data type. For example, to utilize the device's firmware in a report, you could reference the `firmware` column. The data type of this column is [`varchar`](https://en.wikipedia.org/wiki/Varchar) which is a string of characters. On the other hand the `created_timestamp` column is of time `datetime` indicating that we can perform custom date-related calculations on this column, such as calculating the number of days since this device was created.
 
 ### Query Editor {#query-editor}
-![](../images/custom-reports-query-editor.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-query-editor.png)
 
 The query editor is where you will build, customize, and test your reports. Each [report type](#report-types) comes with a default query that you can use as a starting point. You can also use the schema viewer to help you build your query. Queries are written in SQL using the [SQLite](#structured-query-language-sql) dialect. 
 
 
 ### Query Results {#query-results}
-![](../images/custom-reports-query-results.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-query-results.png)
 
 Whenever you click the **Run** button in the [query editor](#query-editor), the results will be displayed below the editor. The results are only a sample of your data which allows you to quickly test your reports on a small subset of your data without having to wait for the entire report to run.
 
@@ -63,12 +63,12 @@ When adding `WHERE` clauses to your query, you might find that no results are re
 :::
 
 ## Editing and Saving Reports {#editing-and-saving-reports}
-![](../images/custom-reports-saving.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-saving.gif)
 
 You can change your report type, the name, description, or query at anytime. To save your changes, click the **Save** button in the bottom right-hand corner.
 
 ## Scheduling Reports {#scheduling-reports}
-![](../images/custom-reports-new-schedule.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-new-schedule.gif)
 
 You have the flexibility to run ad-hoc reports whenever you need to access specific information quickly. However, you may need to receive a report on a predetermined schedule, such as a monthly billing report. Print Tracker allows you to attach any number of schedules to a custom report. By scheduling a report, you can pick the interval, time of day, the entities where the report should run and Print Tracker will automatically generate the report and send it to your email. This way, you receive the most up-to-date report directly in your inbox without having to manually run it each time.
 
@@ -79,7 +79,7 @@ To schedule a custom report:
 4. Click **New schedule**
 
 ### Schedule Configuration {#schedule-configuration}
-![](../images/custom-reports-edit-schedule-report.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-edit-schedule-report.png)
 
 There are several options available when scheduling a report:
 * Entity: You can create a single custom report, but create scheduled reports that run on different schedules, and for different entities. For example, you may want to create a current meter report for each of your customers. In this case you'd [create a single report](#creating-reports) and then create a schedule for each one of your customer entities.
@@ -341,7 +341,7 @@ Billing periods are sometimes tricky to understand, so let's walk through an exa
 
 You may notice that while these two devices have differing billing schedules, they actually both need to be billed on the same day, every other month. In the following diagram, notice how in month 1 (first blue circle) we only bill the customer for the HP OfficeJet 8600 device. However in the second month (second blue circle) we bill the customer for both devices, since once of the devices should only be billed bi-monthly.
 
-![](../images/custom-reports-billing-schedules.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-billing-schedules.png)
 
 The billing period report takes into consideration this idea of differing billing schedules by device and allows you to create a single report that includes all devices whose billing schedules land on the date that you select when configuring the report regardless of the interval of each device's billing schedule. 
 
@@ -459,7 +459,7 @@ The monthly volume report is helpful for getting a month-over-month view of the 
 
 When parsed using an Excel pivot table, this report can help give you a quick overview about the volume of your devices over time, for a particular entity.
 
-![](../images/custom-reports-pivot-table.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-pivot-table.png)
 
 ### Supplies <BetaLabel/> {#supplies-betalabel}
 The supplies report provides data about every supply (currently installed, and replaced) in your devices. The following columns are supported by this report:

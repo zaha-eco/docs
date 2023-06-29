@@ -14,7 +14,7 @@ This guide is currently under construction. Please check back soon for updates.
 The process of discovering devices on your network involves scanning every IP address to detect whether there's a printer located at that address. By default, Print Tracker will periodically scan your network automatically to discover new devices. You can also manually trigger a scan at any time. 
 
 ### On-demand Scans {#on-demand-scans}
-![](../images/discovering-devices-scan-for-device.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/discovering-devices-scan-for-device.gif)
 
 To manually scan your network for devices:
 1. Using the side navigation bar, click **Devices > View devices**
@@ -34,7 +34,7 @@ To manually scan your network for devices:
 If the install is online, it will immediately begin scanning the network for devices. If the install is offline, the scan will begin the next time the install comes online.
 
 #### Viewing Scan Progress {#viewing-scan-progress}
-![](../images/discovering-devices-scan-job.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/discovering-devices-scan-job.gif)
 
 To view the progress of the scan:
 1. Using the sidebar, click **Jobs > View**

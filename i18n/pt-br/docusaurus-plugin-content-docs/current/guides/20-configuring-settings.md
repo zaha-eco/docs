@@ -19,7 +19,7 @@ Settings natively flow from the top down, according to [hierarchy](./30-creating
 
 When a new entity or device is created, it will automatically inherit its settings through its hierarchy.
 
-![](../images/configuring-settings-entity-alert-emails.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-entity-alert-emails.gif)
 To override an inherited setting at the entity level:
 
 1. Navigate to the desired entity
@@ -28,7 +28,7 @@ To override an inherited setting at the entity level:
 4. Change the setting(s)
 5. Click **Save setting** at the bottom of the screen
 
-![](../images/configuring-settings-device-alert-emails.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-device-alert-emails.gif)
 To override an inherited setting at the device level:
 
 1. Navigate to the desired entity
@@ -42,7 +42,7 @@ To override an inherited setting at the device level:
 
 After a settings has been explicityly set, it will no longer automatically inherit that setting's value through its hierarchy.
 
-![](../images/configuring-settings-device-reset.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-device-reset.gif)
 To reset a setting so it will inherit its value:
 
 1. Clicking on the settings tab of any entity or device
@@ -58,7 +58,7 @@ When resetting a setting for an entity, you also have the choice to reset a sett
 When you **Reset for all children**, this will reset the setting to its inherited value for the active entity, all child entities, and those entites' devices.
 :::
 
-![](../images/configuring-settings-entity-bulk-reset.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-entity-bulk-reset.gif)
 To reset a setting for all children:
 
 1. Navigate to the the entity highest in the hierarchy where you want the change to take effect
@@ -79,7 +79,7 @@ To reset a setting for all children:
 Supply alerts are pre-defined conditions printing supplies reach that can trigger notifications be sent to a user or group of users.
 
 ### Low Supply Alerts {#low-supply-alerts}
-![](../images/configuring-settings-low-supply-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-low-supply-alert.gif)
 
 A low supply alert is triggered when a supply level crosses a user-defined minimum threshold and can be configured separately for black and color supplies.
 
@@ -94,7 +94,7 @@ To configure a low supply alert:
 7. Click **Save setting** at the bottom of the screen
 
 ### Replacement Alerts {#replacement-alerts}
-![](../images/configuring-settings-replacement-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-replacement-alert.gif)
 
 A replacement alert is triggered when a supply is replaced. Some dealers want to be notified when a supply is replaced in order to keep track of on-site inventory.
 
@@ -106,7 +106,7 @@ To enable replacement alerts:
 4. Click **Save setting** at the bottom of the screen
 
 ### Premature Replacement Alerts {#premature-replacement-alerts}
-![](../images/configuring-settings-premature-replacement-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-premature-replacement-alert.gif)
 
 A premature replacement alert is triggered when a supply is replaced before it drops below the threshold set for a low supply alert. Some dealers want to be notified when a supply is replaced too early in order to better manage supply costs and prevent preamture replacements in the future.
 
@@ -118,7 +118,7 @@ To enable premature replacement alerts:
 4. Click **Save setting** at the bottom of the screen
 
 ## Service Alerts {#service-alerts}
-![](../images/configuring-settings-service-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-service-alert.gif)
 
 Printing devices wear out, break down, or enter into a state where printing cannot continue without some sort of human intervention. A service alert is triggered when different service needs are required by a device.
 
@@ -135,7 +135,7 @@ To receive low supply alerts for fusers, drums, waste toners, and other maintena
 <!-- TO DO- Need clarification here -->
 
 ## Skip Alerts {#skip-alerts}
-![](../images/configuring-settings-skip-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-skip-alert.gif)
 
 Skip alerts allow you to choose to temporarily ignore low supply alerts. This is typically used by dealers who know how many supplies of a parcticular type they have at a customer's site and do not want to send more of that supply until the current inventoy has been depleted.
 
@@ -154,7 +154,7 @@ Volume alerts can be configured to notify you when a device has printed a specif
 ### One-time Volume Alerts {#one-time-volume-alerts}
 When configuring a one-time volume alert, you decide the number of pages you want to be alerted at and the email address(es) you want the alert sent to.
 
-![](../images/configuring-settings-volume-alert-overview.png)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-volume-alert-overview.png)
 
 To configure a one-time volume alert:
 1. Open the **Device alerts > Volume alerts** section
@@ -165,7 +165,7 @@ To configure a one-time volume alert:
 
 ### Recurring Volume Alerts {#recurring-volume-alerts}
 
-![](../images/configuring-settings-recurring-volume-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-recurring-volume-alert.gif)
 
 When configuring a recurring volume alert, you not only configure the volume at which you want your next alert to be sent, but you also configure a frequency at which you want to be alerted. For example, if I set my **Next alert at** to 15000 pages, and my **Frequency** to 5000 pages, I will receive a volume alert at 15000 pages, and then again at 20000 pages, and then again at 25000 pages, and so on.
 
@@ -184,7 +184,7 @@ To set a volume alert:
 Install alerts are helpful for keeping track of lifecycle events related to an install, such as when a new install is registered to your account, or when an install becomes stale (hasn't checked in for a specified number of days). These alerts can help you proactively manage the health of your fleet.
 
 ### New Install Alert {#new-install-alert}
-![](../images/configuring-settings-new-install-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-new-install-alert.gif)
 
 A new install alert is triggered anytime a new install is registered to your entity.
 
@@ -198,7 +198,7 @@ To configure a new install alert:
 
 ### Stale Install Alert {#stale-install-alert}
 
-![](../images/configuring-settings-stale-install-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-stale-install-alert.gif)
 
 A stale install alert is triggered anytime an install fails to check in after a configurable number of days.
 
@@ -212,7 +212,7 @@ To configure a stale install alert:
 6. Click **Save setting** at the bottom of the screen
 
 ### Stale Install Back Online Alert {#stale-install-back-online-alert}
-![](../images/configuring-settings-stale-install-online-alert.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-stale-install-online-alert.gif)
 
 A stale install back online alert is triggered anytime an install that has been stale for a configurable number of days comes back online. When an install has been offline for a while, it is possible that the install has missed key events such as supply replacements, or low supply alerts. In these cases it is important to manually review the devices tracked by this install to make sure that any missed events are accounted for. This alert notifies you when an install has come back online so that you can manually review the devices tracked by this install.
 
@@ -282,7 +282,7 @@ You can manage when and which page count formats you want to use for billing.
 
 A meter is a page count collected from a device for a specific format of counter. For example, a printing device might report a total value for both an equivalent format and a squre feet format. Choosing which meter type you want to bill off allows the flexibility to collect all the reportble meter formats from a device, but to choose which format will be used to bill the customer. Because different devices collect different page count formats, Print Tracker gives you the flexibility to specifiy an order of priority.
 
-![](../images/configuring-settings-entity-change-billing-preferences.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-entity-change-billing-preferences.gif)
 
 To configure billing meter preferences by entity:
 
@@ -305,7 +305,7 @@ To configure billing meter preferences by entity:
 
 The billing schedule is used to set the timing and frequency of when you bill your customers. For example, if Entity A has a billing schedule of "every 1 month on the 15th day of the month", Print Tracker will create a billing period that can be used to calculate all the volume printed at Entity A from January 15 through February 15 then February 15 through March 15, etc.
 
-![](../images/configuring-settings-entity-change-billing-preferences.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/configuring-settings-entity-change-billing-preferences.gif)
 
 To configure this setting:
 

@@ -22,7 +22,7 @@ Depois que o processo for concluído com sucesso, o novo usuário receberá um e
 
 ## Mudando de Função {#changing-roles}
 
-![](../images/manage-users-change-roles.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/manage-users-change-roles.gif)
 Para alterar a função de um usuário ou adicionar uma função adicional a um usuário:
 
 1. Na barra de navegação lateral, clique em **Admin > Gerenciar usuários**
@@ -37,7 +37,7 @@ Um usuário tem acesso à conta na qual o usuário está atribuído (chamada de 
 
 ### Movendo usuários entre entidades {#moving-users-between-entities}
 
-![](../images/manage-users-move-user.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/manage-users-move-user.gif)
 É possível mover um usuário para qualquer conta que você tenha acesso para exibir. Para mover um usuário:
 
 1. Na barra de navegação lateral, clique em **Admin > Gerenciar usuários**
