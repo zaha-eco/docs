@@ -27,7 +27,7 @@ We periodically collect these meters (and many others depending on the device), 
 Print Tracker will securely collect and upload meters from devices automatically based on a schedule that you can customize, or you can also collect and upload the latest data anytime you'd like.
 
 ### On-demand Uploads {#on-demand-uploads}
-![](../images/meters-upload-on-demand.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/meters-upload-on-demand.gif)
 
 To upload meters once, immediately:
 1. Using the sidebar, click **Devices > View devices**
@@ -60,7 +60,7 @@ Once meter reads have been collected and securely uploaded, you can query them w
 [//]: # (This will open details for a device. On the **Overview** tab, you can see the key billing meters and any supplies the device reports.)
 
 ### Meter History {#meter-history}
-![](../images/meters-view-meter-history.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-meter-history.gif)
 
 To view historical meter reads for a device:
 1. Using the sidebar, click **Devices > View devices**
@@ -73,7 +73,7 @@ Additional details on how to customize the data displayed can be found on the [C
 :::
 
 ### Volume Over Time {#volume-over-time}
-![](../images/meters-view-volume.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-volume.gif)
 
 To view usage behavior over time:
 1. Using the sidebar, click **Devices > View devices**
@@ -82,7 +82,7 @@ To view usage behavior over time:
 4. View the **Page Counts** chart
 
 ### Supply Burn-down {#supply-burn-down}
-![](../images/meters-view-supply-burndown.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-supply-burndown.gif)
 
 To view how supply levels have burned-down over time:
 1. Using the sidebar, click **Devices > View devices**

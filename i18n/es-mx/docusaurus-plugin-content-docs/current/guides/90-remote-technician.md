@@ -11,7 +11,7 @@ Wondering about security? Check out the [Remote Technician Security Overview](..
 :::
 
 ## Opening a Session {#opening-a-session}
-![](../images/remote-technician-start.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-start.gif)
 
 To open a Remote Technician session:
 1. Using the sidebar, click **Devices > View devices**
@@ -32,7 +32,7 @@ Remote Technician will not be able to connect to the device if:
 For sensitive customers, you can restrict access to Remote Technician by user, by install, or even by entity. When you restrict access by install, or entity, even users that have the Remote Technician User role will not be able to access the device.
 
 ### By User {#by-user}
-![](../images/remote-technician-restrict-access-user.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-user.gif)
 
 When you restrict access to Remote Technician at the user level, you are restricting the ability for that user to access any device through Remote Technician. This is the easiest way to prevent unauthorized personal from using Remote Technician without preventing other authorized users from using it.
 
@@ -44,7 +44,7 @@ To prevent a user from using Remote Technician:
 5. Deselect the **Remote Technician User** role
 
 ### By Entity {#by-entity}
-![](../images/remote-technician-restrict-access-entity.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-entity.gif)
 
 When you restrict access to Remote Technician at the entity level, you are restricting access to all devices that underneath that entity. This is the recommended way to restrict access to Remote Technician across an entire site.
 
@@ -56,7 +56,7 @@ To prevent users from using Remote Technician for a specific entity and its chil
 5. Click on the **Enabled** toggle to disable Remote Technician
 
 ### By Install {#by-install}
-![](../images/remote-technician-restrict-access-install.gif)
+![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-install.gif)
 
 When you restrict access to Remote Technician at the install level, you are restricting access to all devices that are managed by that install[^2]. In most cases, you should restrict access to Remote Technician at the [entity level](#by-entity), however there may be some cases where you want to restrict access to a specific install (such as due to antivirus, or system network policy configurations on the specific install).
 

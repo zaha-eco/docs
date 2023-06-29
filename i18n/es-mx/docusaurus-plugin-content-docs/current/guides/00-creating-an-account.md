@@ -15,7 +15,7 @@ To start your free trial:
 2. Open the confirmation email sent to the email address you provided (make sure to check your Spam folder)
 3. Create your new password and click **Create password**
 
-<!-- ![Registration form](../images/registration-form.png) -->
+<!-- ![Registration form](https://www.cdn.printtrackerpro.com/images/documentation/registration-form.png) -->
 
 ## What's Next? {#whats-next}
 
