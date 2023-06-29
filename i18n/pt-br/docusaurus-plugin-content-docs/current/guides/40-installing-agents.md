@@ -20,7 +20,7 @@ Você pode obter o código datalink para uma conta:
 3. Copie o código do datalink do campo **Datalink code**
 
 ## Estratégias de Implantação
-Há várias maneiras diferentes de implantar o agente de coleta de dados do Print Tracker, dependendo de sua necessidade. Por exemplo, se você estiver no cliente, poderá optar por [baixar o agente diretamente](#download e instalar) no computador do cliente e instalá-lo manualmente. Ou, se você estiver trabalhando remotamente, você pode optar por [enviar o agente para o cliente por e-mail] (#deployment-mail) e fazer com que ele mesmo o instale. Você pode até ter acesso de administração remota a um conjunto de computadores, caso em que você pode implantar o agente usando [linha de comando](linha de #command).
+Há várias maneiras diferentes de implantar o agente de coleta de dados do Print Tracker, dependendo de sua necessidade. Por exemplo, se você estiver no cliente, poderá optar por [baixar o agente diretamente](#baixar-e-instalar) no computador do cliente e instalá-lo manualmente. Ou, se você estiver trabalhando remotamente, você pode optar por [enviar o agente para o cliente por e-mail](#email-de-implantação) e fazer com que ele mesmo o instale. Você pode até ter acesso de administração remota a um conjunto de computadores, caso em que você pode implantar o agente usando [linha de comando](#linha-de-comando).
 
 Uma vez instalado, o agente também precisa ser [ativado](#activation). O processo de ativação efetivamente "registra" esse agente em sua conta para que você possa gerenciar e coletar dados dele.
 
@@ -113,7 +113,7 @@ Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a i
 
 1. Abra uma janela do terminal
 2. Copie o seguinte comando
-3. Substitua '<SEU CÓDIGO DATALINK>' pelo seu [código datalink](código #datalink)
+3. Substitua '<SEU CÓDIGO DATALINK>' pelo seu [código datalink](#código-datalink)
 4. Execute o comando para baixar e instalar o agente
 
 ```shell
@@ -124,19 +124,19 @@ datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/in
 </Tabs>
 
 ## Instalação
-Depois que o agente tiver sido [baixado e instalado](#download-and-install), a última etapa é a ativação. A ativação conecta sua conta do Print Tracker ao agente instalado na rede do cliente. Um agente que não esteja ativado na sua conta não aparecerá no Print Tracker.
+Depois que o agente tiver sido [baixado e instalado](#baixar-e-instalar), a última etapa é a ativação. A ativação conecta sua conta do Print Tracker ao agente instalado na rede do cliente. Um agente que não esteja ativado na sua conta não aparecerá no Print Tracker.
 
 ### Ativação
-Para ativar um agente, verifique se o agente foi baixado e instalado usando uma das [estratégias de implantação](#deployment-strategies). Uma vez instalado o agente:
+Para ativar um agente, verifique se o agente foi baixado e instalado usando uma das [estratégias de implantação](#estratégias-de-implantação). Uma vez instalado o agente:
 
 1. Abra [localhost:1301](http://localhost:1301/) no navegador da Web do computador em que o agente está instalado
-2. Digite seu [datalink code](#datalink-code)
+2. Digite seu [datalink code](#código-datalink)
 3. Clique em **Ativar**
 
 [//]: # (### Descoberta de Rede)
 
 ## Clustering e Redundância
-Clustering é a ideia de instalar vários agentes na mesma rede para que, se um agente ficar inativo, outro agente possa assumir o controle. O Print Tracker agrupa automaticamente os agentes registrados usando o mesmo [datalink code](#datalink-code). Isso significa que, se você tiver vários agentes instalados na mesma conta, eles se agruparão automaticamente sem exigir nenhuma configuração adicional de você.
+Clustering é a ideia de instalar vários agentes na mesma rede para que, se um agente ficar inativo, outro agente possa assumir o controle. O Print Tracker agrupa automaticamente os agentes registrados usando o mesmo [datalink code](#código-datalink). Isso significa que, se você tiver vários agentes instalados na mesma conta, eles se agruparão automaticamente sem exigir nenhuma configuração adicional de você.
 
 Quando vários agentes são instalados na mesma rede, dispositivos, medidores e todos os outros dados coletados duplicados são eliminados automaticamente, não havendo duplicidade.
 
@@ -211,7 +211,7 @@ source <(curl -fsSL printtrackerpro.com/uninstall.sh)
 </Tabs>
 
 ## Solução de problemas
-Para obter mais detalhes sobre como solucionar problemas com seus agentes, consulte [Solução de problemas](.. /solução de problemas/20-installs.md).
+Para obter mais detalhes sobre como solucionar problemas com seus agentes, consulte [Solução de problemas](../troubleshooting/20-installs.mdx).
 
 ### Pacotes do instalador do macOS
 
