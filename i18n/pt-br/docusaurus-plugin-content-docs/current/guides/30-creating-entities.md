@@ -3,94 +3,94 @@ slug: entities
 sidebar_position: 30
 ---
 
-# Creating and Managing Entities
+# Criação e Gestão de Contas
 
-An entity is a container used for organizing other entities, installs, and devices for easier management and navigation. An entity functions much like a "Folder" does within the Windows folder system.
+Uma conta é um contêiner usado para organizar outras contas, instalações, dispositivos e facilitar o gerenciamento e a navegação. Uma conta funciona como uma "Pasta" funciona dentro do sistema de pastas do Windows.
 
-Entities can contain any number of other entities, installs, and devices and they can be nested within other entities to create a hierarchical organization structure. Each entity should be identified by a unique name, and its contents can be accessed and manipulated through the **Entity Selector** tool or the **Search entities** search bar at the top of the page.
+As contas podem conter qualquer número de outras contas, instalações, dispositivos e podem ser aninhadas em outras contas para criar uma estrutura de organização hierárquica. Cada conta deve ser identificada por um nome exclusivo e seu conteúdo pode ser acessado e manipulado por meio da ferramenta **Seletor de Contas** ou da barra de pesquisa **Pesquisar contas** na parte superior da página.
 
-You can create, rename, move, copy, delete, and modify the contents of entities to organize and manage their contents efficiently. Entities are essential to effectively manage organized and to facilitate easy access and sharing of data.
+Você pode criar, renomear, mover, copiar, excluir e modificar o conteúdo de contas para organizar e gerenciar seu conteúdo de forma eficiente. As contas são essenciais para gerir de forma eficaz, organizada e facilitar o acesso e o compartilhamento de dados.
 
-## Hierarchy
+## Hierarquia
 
-Entities and their contents are organized in a parent-child relationship, where a parent entity can contain one or more child entities, and each child entity can, in turn, contain additional child entities, installs or devices. This hierarchy of entities can be thought of like a directory tree or file system tree. Print Tracker supports an unlimited number of levels of hierarchy.
+As contas e seu conteúdo são organizados em uma relação pai-filho, onde uma conta pai pode conter uma ou mais contas filhas, e cada conta filha pode, por sua vez, conter contas, instalações ou dispositivos filhos adicionais. Essa hierarquia de contas pode ser pensada como uma árvore de diretórios ou árvore de sistema de arquivos. O Print Tracker suporta um número ilimitado de níveis de hierarquia.
 
-Each entity in the directory tree should have a unique name, and its location is specified by the full path from the top level directory to the entity. An entity's hierarchy can be seen in the bread crumb and each level of hierarchy is denoted with the "/" between entity names.
+Cada conta na árvore de diretórios deve ter um nome exclusivo e seu local é especificado pelo caminho completo do diretório de nível superior da conta. A hierarquia de uma conta pode ser vista na estrutura de navegação e cada nível de hierarquia é denotado com o "/" entre os nomes das contas.
 
-The entity system uses a hierarchical structure to facilitate organization, making it easier for you to locate and manage your printer fleet. It also enables you to set permissions and access levels on an entity-by-entity basis, providing enhanced security and control.
+O sistema de conta usa uma estrutura hierárquica para facilitar a organização, facilitando a localização e o gerenciamento do seu parque de impressoras. Ele também permite que você defina permissões e níveis de acesso em uma base de conta por conta, fornecendo segurança e controle aprimorados.
 
-### Top Level Entity
+### Conta de Nível Superior
 
-The top level entity contains all child entities, installs, and devices a particular user can access. Each user must have exactly one top level entity.
+A conta de nível superior contém todas as contas filhas, instalações e dispositivos que um determinado usuário pode acessar. Cada usuário deve ter exatamente uma conta de nível superior.
 
-### Parent Entity
+### Conta Pai
 
-A parent entity describes whichever entity is directly above the active entity, or the entity you have currently selected.
+Uma conta pai descreve qualquer conta que esteja diretamente acima da conta ativa ou da conta que você selecionou no momento.
 
-### Child Entity
+### Conta Filha
 
-A child entity is entity that is contained within another entity in the Print Tracker hierarchy system and can be located at any level below a parent folder in the hierarchy. A child entity can contain its own child entities, installs, and devices.
+Uma conta filha é uma conta contida em outra conta no sistema de hierarquia do Print Tracker e pode estar localizada em qualquer nível abaixo de uma conta pai na hierarquia. Uma conta filha pode conter suas próprias contas, instalações e dispositivos filhos.
 
-### Active Entity
+### Conta Ativa
 
-The active entity is the entity you have currently selected. In order to configure or manage an entity's settings, it must first be navigated to using the **Entity Selector** tool or the **Search entities** search bar at the top of the page.
+A conta ativa é a conta que você selecionou no momento. Para configurar ou gerenciar as configurações de uma conta, ela deve primeiro ser navegada usando a ferramenta **Seletor de Conta** ou a barra de pesquisa **Pesquisar contas** na parte superior da página.
 
-## Organization Strategies
+## Estratégias de Organização
 
-The best strategy for organizing the hierarchy within the Print Tracker entity system will depend on your specific needs and preferences. However, there are some general guidelines that can help create an effective and efficient hierarchy structure:
+A melhor estratégia para organizar a hierarquia dentro do sistema de contas do Print Tracker dependerá de suas necessidades e preferências específicas. No entanto, existem algumas diretrizes gerais que podem ajudar a criar uma estrutura hierárquica eficaz e eficiente:
 
-1. Keep it simple and logical: Use clear and concise entity names that accurately describe the contents.
+1. Mantenha a simplicidade e a lógica: use nomes de contas claros e concisos que descrevam com precisão o conteúdo.
 
-2. Use entities to manage logical divisions of access: Consider how you want to control visibility, roles and permission, and access of other users. You might use entites to delineate between georaphical divisions of an organization (eg. North Division, and South Division) or personnel limits within your organization (eg John Doe Team, Mary Doe Team).
+2. Use contas para gerenciar divisões lógicas de acesso: considere como você deseja controlar a visibilidade, as funções e permissões e o acesso de outros usuários. Você pode usar contas para delinear entre divisões geográficas de uma organização (por exemplo. Divisão Norte e Divisão Sul) ou limites de pessoal dentro da sua organização (por exemplo, Time do João, Time da Maria).
 
-3. Create a consistent naming convention: Use a consistent naming convention for entities, and install, so they are easy to locate and identify.
+3. Crie uma convenção de nomenclatura consistente: use uma convenção de nomenclatura consistente para contas e instalações, para que elas sejam fáceis de localizar e identificar.
 
-4. Avoid creating too many levels: Try to keep the entity structure as flat as possible and avoid creating too many levels of child-entities. This can make it difficult to navigate the folder structure and find specific entities.
+4. Evite criar muitos níveis: Tente manter a estrutura da conta o mais plana possível e evite criar muitos níveis de contas-filhas. Isso pode dificultar a navegação na estrutura de pastas e a localização de contas específicas.
 
-Overall, an effective entity structure should be easy to navigate, organized logically, and allow for efficient entity management, while also taking into account user access and management.
+Em geral, uma estrutura de conta eficaz deve ser fácil de navegar, organizada logicamente e permitir uma gestão eficiente da conta, tendo simultaneamente em conta o acesso e a gestão dos utilizadores.
 
-### Physical Locations
+### Locais Físicos
 
-### User Access Scope
+### Escopo de Acesso do Usuário
 
-A user can only access entities and their contents at or below their own top level entity.
+Um usuário só pode acessar contas e seus conteúdos em ou abaixo de sua própria conta.
 
-## Creating an Entity
-
-<!-- TO DO: INSERT GIF -->
-
-To create a new entity:
-
-1. Navigate to the entity you want to become the new entity's parent entity
-2. Clik on the down arrow next to name of the active entity in the upper left corner of the screen
-3. Click **Add entity**
-4. Enter the new entity's name in the **Entity name** field
-5. Add any additional information you want to associate with the new entity in the options fields
-6. Click **Save and edit settings**
-
-## Deleting an Entity
+## Criando uma conta
 
 <!-- TO DO: INSERT GIF -->
 
-To delete an entity:
+Para criar uma nova conta:
 
-1. Navigate to the entity you want to delete
-2. On the right bar, click **Admin > Manage entity**
-3. Click **Settings**
-4. Click **Delete entity** at the bottom of the page
-5. Follow the instructions to confirm you want to delete the entity
-   :::danger
-   Deleting an entity will also delete **all** of its descendants and their contents, including child entities, installs, users, devices, and device data. This action cannot be undone.
+1. Navegue até a conta que você deseja que se torne a conta pai da nova conta
+2. Clik na seta para baixo ao lado do nome da conta ativa no canto superior esquerdo da tela
+3. Clique em **Adicionar conta**
+4. Introduza o nome da nova conta no campo **Nome da conta**
+5. Adicione qualquer informação adicional que você deseja associar à nova conta nos campos
+6. Clique em **Salvar e editar configurações**
+
+## Excluindo uma conta
+
+<!-- TO DO: INSERT GIF -->
+
+Para excluir uma conta:
+
+1. Navegue até a conta que você deseja excluir
+2. Na barra lateral esquerda, clique em **Admin > Gerenciar conta**
+3. Clique em **Configurações**
+4. Clique em **Excluir conta** na parte inferior da página
+5. Siga as instruções para confirmar que deseja excluir a conta
+   :::perigo
+   A exclusão de uma conta também excluirá **todos** de seus descendentes e seus conteúdos, incluindo contas filhas, instalações, usuários, dispositivos e dados de dispositivos. Essa ação não pode ser desfeita.
    :::
 
-## Moving an Entity
+## Movendo uma conta
 
-If you have the proper role and permissions, you can move any entity to become a child entity of any other entity at or below your top level entity level.
+Se você tiver a função e as permissões adequadas, poderá mover qualquer conta para se tornar uma conta filha de qualquer outra conta no nível de conta de nível superior ou abaixo dele.
 
-To move an entity:
+Para mover uma conta:
 
-1. In the right bar, click **Admin > Move Entities**
-2. Begin typing the name of the entity you want to move in the **Move** input field and select the name of the entity you want to move when it appears in the drop down list
-3. Begin typing the name of the entity you want to move the entity to in the **to** input field and select the name of the entity you want to become the new parent entity when it appears in the drop down list
-4. Click **Move entity**
-5. Confim the action if you want to continue
+1. Na barra direita, clique em **Admin > Mover Contas**
+2. Comece a digitar o nome da conta que você deseja mover no campo de entrada **Mover** e selecione o nome da conta que deseja mover quando ela aparecer na lista suspensa
+3. Comece a digitar o nome da conta para a qual você deseja mover a conta no campo de entrada **para** e selecione o nome da conta que você deseja se tornar a nova conta pai quando ela aparecer na lista suspensa
+4. Clique em **Mover conta**
+5. Confim a ação se quiser continuar
