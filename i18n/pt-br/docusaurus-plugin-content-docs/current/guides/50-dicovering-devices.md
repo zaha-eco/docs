@@ -3,44 +3,45 @@ slug: discovery
 sidebar_position: 50
 ---
 
-# Discovering and Managing Devices
-Print Tracker's primary purpose is to discover your devices and collect [meters](./60-meters-and-supplies.md) from those devices. Once discovered, you can view and manage your devices remotely from anywhere in the world. Managing your devices includes configuring device settings, cleaning up old devices, reviewing device statistics, and more.
+# Descobrindo e gerenciando dispositivos
+O objetivo principal do Print Tracker é encontrar seus dispositivos e coletar [medidores](./60-meters-and-supplies.md). Uma vez encontrados, você pode visualizar e gerenciar seus dispositivos remotamente de qualquer lugar do mundo. O gerenciamento de seus dispositivos inclui a definição de configurações de dispositivos, a limpeza de dispositivos antigos, a revisão de estatísticas de dispositivos e muito mais.
 
-:::caution Under Construction
-This guide is currently under construction. Please check back soon for updates.
+:::cautela Em Construção
+Este guia está atualmente em construção. Por favor, volte em breve para atualizações.
 :::
 
-## Discovering Devices {#discovering-devices}
-The process of discovering devices on your network involves scanning every IP address to detect whether there's a printer located at that address. By default, Print Tracker will periodically scan your network automatically to discover new devices. You can also manually trigger a scan at any time. 
+## Descobrindo dispositivos {#discovering-devices}
+O processo de descoberta de dispositivos em sua rede envolve a varredura de cada endereço IP para detectar se há uma impressora localizada nesse endereço. Por padrão, o Print Tracker verificará periodicamente sua rede automaticamente para descobrir novos dispositivos. Você também pode acionar manualmente uma varredura a qualquer momento. 
 
-### On-demand Scans {#on-demand-scans}
+### Varreduras por demanda {#on-demand-scans}
 ![](../images/discovering-devices-scan-for-device.gif)
 
-To manually scan your network for devices:
-1. Using the side navigation bar, click **Devices > View devices**
-2. In the top-right corner, click **Scan for devices**
-3. Enter the IP address, range, network, or CIDR block you want to scan
-   :::info
-   This field supports values formatted as:
-   * Individual IP addresses (`10.0.0.1`)
-   * Range of IP addresses (`10.0.0.1-10`)
-   * A single subnet using a wild card (`10.0.0.*`)
-   * A [CIDR notated](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) network (`10.0.0.1/24`)
+Para verificar manualmente a rede em busca de dispositivos:
+1. Usando a barra de navegação lateral, clique em **Dispositivos > Ver dispositivos**
+2. No canto superior direito, clique em **Procurar dispositivos**
+3. Digite o endereço IP, intervalo, rede ou bloco CIDR que você deseja verificar
+   :::informação
+   Este campo suporta valores formatados como:
+   * Endereços IP individuais ('10.0.0.1')
+   * Intervalo de endereços IP ('10.0.0.1-10')
+   * Uma única sub-rede usando um curinga ('10.0.0.*')
+   * Uma rede [CIDR notated](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) ('10.0.0.1/24')
    :::
-4. Click **Add devices**
-5. If there are multiple installs at this entity, select the installs that you want to run the scan from
-6. Click **Confirm**
+4. Clique em **Adicionar dispositivos**
+5. Se houver várias instalações nesta conta, selecione as instalações das quais você deseja executar a varredura
+6. Clique em **Confirmar**
 
-If the install is online, it will immediately begin scanning the network for devices. If the install is offline, the scan will begin the next time the install comes online.
+Se a instalação estiver online, ela começará imediatamente a verificar a rede em busca de dispositivos. Se a instalação estiver offline, a verificação começará na próxima vez que a instalação ficar online.
 
-#### Viewing Scan Progress {#viewing-scan-progress}
+#### Exibindo o progresso da varredura {#viewing-scan-progress}
+
 ![](../images/discovering-devices-scan-job.gif)
 
-To view the progress of the scan:
-1. Using the sidebar, click **Jobs > View**
-2. Click on the job named **Custom Scan**
+Para exibir o progresso da varredura:
+1. Usando a barra lateral, clique em **Jobs > View**
+2. Clique no trabalho chamado **Custom Scan**
 
-You can view the progress of the scan as well as the logs produced by the install during the scan.
+Você pode visualizar o progresso da varredura, bem como os logs produzidos pela instalação durante a verificação.
 
 ### Scheduled Scans {#scheduled-scans}
 
