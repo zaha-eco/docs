@@ -91,7 +91,7 @@ Além de instalar o agente usando a linha de comando, você também pode usar a 
 <Tabs groupId="operating-system">
 <TabItem value="windows" label="Windows">
 
-:::Aviso de cautela
+:::caution Aviso de cautela
 Você deve executar a janela do Powershell como administrador para instalar o agente. Se você não fizer isso, a instalação falhará silenciosamente.
 :::
 
@@ -107,7 +107,7 @@ $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadStri
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-:::Aviso de cautela
+:::caution Aviso de cautela
 Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a instalação falhará.
 :::
 
