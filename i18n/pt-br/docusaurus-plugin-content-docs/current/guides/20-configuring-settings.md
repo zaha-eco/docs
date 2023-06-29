@@ -52,7 +52,7 @@ Para redefinir uma configuração para que ela herde seu valor:
 
 #### Redefinir para todas as filhas {#reset-for-all-children}
 
-Ao redefinir uma configuração para uma conta, você também tem a opção de redefinir uma configuração para a [conta ativa](./30-criating-entities.md#active-entity) e todas as suas filhas. Isso geralmente é feito quando você deseja padronizar uma configuração.
+Ao redefinir uma configuração para uma conta, você também tem a opção de redefinir uma configuração para a [conta ativa](./30-creating-entities.md#active-entity) e todas as suas filhas. Isso geralmente é feito quando você deseja padronizar uma configuração.
 
 :::danger
 Quando você **Redefinir para todas as filhas**, isso redefinirá a configuração para seu valor herdado para a conta ativa, todas as contas filhas e os dispositivos dessas contas.
