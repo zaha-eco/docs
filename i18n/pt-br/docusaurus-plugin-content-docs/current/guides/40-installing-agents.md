@@ -6,60 +6,61 @@ sidebar_position: 40
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Installing and Managing Agents
-Print Tracker utilizes data collection agents -- lightweight software applications installed within customer networks -- to discover and collect data from your devices. The agents are available for Windows, Mac, and Linux operating systems and can be installed using a variety of methods, including email, direct download, and command line. 
+# Instalando e gerenciando agentes
+O Print Tracker utiliza agentes de coleta de dados -- aplicativos de software leves instalados em redes de clientes -- para descobrir e coletar dados de seus dispositivos. Os agentes estão disponíveis para sistemas operacionais Windows, Mac e Linux e podem ser instalados usando uma variedade de métodos, incluindo e-mail, download direto e linha de comando.  
 
-## Datalink Code
-When an agent is installed inside your customers network, it needs to know how to upload that data to you. Print Tracker connects data collected from your customer's network to your account using a unique identifier called a **Datalink Code**. This code is a unique identifier that is generated for each entity in your account.
+## Código Datalink
+Quando um agente é instalado dentro da rede de seus clientes, ele precisa saber como enviar esses dados para você. O Print Tracker conecta os dados coletados da rede do seu cliente à sua conta usando um identificador exclusivo chamado **Datalink Code**. Esse código é um identificador exclusivo gerado para cada conta em sua conta.
 
 ![](../images/installing-agents-datalink-code.png)
 
-You can get the datalink code for an entity by:
-1. Navigating to the entity you'd like to get the datalink code for
-2. Using the sidebar, click **Installs > Deploy install**
-3. Copy the datalink code from the **Datalink code** field
+Você pode obter o código datalink para uma conta:
+1. Navegue até a conta para a qual você gostaria de obter o código de link de dados
+2. Usando a barra lateral, clique em **Instalações > Implantar nova instalação**
+3. Copie o código do datalink do campo **Datalink code**
 
-## Deployment Strategies
-There are several different ways that you can deploy the Print Tracker data collection agent depending on your use-case. For example, if you're on-site at a customer's location, you may choose to [download the agent directly](#download-and-install) to the customer's computer and install it manually. Or, if you're working remotely, you may choose to [send the agent to the customer via email](#deployment-email) and have them install it themselves. You might even have remote administration access to a fleet of computers, in which case you can deploy the agent using the [command line](#command-line).
+## Estratégias de Implantação
+Há várias maneiras diferentes de implantar o agente de coleta de dados do Print Tracker, dependendo de sua necessidade. Por exemplo, se você estiver no cliente, poderá optar por [baixar o agente diretamente](#download e instalar) no computador do cliente e instalá-lo manualmente. Ou, se você estiver trabalhando remotamente, você pode optar por [enviar o agente para o cliente por e-mail] (#deployment-mail) e fazer com que ele mesmo o instale. Você pode até ter acesso de administração remota a um conjunto de computadores, caso em que você pode implantar o agente usando [linha de comando](linha de #command).
 
-Once the agent is installed, it also needs to be [activated](#activation). The activation process effectively "registers" this agent to your account so that you can manage and collect data from it.
+Uma vez instalado, o agente também precisa ser [ativado](#activation). O processo de ativação efetivamente "registra" esse agente em sua conta para que você possa gerenciar e coletar dados dele.
 
-### Deployment Email
-The deployment email strategy allows you to easily send a link to the installer directly to your customer, along with instructions on how to activate the agent.
+### Email de implantação
+A estratégia de e-mail de implantação permite que você envie facilmente um link para o instalador diretamente para o cliente, juntamente com instruções sobre como ativar o agente.
 
 ![](../images/installing-agents-send-deployment-email.gif)
 
-To send a deployment email:
-1. Select the entity that you'd like the install to be associated with.
-2. Using the sidebar, click **Installs > Deploy install**
-3. Click **Send installation email**
-4. Enter the email address of your customer's on-site contact
-5. Click **Send email**. 
+Para enviar um email de implantação:
+1. Selecione a conta à qual você deseja que a instalação seja associada.
+2. Usando a barra lateral, clique em **Instalações > Implantar nova instalação**
+3. Clique em **Enviar e-mail de instalação**
+4. Digite o endereço de e-mail do contato do seu cliente no local
+5. Clique em **Enviar e-mail**. 
 
-Your customer will receive instructions on how to download and activate the agent
+Seu cliente receberá instruções sobre como baixar e ativar o agente
 
-### Download and Install
-You may choose to download the agent directly to the computer that you're working on right now. You can find all Print Tracker downloads by navigating to [printtrackerpro.com/download](https://www.printtrackerpro.com/download), or picking the appropriate download for your operating system below.
+### Baixar e instalar
+Você pode optar por baixar o agente diretamente para o computador em que está trabalhando no momento. Você pode encontrar todos os downloads do Print Tracker navegando até [printtrackerpro.com/download](https://www.printtrackerpro.com/download) ou escolhendo o download apropriado para seu sistema operacional abaixo.
 
 <iframe src="https://app-v2.printtrackerpro.com/download" width="100%" height="500px" frameborder="0"></iframe>
 
-### Command Line
-In some cases, it may be easier to deploy the agent using the command line. This is especially true if you have remote administration access to a fleet of computers that all need to be installed with the agent. Currently, only Windows and Linux support command-line installation.
+### Linha de comando
+Em alguns casos, pode ser mais fácil implantar o agente usando a linha de comando. Isso é especialmente verdadeiro se você tiver acesso de administração remota a uma frota de computadores que precisam ser instalados com o agente. Atualmente, apenas o Windows e o Linux oferecem suporte à instalação de linha de comando.
 
-If you'd like to install and activate the agent in the same command, please skip to [Automatic Activation](#automatic-activation).
+Se você quiser instalar e ativar o agente no mesmo comando, pule para [Ativação Automática](#automatic-ativação).
 
-#### Installation
+#### Instalação
+
 <Tabs groupId="operating-system">
 <TabItem value="windows" label="Windows">
 
-:::caution Warning
-You must run the Powershell window as an administrator in order to install the agent. If you do not, the installation will silently fail.
+:::Aviso de cautela
+Você deve executar a janela do Powershell como administrador para instalar o agente. Se você não fizer isso, a instalação falhará silenciosamente.
 :::
 
-1. Open a Powershell window as an administrator
-2. Copy and paste the following command into the Powershell window and press enter
-3. This command will download the latest version of Print Tracker and install it
-4. Once the installation is complete, open [localhost:1301](http://localhost:1301/) to activate the agent with your [datalink code](#datalink-code)
+1. Abra uma janela do Powershell como administrador
+2. Copie e cole o seguinte comando na janela do Powershell e pressione enter
+3. Este comando irá baixar a versão mais recente do Print Tracker e instalá-lo
+4. Quando a instalação estiver concluída, abra [localhost:1301](http://localhost:1301/) para ativar o agente com seu [datalink code](#datalink-code)
 
 ```powershell
 $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadString('https://www.cdn.printtrackerpro.com/modules/dca/current_major_version').Trim(); $url = "https://www.cdn.printtrackerpro.com/modules/dca/$version/PrintTrackerProOfflineSetup.msi";  Write-Host "Version: $version"; Write-Host "Download URL: $url"; $output = Join-Path -Path $([System.IO.Path]::GetTempPath()) -ChildPath 'PrintTrackerProOfflineSetup.msi';  Write-Host "Download Path: $output" $webClient.DownloadFile($url, $output); Start-Process 'msiexec' -ArgumentList @('/qn', '/i', "`"$output`"") -Wait;
@@ -68,13 +69,13 @@ $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadStri
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-:::caution Warning
-You must have sudo access in order to install the agent. If you do not, the installation will fail.
+:::Aviso de cautela
+Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a instalação falhará.
 :::
 
-1. Open a terminal window
-2. Run the following command to download and install the agent
-3. Once the installation is complete, open [localhost:1301](http://localhost:1301/) to activate the agent with your [datalink code](#datalink-code)
+1. Abra uma janela do terminal
+2. Execute o seguinte comando para baixar e instalar o agente
+3. Quando a instalação estiver concluída, abra [localhost:1301](http://localhost:1301/) para ativar o agente com seu [datalink code](#datalink-code)
 
 ```shell
 source <(curl -fsSL printtrackerpro.com/install.sh)
@@ -84,20 +85,20 @@ source <(curl -fsSL printtrackerpro.com/install.sh)
 </Tabs>
 
 
-#### Automatic Activation
-In addition to installing the agent using the command line, you can also use the command line to activate the agent.
+#### Ativação Automática
+Além de instalar o agente usando a linha de comando, você também pode usar a linha de comando para ativar o agente.
 
 <Tabs groupId="operating-system">
 <TabItem value="windows" label="Windows">
 
-:::caution Warning
-You must run the Powershell window as an administrator in order to install the agent. If you do not, the installation will silently fail.
+:::Aviso de cautela
+Você deve executar a janela do Powershell como administrador para instalar o agente. Se você não fizer isso, a instalação falhará silenciosamente.
 :::
 
-1. Open a Powershell window as an administrator
-2. Copy the following command
-3. Replace `<YOUR DATALINK CODE>` with your [datalink code](#datalink-code)
-4. Run the command to download and install the agent
+1. Abra uma janela do Powershell como administrador
+2. Copie o seguinte comando
+3. Substitua '<SEU CÓDIGO DATALINK>' pelo seu [código datalink](código #datalink)
+4. Execute o comando para baixar e instalar o agente
 
 ```powershell
 $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadString('https://www.cdn.printtrackerpro.com/modules/dca/current_major_version').Trim(); $url = "https://www.cdn.printtrackerpro.com/modules/dca/$version/PrintTrackerProOfflineSetup.msi";  Write-Host "Version: $version"; Write-Host "Download URL: $url"; $output = Join-Path -Path $([System.IO.Path]::GetTempPath()) -ChildPath 'PrintTrackerProOfflineSetup.msi';  Write-Host "Download Path: $output" $webClient.DownloadFile($url, $output); Start-Process 'msiexec' -ArgumentList @('/qn', '/i', "`"$output`"", 'DATALINK_CODE=<YOUR DATALINK CODE>') -Wait;
@@ -106,14 +107,14 @@ $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadStri
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-:::caution Warning
-You must have sudo access in order to install the agent. If you do not, the installation will fail.
+:::Aviso de cautela
+Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a instalação falhará.
 :::
 
-1. Open a terminal window
-2. Copy the following command
-3. Replace `<YOUR DATALINK CODE>` with your [datalink code](#datalink-code)
-4. Run the command to download and install the agent
+1. Abra uma janela do terminal
+2. Copie o seguinte comando
+3. Substitua '<SEU CÓDIGO DATALINK>' pelo seu [código datalink](código #datalink)
+4. Execute o comando para baixar e instalar o agente
 
 ```shell
 datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/install.sh)
@@ -122,75 +123,75 @@ datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/in
 </TabItem>
 </Tabs>
 
-## Installation
-Once the agent has been [downloaded and installed](#download-and-install), the last step is activation. Activation connects your Print Tracker account to the agent installed within your customer's network. An agent that is not activated to your account will not appear in Print Tracker.
+## Instalação
+Depois que o agente tiver sido [baixado e instalado](#download-and-install), a última etapa é a ativação. A ativação conecta sua conta do Print Tracker ao agente instalado na rede do cliente. Um agente que não esteja ativado na sua conta não aparecerá no Print Tracker.
 
-### Activation
-To activate an agent, make sure the agent has been downloaded and installed using one of the [deployment strategies](#deployment-strategies). Once the agent has been installed:
+### Ativação
+Para ativar um agente, verifique se o agente foi baixado e instalado usando uma das [estratégias de implantação](#deployment-strategies). Uma vez instalado o agente:
 
-1. Open [localhost:1301](http://localhost:1301/) in the web browser of the computer that the agent is installed on
-2. Enter your [datalink code](#datalink-code)
-3. Click **Activate**
+1. Abra [localhost:1301](http://localhost:1301/) no navegador da Web do computador em que o agente está instalado
+2. Digite seu [datalink code](#datalink-code)
+3. Clique em **Ativar**
 
-[//]: # (### Network Discovery)
+[//]: # (### Descoberta de Rede)
 
-## Clustering and Redundancy
-Clustering is the idea of installing multiple agents on the same network so that if one agent goes down, another agent can take over. Print Tracker automatically clusters agents that are registered using the same [datalink code](#datalink-code). This means that if you have multiple agents installed at the same entity, they will automatically cluster together without requiring any additional configuring from you.
+## Clustering e Redundância
+Clustering é a ideia de instalar vários agentes na mesma rede para que, se um agente ficar inativo, outro agente possa assumir o controle. O Print Tracker agrupa automaticamente os agentes registrados usando o mesmo [datalink code](#datalink-code). Isso significa que, se você tiver vários agentes instalados na mesma conta, eles se agruparão automaticamente sem exigir nenhuma configuração adicional de você.
 
-When multiple agents are installed on the same network, devices, meters, and all other collected data is de-duplicated automatically.
+Quando vários agentes são instalados na mesma rede, dispositivos, medidores e todos os outros dados coletados duplicados são eliminados automaticamente, não havendo duplicidade.
 
-## Stale Agents
-A stale agent is an agent that is no longer connected to Print Tracker. Installs usually check-in every 30-minutes, however, some installs may not check in for longer periods of time if the computer is shutdown, or enters sleep mode. Installs that are offline for extended periods of time (several days) can be problematic. For example asn agent that is offline for an extended period of time may have missed critical device alerts, such as a supply being replaced. When a [stale agent comes back online](./20-configuring-settings.md#stale-install-back-online-alert) it is important to review all your devices to make sure you haven't missed any critical events.
+## Agentes obsoletos
+Um agente obsoleto é um agente que não está mais conectado ao Print Tracker. As instalações geralmente fazem check-in a cada 30 minutos, no entanto, algumas instalações podem não fazer check-in por períodos mais longos se o computador for desligado ou entrar no modo de suspensão. Instalações que estão offline por longos períodos de tempo (vários dias) podem ser problemáticas. Por exemplo, o agente asn que está offline por um longo período de tempo pode ter perdido alertas de dispositivo críticos, como uma substituição de suprimento. Quando um [agente obsoleto volta a ficar online](./20-configuring-settings.md#stale-install-back-online-alert) é importante rever todos os seus dispositivos para se certificar de que não perdeu nenhum evento crítico.
 
-## Deactivating/Reactivating
-You can deactivate an agent at any time. Deactivating an agent will hide the agent from your account. Deactivating an agent will not uninstall the agent from the computer it is installed on. If you want to uninstall the agent, you must do so manually.
+## Desativando/Reativando
+Você pode desativar um agente a qualquer momento. A desativação de um agente ocultará o agente da sua conta. A desativação de um agente não desinstalará o agente do computador em que ele está instalado. Se você quiser desinstalar o agente, deverá fazê-lo manualmente.
 
-Deactivated agents stop checking in to Print Tracker regularly, and instead, check in only on system restart. This means that if you reactivate a deactivated install, it may not come back online until the computer is restarted.
+Os agentes desativados param de fazer check-in no Print Tracker regularmente e, em vez disso, fazem check-in apenas na reinicialização do sistema. Isso significa que, se você reativar uma instalação desativada, ela pode não voltar a ficar online até que o computador seja reiniciado.
 
-You should only deactivate agents that you don't plan on using again. If you plan on using an agent again in the future, you should leave it activated.
+Você só deve desativar os agentes que não planeja usar novamente. Se você planeja usar um agente novamente no futuro, você deve deixá-lo ativado.
 
-### Deactivating
+### Desativando
 ![](../images/installing-agents-deactivating.gif)
 
-To deactivate an agent:
-1. Using the sidebar, click **Installs > View installs**
-2. Find the install that you want to deactivate
-3. Click the **Checkbox Icon** on the left side of the table
-4. At the top of the table, click the down arrow next to table's checkbox icon
-5. Click **Disable selected**
+Para desativar um agente:
+1. Usando a barra lateral, clique em **Instalações > Exibir instalações**
+2. Encontre a instalação que você deseja desativar
+3. Clique no ícone **Checkbox** no lado esquerdo da tabela
+4. Na parte superior da tabela, clique na seta para baixo ao lado do ícone da caixa de seleção da tabela
+5. Clique em **Desativar selecionado**
 
-### Reactivating
+### Reativando
 ![](../images/installing-agents-reactivating.gif)
 
-To reactivate an agent:
-1. Using the sidebar, click **Installs > View installs**
-2. Make sure that the **Exclude inactive** filter is disabled
-3. Find the install that you want to reactivate
-4. Click the **Checkbox Icon** on the left side of the table
-5. At the top of the table, click the down arrow next to table's checkbox icon
-6. Click **Enable selected**
+Para reativar um agente:
+1. Usando a barra lateral, clique em ** Instalações > Exibir instalações **
+2. Certifique-se de que o filtro **Excluir inativo** está desativado
+3. Encontre a instalação que você deseja reativar
+4. Clique no **ícone da caixa de seleção** no lado esquerdo da tabela
+5. Na parte superior da tabela, clique na seta para baixo ao lado do ícone da caixa de seleção da tabela
+6. Clique em **Ativar selecionado**
 
-## Uninstalling
-Uninstalling Print Tracker must be done directly on the computer where Print Tracker is installed. This process varies depending on the operating system.
+## Desinstalando
+A desinstalação do Print Tracker deve ser feita diretamente no computador onde o Print Tracker está instalado. Esse processo varia de acordo com o sistema operacional.
 
 <Tabs groupId="operating-system">
 <TabItem value="windows" label="Windows">
 
 ![](../images/installing-agents-uninstalling.gif)
 
-1. Open the Windows **Start Menu**
-2. Search "Add or remove programs" and open it
-3. Search for "Print Tracker Pro"
-4. Click the three-dot menu icon next to "Print Tracker Pro"
-5. Click **Uninstall**
-6. Follow the prompts to complete the uninstallation
+1. Abra o Windows **Menu Iniciar**
+2. Pesquise "Adicionar ou remover programas" e abra-o
+3. Procure por "Print Tracker Pro"
+4. Clique no ícone de menu de três pontos ao lado de "Print Tracker Pro"
+5. Clique em **Desinstalar**
+6. Siga as instruções para concluir a desinstalação
 
 </TabItem>
 <TabItem value="macos" label="macOS">
 
-1. Open a terminal window
-2. Copy and run the following command
-3. Follow the prompts to complete the uninstallation
+1. Abra uma janela do terminal
+2. Copie e execute o seguinte comando
+3. Siga as instruções para concluir a desinstalação
 
 ```shell
 sudo bash /Library/PrintTracker/DataCollectionAgent/uninstall.sh
@@ -199,8 +200,8 @@ sudo bash /Library/PrintTracker/DataCollectionAgent/uninstall.sh
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-1. Open a terminal window
-2. Copy and run the following command
+1. Abra uma janela do terminal
+2. Copie e execute o seguinte comando
 
 ```shell
 source <(curl -fsSL printtrackerpro.com/uninstall.sh)
@@ -209,19 +210,19 @@ source <(curl -fsSL printtrackerpro.com/uninstall.sh)
 </TabItem>
 </Tabs>
 
-## Troubleshooting
-For more details on troubleshooting issues with your agents, see the [Troubleshooting](../troubleshooting/20-installs.md) section.
+## Solução de problemas
+Para obter mais detalhes sobre como solucionar problemas com seus agentes, consulte [Solução de problemas](.. /solução de problemas/20-installs.md).
 
-### macOS Installer Packages
+### Pacotes do instalador do macOS
 
-Some macOS devices may pop up a warning indicating that the .pkg cannot be opened. This is because Print Tracker is not notarized by Apple and made available via the Apple App Store.
+Alguns dispositivos macOS podem exibir um aviso indicando que o .pkg não pode ser aberto. Isso ocorre porque o Print Tracker não é registrado pela Apple e disponibilizado através da Apple App Store.
 
 ![](../images/installing-agents-macos-error.png)
 
-To bypass this warning:
-1. Right-click on the file in your Finder window.
-2. Click **Open**
-3. Click **Open** again
-4. Follow the installation prompts.
+Para ignorar este aviso:
+1. Clique com o botão direito do mouse no arquivo na janela do Finder.
+2. Clique em **Abrir**
+3. Clique em **Abrir** novamente
+4. Siga as instruções de instalação.
 
 ![](../images/installing-agents-macos.gif)
