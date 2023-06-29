@@ -69,7 +69,7 @@ $webClient = New-Object System.Net.WebClient; $version = $webClient.DownloadStri
 </TabItem>
 <TabItem value="linux" label="Linux">
 
-:::Aviso de cautela
+:::caution Aviso de cautela
 Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a instalação falhará.
 :::
 
