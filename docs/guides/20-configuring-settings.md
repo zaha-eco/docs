@@ -5,15 +5,15 @@ sidebar_position: 20
 
 # Configuring Settings and Alerts
 
-You can control how and where you collect data, and when you receive alerts about that data by configuring settings. Settings can be set and managed from the [top level entity](./entities#Top-Level-Entity), any individual entity, or an individual device. This gives you maximum flexibility while also providing efficient management of standard settings.
+You can control how and where you collect data, and when you receive alerts about that data by configuring settings. Settings can be set and managed from the [top level entity](./30-creating-entities.md#top-level-entity), any individual entity, or an individual device. This gives you maximum flexibility while also providing efficient management of standard settings.
 
 ## Settings Inheritance {#settings-inheritance}
 
-Print Tracker settings are inherited through [hierarchy](./entities#hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#Parent-entity) in its hierarchy with a setting value explicitly set.
+Print Tracker settings are inherited through [hierarchy](./entities#hierarchy). This means that when a new entity or device is created in Print Tracker, its settings and alerts will come from the first [parent entity](./entities#parent-entity) in its hierarchy with a setting value explicitly set.
 
 ### Inheriting Settings {#inheriting-settings}
 
-Settings natively flow from the top down, according to [hierarchy](./entities#hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./entities#Top-Level-Entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
+Settings natively flow from the top down, according to [hierarchy](./entities#hierarchy). Custom settings you want to apply to your entire fleet should be set one time at your [top level entity](./entities#top-level-entity), while settings that only apply to a particular entity or device should be explicitly set at that level.
 
 ### Overriding Settings {#overriding-settings}
 
@@ -227,7 +227,7 @@ To configure a stale install back online alert:
 
 ## Network Scans {#network-scans}
 
-Network scan settings set defaults for how an [agent](./installation#Installing-And-Managing-Agents) scans the network where it is installed.
+Network scan settings set defaults for how an [agent](./installation) scans the network where it is installed.
 
 ### IP Addresses to Scan {#ip-addresses-to-scan}
 
@@ -288,7 +288,7 @@ To configure billing meter preferences by entity:
 
 1. Navigate to the desired entity
    :::tip
-   If all your devices use the same meters for billing, set your default preferences at your [top level entity](./entities#top-level-entity) so that all your child entities and devices will inherit these defaults.
+   If all your devices use the same meters for billing, set your default preferences at your [top level entity](./30-creating-entities.md#top-level-entity) so that all your child entities and devices will inherit these defaults.
    :::
 2. Using the sidebar, click **Admin > Manage entity**
 3. Click on the **Settings** tab
