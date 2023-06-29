@@ -6,7 +6,7 @@ sidebar_position: 10
 
 Creating and managing users allows you to grant and control access to other users depending on the role you need them to have within your organization(s).
 
-## Creating a User
+## Creating a User {#creating-a-user}
 
 To create a new user:
 
@@ -20,7 +20,7 @@ To create a new user:
 
 After a new user has been successfully completed, the new user will receive an email with instructions on how to set their own password the first time they login.
 
-## Changing Roles
+## Changing Roles {#changing-roles}
 
 ![](../images/manage-users-change-roles.gif)
 To change a user's role or add an additional role to a user:
@@ -31,11 +31,11 @@ To change a user's role or add an additional role to a user:
 4. In the **Role** input, select or unselect multiple roles as needed
 5. Click **Save changes**
 
-## Entity Assignment
+## Entity Assignment {#entity-assignment}
 
 A user has access to the entity where the user is assigned (called the parent entity) and any of the chlidren entites of the parent entity.
 
-### Moving Users Between Entities
+### Moving Users Between Entities {#moving-users-between-entities}
 
 ![](../images/manage-users-move-user.gif)
 You can move a user to any entity you have access to view. To move a user:
@@ -46,7 +46,7 @@ You can move a user to any entity you have access to view. To move a user:
 4. In the **Parent entity** input, begin typing the name of the entity you want to move the user to
 5. Click **Save changes**
 
-## Roles and Permissions
+## Roles and Permissions {#roles-and-permissions}
 
 | Permission                                | Master Admin | Admin | Buyer | User | Remote Technician Configurer | Remote Technician User |
 | ----------------------------------------- | ------------ | ----- | ----- | ---- | ---------------------------- | ---------------------- |

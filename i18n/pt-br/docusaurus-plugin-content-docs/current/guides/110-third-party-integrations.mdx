@@ -9,8 +9,8 @@ import Box from '@mui/joy/Box';
 # Third-Party Integrations
 In many enterprise scenarios, you may need to integrate data collected by Print Tracker with other systems such as your ERP (Enterprise Resource Planning) solution. Print Tracker provides integrations with several ERP solutions today, with the ability to integrate out-of-the box with any system that supports emailed CSV reports. You can even create your own custom integrations using our REST API!
 
-## ERP Systems
-### E-Automate
+## ERP Systems {#erp-systems}
+### E-Automate {#e-automate}
 Because E-Automate is the most popular ERP system amount enterprise MPS users, we've developed a native integration with E-Automate that automatically pushes Print Tracker meters based on your [billing schedules](./20-configuring-settings.md#schedules). It also synchronizes equipment numbers from E-Automate into Print Tracker so that you can easily work with the devices between the two systems.
 
 ![](../images/integrations-data-processor-meters.png)
@@ -26,14 +26,14 @@ Interested in learning more? Our support team is ready to help you get started i
 </Box>
 :::
 
-### Tigerpaw
+### Tigerpaw {#tigerpaw}
 Tigerpaw supports ingesting meter data via emailed CSV files. You can create a [custom report](./reports) and [schedule](./reports#scheduling-reports) it to be emailed to Tigerpaw.
 
-### Miracle Service
+### Miracle Service {#miracle-service}
 Miracle Service supports ingesting meter data via emailed CSV files. You can create a [custom report](./reports) and [schedule](./reports#scheduling-reports) it to be emailed to Miracle Service.
 
-## Auto-fulfillment
-### Supplies Network
+## Auto-fulfillment {#auto-fulfillment}
+### Supplies Network {#supplies-network}
 Print Tracker has a seamless integration with Supplies Network, a leading consumable auto-fulfillment supplier. Once the integration is enabled, Print Tracker will automatically push your meters to Supplies Network, where they will analyze the meters to estimate the best time to ship replacement supplies.
 
 :::info
@@ -43,10 +43,10 @@ Enabling the supplies network integration requires some co-ordination between yo
 </Box>
 :::
 
-#### Enabling Supplies Network Integration
+#### Enabling Supplies Network Integration {#enabling-supplies-network-integration}
 Once the initial integration has been co-ordinated between Print Tracker and Supplies Network, you can configure Print Tracker to automatically push meters for specific devices, or even entire entities.
 
-#### On a Device
+#### On a Device {#on-a-device}
 ![](../images/integrations-supplies-network-device.gif)
 To enable the supplies network integration for a specific device:
 
@@ -56,7 +56,7 @@ To enable the supplies network integration for a specific device:
 4. Expand the **Auto-fulfillment** section
 5. Under the **Supplies Network** section, click the **Enable** toggle
 
-#### At an Entity
+#### At an Entity {#at-an-entity}
 ![](../images/integrations-supplies-network-entity.gif)
 When you enable the Supplies Network integration at an entity, meters for all devices under that entity will be pushed to Supplies Network.
 
@@ -66,16 +66,16 @@ When you enable the Supplies Network integration at an entity, meters for all de
 4. Expand the **Auto-fulfillment** section
 5. Under the **Supplies Network** section, click the **Enable** toggle
 
-## Custom Integrations
+## Custom Integrations {#custom-integrations}
 
-### REST API
+### REST API {#rest-api}
 Print Tracker provides a REST API that allows you to create custom integrations with other systems.
 
 :::info Coming Soon
 Our API documentation is a work-in-progress. Check back soon!
 :::
 
-## Pricing
+## Pricing {#pricing}
 Integrations that require the use of an API-key such as the [Print Tracker Data Processor](#e-automate) or any custom integrations using the [REST API](#rest-api) incur additional charges which will appear on your monthly invoice.
 
 > API keys are billed at $50 per 50 GB of data transfer, per month, per entity with at least one API key.
