@@ -1,0 +1,160 @@
+---
+slug: supplies
+sidebar_position: 60
+---
+
+import BetaLabel from '@site/src/components/BetaLabel'
+import Button from '@mui/joy/Button';
+import Box from '@mui/joy/Box';
+
+# Managing Supplies
+
+:::caution BETA
+The features described on this page are currently in public-beta. If you have any feedback or suggestions, feel free reach out!
+
+<Button color="warning" fullWidth size="lg" onClick={() => window.open("mailto:support@printtrackerpro.com")}>Contact Support</Button>
+:::
+
+Many business operations revolve around tracking when supplies are low, when they're replaced, and what devices they belong to. The **Manage Supplies** page can help you be proactive about supply management by understanding key metrics such as when a supply is going to be replaced, the fill rate of the supply, or the number of pages lost due to premature supply replacements.
+
+## Viewing Supplies {#viewing-supplies}
+You can view supplies for all devices at an entity, or for a specific device. Print Tracker provides the currently installed supplies for each device, as well as the historical supplies for each device. This can help you get a comprehensive picture of how your customers consume their supplies.
+
+### Supplies by Entity {#supplies-by-entity}
+![](../images/managing-supplies-viewing-supplies-by-entity.gif)
+
+To view supplies by entity:
+1. Make sure you've selected the entity that you want to view supplies for
+2. Using the sidebar, click **Devices > Manage supplies**
+
+### Supplies by Device {#supplies-by-device}
+![](../images/managing-supplies-viewing-supplies-by-device.gif)
+
+To view supplies for a specific device:
+1. Using the sidebar, click **Devices > View devices**
+2. Click on the device that you want to view supplies for
+3. Click on the **Supplies** tab
+
+
+### Customizing Columns {#customizing-columns}
+![](../images/managing-supplies-changing-columns.gif)
+
+You can customize which columns appear in the supplies table. This is often helpful if you're using Print Tracker on a small screen, or if you're only interested in a few of the columns.
+
+To customize columns:
+1. Click on the **Filter** icon in the top right corner of the table
+2. Check the columns that you want to appear in the table
+
+### Including Children {#including-children}
+![](../images/managing-supplies-include-children.gif)
+
+You can optionally include supplies that belong to devices and entities that are below the current entity in your [hierarchy](./entities#hierarchy). This is called "including children" and can be done almost anywhere in Print Tracker, including on the manage supplies page. 
+
+To include children:
+1. In the top right corner of the table, click on the **Include children** toggle
+
+### Including Replaced Supplies {#including-replaced-supplies}
+![](../images/managing-supplies-include-replaced.gif)
+
+By default, only the currently-installed supplies are shown, however you may also want to see supplies that were previously installed in a device, but have since been replaced. You can do this by including the replaced supplies.
+
+To include replaced supplies:
+1. In the top right corner of the table, click on **Filter** icon
+2. Check the **Include replaced supplies** checkbox
+3. A new date range filter will appear in the table filter area, this date picker allows you to choose a date range for which you want to see replaced supplies. By default, this date range is set to the last 30 days.
+
+### Filtering and Sorting {#filtering-and-sorting}
+![](../images/managing-supplies-filter-sort.gif)
+
+You can filter the list of supplies by typing a search term into the search bar at the top of the table. You can search for specific devices by serial number, by model, supply name, and more.
+
+You can also sort the list of supplies by clicking on the column headers. Click the column headers multiple times to adjust the sort direction (ascending or descending).
+
+### Pagination {#pagination}
+![](../images/managing-supplies-pagination.gif)
+
+Entities with many devices may have hundreds or thousands of supplies. In order to help you find the data that you're looking for, Print Tracker divides up all your data into pages. You can navigate between pages using the pagination controls at the bottom of the table.
+
+### Exporting {#exporting}
+![](../images/managing-supplies-export-to-csv.gif)
+
+You can export the list of supplies to a CSV file. This is helpful if you want to share the list of supplies with someone else, or if you want to do some analysis in a spreadsheet.
+
+### Lost Pages {#lost-pages}
+
+A supply manufacturer may provide a yield rating for a supply. This is the number of pages that the supply is expected to print. If a supply is replaced before it's expected to be replaced, then the number of pages that the supply was expected to print is lost. This is called "lost pages". Lost pages can help you identify when your customers are replacing supplies too early. In order for Print Tracker to calculate lost pages, it needs to know the rated yield of the supply. In many cases the expected yield is provided by the device, however, if the device doesn't provide the rated yield, then you can [manually enter the expected yield](#rated-yield) for each supply.
+
+If the "Lost pages" column is missing from the supplies table, then you can add it by [customizing the columns](#customizing-columns).
+
+### Fill Rate {#fill-rate}
+
+The fill rate (often referred to as coverage rate) is the average percentage of the page that is covered by supply. Usually a supply manufacturer will set a supply's [rated yield](#rated-yield) at some [expected fill rate](#expected-fill-rate). Most supplies have a rated yield with a 5% fill rate. This means that a supply may not print the rated yield if a customer has a higher-then-rated fill rate, indicating that the customer is putting more supply on the same size page than what the supply was originally rated for.
+
+Fill rate can help you understand how efficiently a supply is being utilized and determine the overall cost per page. By comparing fill rates of different supplies, one can identify the most cost-effective option for their printing needs. Additionally, monitoring fill rate can help in optimizing the printing process, reducing waste, and extending the life of printing supplies. This ultimately leads to reduced operational costs and improved sustainability in the long run. Fill rate also serves as a benchmark for evaluating the performance of supplies across various manufacturers, enabling businesses and consumers to make informed decisions when selecting their printing resources.
+
+### Estimated Depletion Date <BetaLabel/> {#estimated-depletion-date-betalabel}
+
+Based on historical printing patterns, Print Tracker will attempt to predict when a supply will reach 0%. This is called the estimated depletion date. Some devices will calculate and report this metric to Print Tracker, however, if the device doesn't provide this metric, then Print Tracker will attempt to calculate it based on the device's historical printing patterns.
+
+## Managing Supplies {#managing-supplies}
+
+You can configure some settings for your supplies to help Print Tracker provide better supply insights, and to help your supply fulfillment teams be more proactive about supply management.
+
+### Part Number {#part-number}
+The supply part number is often helpful for supply management teams, allowing them to re-order the same part numbers that are currently installed in your devices. In some cases, Print Tracker will be able to automatically detect the part number of a supply.
+
+If knowing the supply part number is important to you and it is not collected by Print Tracker, you can manually specify the part number for a supply. This part number will automatically be applied to all future supplies of the same type. For example, if you manually specify a part number for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same part number.
+
+![](../images/managing-supplies-set-part-number.gif)
+
+To manually specify the part number for a supply:
+1. Using the sidebar, click **Devices > Manage supplies**
+2. Find the supply that you want to specify the part number for
+3. Click on the cell for the supply that you want to change, and in the **Part number** column
+4. Type in the part number for the supply
+5. Press **Enter** to save the part number
+
+### Expected Fill Rate {#expected-fill-rate}
+The fill rate (often referred to as coverage rate) is the average percentage of the page that is covered by supply. Usually a supply manufacturer will set a supply's [rated yield](#rated-yield) at a specific fill rate called the **Expected Fill Rate**. Most supplies have a rated yield with a 5% expected fill rate. This means that a supply may not print the rated yield if a customer has a fill rate that is higher than the expected fill rate, indicating that the customer is putting more supply on the same size page than what the supply was originally rated for.
+
+Unless otherwise specified, Print Tracker assumes that all supplies are rated at a 5% expected fill rate. If you know the expected fill rate for a supply, you can manually specify it. This expected fill rate will automatically be applied to all future supplies of the same type. For example, if you manually specify an expected fill rate for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same expected fill rate.
+
+![](../images/managing-supplies-set-expected-fill-rate.gif)
+
+To manually specify the expected fill rate for a supply:
+1. Using the sidebar, click **Devices > Manage supplies**
+2. Find the supply that you want to specify the expected fill rate for
+3. Click on the cell for the supply that you want to change, and in the **Expected fill rate** column
+4. Type in the expected fill rate for the supply
+5. Press **Enter** to save the expected fill rate
+
+### Rated Yield {#rated-yield}
+The rated yield is determined by a supply manufacturer and represents the expected number of pages that the supply should print given some standard assumptions (like the [expected fill rate](#expected-fill-rate)). The rated yield is used to calculate metrics like [lost pages](#lost-pages). In many cases it is provided by the device, however, if the device doesn't provide the rated yield, then you can manually enter the rated yield for each supply.
+
+This rated yield will automatically be applied to all future supplies of the same type. For example, if you manually specify a rated yield for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same rated yield.
+
+
+![](../images/managing-supplies-set-rated-yield.gif)
+
+To manually specify the rated yield for a supply:
+1. Using the sidebar, click **Devices > Manage supplies**
+2. Find the supply that you want to specify the rated yield for
+3. Click on the cell for the supply that you want to change, and in the **Rated yield** column
+4. Type in the rated yield for the supply
+5. Press **Enter** to save the rated yield
+
+### Supply Cost {#supply-cost}
+The supply cost is the price that you pay for a supply. This is used to calculate the cost per page for a supply. Unfortunately, this data is not provided to Print Tracker by the device, so you will need to manually enter the supply cost for each supply if you care about any of the supply cost-based metrics.
+
+This supply cost will automatically be applied to all future supplies of the same type for this device. For example, if you manually specify a supply cost for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same supply cost.
+
+![](../images/managing-supplies-set-supply-cost.gif)
+
+To manually specify the supply cost for a supply:
+1. Using the sidebar, click **Devices > Manage supplies**
+2. Find the supply that you want to specify the supply cost for
+3. Click on the cell for the supply that you want to change, and in the **Supply cost** column
+4. Type in the supply cost for the supply
+5. Press **Enter** to save the supply cost
+
+
