@@ -14,6 +14,9 @@ Paragraph
 ![image of something](image.png)
 **Bold**
 _Italic_
+:::caution Caution
+This is a warning
+:::
 ```
 
 When adding translations, it's critical that you only translate the following:
@@ -24,3 +27,4 @@ When adding translations, it's critical that you only translate the following:
 * The `[image of something]` but not `(image.png)` (this is a link to a filename)
 * The `Bold`
 * The `Italic`
+* The `Caution` and `This is a warning` but not `:::caution` (this is a warning block)
