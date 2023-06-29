@@ -123,10 +123,10 @@ datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/in
 </TabItem>
 </Tabs>
 
-## Instalação {#instalação-1}
+## Instalação {#installation}
 Depois que o agente tiver sido [baixado e instalado](#download-and-install), a última etapa é a ativação. A ativação conecta sua conta do Print Tracker ao agente instalado na rede do cliente. Um agente que não esteja ativado na sua conta não aparecerá no Print Tracker.
 
-### Ativação {#ativação}
+### Ativação {#activation}
 Para ativar um agente, verifique se o agente foi baixado e instalado usando uma das [estratégias de implantação](#deployment-strategies). Uma vez instalado o agente:
 
 1. Abra [localhost:1301](http://localhost:1301/) no navegador da Web do computador em que o agente está instalado
@@ -135,22 +135,22 @@ Para ativar um agente, verifique se o agente foi baixado e instalado usando uma 
 
 [//]: # (### Descoberta de Rede)
 
-## Clustering e Redundância {#clustering-and-redudancy}
+## Clustering e Redundância {#clustering-and-redundancy}
 Clustering é a ideia de instalar vários agentes na mesma rede para que, se um agente ficar inativo, outro agente possa assumir o controle. O Print Tracker agrupa automaticamente os agentes registrados usando o mesmo [datalink code](#datalink-code). Isso significa que, se você tiver vários agentes instalados na mesma conta, eles se agruparão automaticamente sem exigir nenhuma configuração adicional de você.
 
 Quando vários agentes são instalados na mesma rede, dispositivos, medidores e todos os outros dados coletados duplicados são eliminados automaticamente, não havendo duplicidade.
 
-## Agentes obsoletos {#agentes-obsoletos}
+## Agentes obsoletos {#stale-agents}
 Um agente obsoleto é um agente que não está mais conectado ao Print Tracker. As instalações geralmente fazem check-in a cada 30 minutos, no entanto, algumas instalações podem não fazer check-in por períodos mais longos se o computador for desligado ou entrar no modo de suspensão. Instalações que estão offline por longos períodos de tempo (vários dias) podem ser problemáticas. Por exemplo, o agente asn que está offline por um longo período de tempo pode ter perdido alertas de dispositivo críticos, como uma substituição de suprimento. Quando um [agente obsoleto volta a ficar online](./20-configuring-settings.md#stale-install-back-online-alert) é importante rever todos os seus dispositivos para se certificar de que não perdeu nenhum evento crítico.
 
-## Desativando/Reativando {#desativandoreativando}
+## Desativando/Reativando {#deactivating-reactivating}
 Você pode desativar um agente a qualquer momento. A desativação de um agente ocultará o agente da sua conta. A desativação de um agente não desinstalará o agente do computador em que ele está instalado. Se você quiser desinstalar o agente, deverá fazê-lo manualmente.
 
 Os agentes desativados param de fazer check-in no Print Tracker regularmente e, em vez disso, fazem check-in apenas na reinicialização do sistema. Isso significa que, se você reativar uma instalação desativada, ela pode não voltar a ficar online até que o computador seja reiniciado.
 
 Você só deve desativar os agentes que não planeja usar novamente. Se você planeja usar um agente novamente no futuro, você deve deixá-lo ativado.
 
-### Desativando {#desativando}
+### Desativando {#deactivating}
 ![](../images/installing-agents-deactivating.gif)
 
 Para desativar um agente:
@@ -160,7 +160,7 @@ Para desativar um agente:
 4. Na parte superior da tabela, clique na seta para baixo ao lado do ícone da caixa de seleção da tabela
 5. Clique em **Desativar selecionado**
 
-### Reativando {#reativando}
+### Reativando {#reactivating}
 ![](../images/installing-agents-reactivating.gif)
 
 Para reativar um agente:
@@ -171,7 +171,7 @@ Para reativar um agente:
 5. Na parte superior da tabela, clique na seta para baixo ao lado do ícone da caixa de seleção da tabela
 6. Clique em **Ativar selecionado**
 
-## Desinstalando {#desinstalando}
+## Desinstalando {#uninstalling}
 A desinstalação do Print Tracker deve ser feita diretamente no computador onde o Print Tracker está instalado. Esse processo varia de acordo com o sistema operacional.
 
 <Tabs groupId="operating-system">
@@ -210,10 +210,10 @@ source <(curl -fsSL printtrackerpro.com/uninstall.sh)
 </TabItem>
 </Tabs>
 
-## Solução de problemas {#solução-de-problemas}
+## Solução de problemas {#troubleshooting}
 Para obter mais detalhes sobre como solucionar problemas com seus agentes, consulte [Solução de problemas](../troubleshooting/20-installs.mdx).
 
-### Pacotes do instalador do macOS {#pacotes-do-instalador-do-macos}
+### Pacotes do instalador do macOS {#macos-installer-packages}
 
 Alguns dispositivos macOS podem exibir um aviso indicando que o .pkg não pode ser aberto. Isso ocorre porque o Print Tracker não é registrado pela Apple e disponibilizado através da Apple App Store.
 

@@ -142,7 +142,7 @@ When multiple agents are installed on the same network, devices, meters, and all
 ## Stale Agents {#stale-agents}
 A stale agent is an agent that is no longer connected to Print Tracker. Installs usually check-in every 30-minutes, however, some installs may not check in for longer periods of time if the computer is shutdown, or enters sleep mode. Installs that are offline for extended periods of time (several days) can be problematic. For example asn agent that is offline for an extended period of time may have missed critical device alerts, such as a supply being replaced. When a [stale agent comes back online](./20-configuring-settings.md#stale-install-back-online-alert) it is important to review all your devices to make sure you haven't missed any critical events.
 
-## Deactivating/Reactivating {#deactivatingreactivating}
+## Deactivating/Reactivating {#deactivating-reactivating}
 You can deactivate an agent at any time. Deactivating an agent will hide the agent from your account. Deactivating an agent will not uninstall the agent from the computer it is installed on. If you want to uninstall the agent, you must do so manually.
 
 Deactivated agents stop checking in to Print Tracker regularly, and instead, check in only on system restart. This means that if you reactivate a deactivated install, it may not come back online until the computer is restarted.
