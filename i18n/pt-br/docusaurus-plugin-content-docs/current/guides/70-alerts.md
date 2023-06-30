@@ -3,7 +3,7 @@ slug: alerts
 sidebar_position: 70
 ---
 
-# Managing Alerts
+# Gerenciando Alertas
 
 :::caution Under Construction
 This guide is currently under construction. Please check back soon for updates.
