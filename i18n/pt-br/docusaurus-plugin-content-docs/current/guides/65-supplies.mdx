@@ -7,154 +7,153 @@ import BetaLabel from '@site/src/components/BetaLabel'
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 
-# Managing Supplies
+# Gestão de Suprimentos
 
 :::caution BETA
-The features described on this page are currently in public-beta. If you have any feedback or suggestions, feel free reach out!
+Os recursos descritos nesta página estão atualmente em beta público. Se você tiver algum feedback ou sugestões, sinta-se à vontade para entrar em contato!
 
 <Button color="warning" fullWidth size="lg" onClick={() => window.open("mailto:support@printtrackerpro.com")}>Contact Support</Button>
 :::
 
-Many business operations revolve around tracking when supplies are low, when they're replaced, and what devices they belong to. The **Manage Supplies** page can help you be proactive about supply management by understanding key metrics such as when a supply is going to be replaced, the fill rate of the supply, or the number of pages lost due to premature supply replacements.
+Muitas operações de negócios giram em torno do rastreamento de quando os suprimentos estão baixos, quando são substituídos e a quais dispositivos pertencem. A página **Gerenciar suprimentos** pode ajudá-lo a ser proativo em relação ao gerenciamento de suprimentos, entendendo as principais métricas, como quando um suprimento será substituído, a taxa de preenchimento do suprimento ou o número de páginas perdidas devido a substituições prematuras de suprimentos.
 
-## Viewing Supplies {#viewing-supplies}
-You can view supplies for all devices at an entity, or for a specific device. Print Tracker provides the currently installed supplies for each device, as well as the historical supplies for each device. This can help you get a comprehensive picture of how your customers consume their supplies.
+## Visualizando suprimentos {#viewing-supplies}
+Você pode exibir suprimentos para todos os dispositivos em uma conta ou para um dispositivo específico. O Print Tracker fornece os suprimentos atualmente instalados para cada dispositivo, bem como o histórico de suprimentos para cada dispositivo. Isso pode ajudá-lo a obter uma visão abrangente de como seus clientes consomem seus suprimentos.
 
-### Supplies by Entity {#supplies-by-entity}
+### Suprimentos por Conta {#supplies-by-entity}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-viewing-supplies-by-entity.gif)
 
-To view supplies by entity:
-1. Make sure you've selected the entity that you want to view supplies for
-2. Using the sidebar, click **Devices > Manage supplies**
+Para exibir suprimentos por conta:
+1. Certifique-se de que selecionou a conta para a qual pretende ver os suprimentos
+2. Usando a barra lateral, clique em **Dispositivos > ver suprimentos**
 
-### Supplies by Device {#supplies-by-device}
+### Suprimentos por dispositivo {#supplies-by-device}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-viewing-supplies-by-device.gif)
 
-To view supplies for a specific device:
-1. Using the sidebar, click **Devices > View devices**
-2. Click on the device that you want to view supplies for
-3. Click on the **Supplies** tab
+Para exibir suprimentos para um dispositivo específico:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Clique no dispositivo para o qual você deseja visualizar os suprimentos
+3. Clique na guia **Suprimentos**
 
 
-### Customizing Columns {#customizing-columns}
+### Personalizando colunas {#customizing-columns}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-changing-columns.gif)
 
-You can customize which columns appear in the supplies table. This is often helpful if you're using Print Tracker on a small screen, or if you're only interested in a few of the columns.
+Você pode personalizar quais colunas aparecem na tabela de suprimentos. Isso geralmente é útil se você estiver usando o Print Tracker em uma tela pequena ou se estiver interessado apenas em algumas das colunas.
 
-To customize columns:
-1. Click on the **Filter** icon in the top right corner of the table
-2. Check the columns that you want to appear in the table
+Para personalizar colunas:
+1. Clique no ícone **Filtro** no canto superior direito da tabela
+2. Verifique as colunas que você deseja que apareçam na tabela
 
-### Including Children {#including-children}
+### Incluindo Filhas {#including-children}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-include-children.gif)
 
-You can optionally include supplies that belong to devices and entities that are below the current entity in your [hierarchy](./entities#hierarchy). This is called "including children" and can be done almost anywhere in Print Tracker, including on the manage supplies page. 
+Opcionalmente, você pode incluir suprimentos que pertencem a dispositivos e contas que estão abaixo da conta atual em sua [hierarquia](./entities#hierarchy). Isso é chamado de "incluir filhas" e pode ser feito em praticamente qualquer lugar no Print Tracker, inclusive na página de gerenciamento de suprimentos. 
 
-To include children:
-1. In the top right corner of the table, click on the **Include children** toggle
+Para incluir filhas:
+1. No canto superior direito da tabela, clique no botão de alternância **Incluir filhas**
 
-### Including Replaced Supplies {#including-replaced-supplies}
+### Incluindo suprimentos substituídos {#including-replaced-supplies}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-include-replaced.gif)
 
-By default, only the currently-installed supplies are shown, however you may also want to see supplies that were previously installed in a device, but have since been replaced. You can do this by including the replaced supplies.
+Por padrão, apenas os suprimentos instalados atualmente são mostrados, no entanto, você também pode querer ver suprimentos que foram instalados anteriormente em um dispositivo, mas que já foram substituídos. Você pode fazer isso incluindo os suprimentos substituídos.
 
-To include replaced supplies:
-1. In the top right corner of the table, click on **Filter** icon
-2. Check the **Include replaced supplies** checkbox
-3. A new date range filter will appear in the table filter area, this date picker allows you to choose a date range for which you want to see replaced supplies. By default, this date range is set to the last 30 days.
+Para incluir suprimentos substituídos:
+1. No canto superior direito da tabela, clique no ícone **Filtro**
+2. Marque a caixa de seleção **Include replaced supplies**
+3. Um novo filtro de intervalo de datas aparecerá na área de filtro de tabela, este seletor de datas permite que você escolha um intervalo de datas para o qual você deseja ver suprimentos substituídos. Por padrão, esse intervalo de datas é definido como os últimos 30 dias.
 
-### Filtering and Sorting {#filtering-and-sorting}
+### Filtrando e classificando {#filtering-and-sorting}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-filter-sort.gif)
 
-You can filter the list of supplies by typing a search term into the search bar at the top of the table. You can search for specific devices by serial number, by model, supply name, and more.
+Você pode filtrar a lista de suprimentos digitando um termo de pesquisa na barra de pesquisa na parte superior da tabela. Você pode pesquisar dispositivos específicos por número de série, por modelo, nome de suprimento e muito mais.
 
-You can also sort the list of supplies by clicking on the column headers. Click the column headers multiple times to adjust the sort direction (ascending or descending).
+Você também pode classificar a lista de suprimentos clicando nos cabeçalhos das colunas. Clique nos cabeçalhos das colunas várias vezes para ajustar a direção de classificação (ascendente ou descendente).
 
-### Pagination {#pagination}
+### Paginação {#pagination}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-pagination.gif)
 
-Entities with many devices may have hundreds or thousands of supplies. In order to help you find the data that you're looking for, Print Tracker divides up all your data into pages. You can navigate between pages using the pagination controls at the bottom of the table.
+Contas com muitos dispositivos podem ter centenas ou milhares de suprimentos. Para ajudá-lo a encontrar os dados que você está procurando, o Print Tracker divide todos os seus dados em páginas. Você pode navegar entre páginas usando os controles de paginação na parte inferior da tabela.
 
-### Exporting {#exporting}
+### Exportando {#exporting}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-export-to-csv.gif)
 
-You can export the list of supplies to a CSV file. This is helpful if you want to share the list of supplies with someone else, or if you want to do some analysis in a spreadsheet.
+Você pode exportar a lista de suprimentos para um arquivo CSV. Isso é útil se você quiser compartilhar a lista de suprimentos com outra pessoa ou se quiser fazer alguma análise em uma planilha.
 
-### Lost Pages {#lost-pages}
+### Páginas Perdidas {#lost-pages}
 
-A supply manufacturer may provide a yield rating for a supply. This is the number of pages that the supply is expected to print. If a supply is replaced before it's expected to be replaced, then the number of pages that the supply was expected to print is lost. This is called "lost pages". Lost pages can help you identify when your customers are replacing supplies too early. In order for Print Tracker to calculate lost pages, it needs to know the rated yield of the supply. In many cases the expected yield is provided by the device, however, if the device doesn't provide the rated yield, then you can [manually enter the expected yield](#rated-yield) for each supply.
+Um fabricante de suprimento pode fornecer uma classificação de rendimento para um suprimento. Este é o número de páginas que o suprimento deve imprimir. Se um suprimento for substituído antes do tempo estimado, o número de páginas que o suprimento deveria imprimir será perdido. Isso é chamado de "páginas perdidas". As páginas perdidas podem ajudá-lo a identificar quando seus clientes estão substituindo suprimentos muito cedo. Para que o Print Tracker calcule as páginas perdidas, ele precisa saber o rendimento nominal do suprimento. Em muitos casos, o rendimento esperado é fornecido pelo dispositivo, no entanto, se o dispositivo não fornecer o rendimento nominal, então você pode [inserir manualmente o rendimento esperado](#rated-yield) para cada suprimento.
 
-If the "Lost pages" column is missing from the supplies table, then you can add it by [customizing the columns](#customizing-columns).
+Se a coluna "Páginas perdidas" estiver ausente da tabela de suprimentos, você poderá adicioná-la [customizando as colunas](#customizing-columns).
 
-### Fill Rate {#fill-rate}
+### Taxa de preenchimento {#fill-rate}
 
-The fill rate (often referred to as coverage rate) is the average percentage of the page that is covered by supply. Usually a supply manufacturer will set a supply's [rated yield](#rated-yield) at some [expected fill rate](#expected-fill-rate). Most supplies have a rated yield with a 5% fill rate. This means that a supply may not print the rated yield if a customer has a higher-then-rated fill rate, indicating that the customer is putting more supply on the same size page than what the supply was originally rated for.
+A taxa de preenchimento (muitas vezes referida como taxa de cobertura) é a porcentagem média da página que é coberta pelo suprimento. Normalmente, um fabricante de suprimentos definirá o [rendimento nominal](#rated-yield) de um suprimento em alguma [taxa de preenchimento esperada](#expected-fill-rate). A maioria dos suprimentos tem um rendimento nominal com uma taxa de preenchimento de 5%. Isso significa que um suprimento pode não imprimir o rendimento nominal se um cliente tiver uma taxa de preenchimento mais alta, indicando que o cliente está colocando mais suprimento na mesma página de tamanho do que o suprimento foi originalmente classificado.
 
-Fill rate can help you understand how efficiently a supply is being utilized and determine the overall cost per page. By comparing fill rates of different supplies, one can identify the most cost-effective option for their printing needs. Additionally, monitoring fill rate can help in optimizing the printing process, reducing waste, and extending the life of printing supplies. This ultimately leads to reduced operational costs and improved sustainability in the long run. Fill rate also serves as a benchmark for evaluating the performance of supplies across various manufacturers, enabling businesses and consumers to make informed decisions when selecting their printing resources.
+A taxa de preenchimento pode ajudá-lo a entender a eficiência com que um suprimento está sendo utilizado e determinar o custo geral por página. Ao comparar as taxas de preenchimento de diferentes suprimentos, pode-se identificar a opção mais econômica para suas necessidades de impressão. Além disso, o monitoramento da taxa de preenchimento pode ajudar a otimizar o processo de impressão, reduzir o desperdício e estender a vida útil dos suprimentos de impressão. Isso acaba levando à redução dos custos operacionais e à melhoria da sustentabilidade no longo prazo. A taxa de preenchimento também serve como referência para avaliar o desempenho de suprimentos em vários fabricantes, permitindo que empresas e consumidores tomem decisões baseadas em dados ao selecionar seus recursos de impressão.
 
-### Estimated Depletion Date <BetaLabel/> {#estimated-depletion-date-betalabel}
+### Data de esgotamento estimada <BetaLabel/> {#estimated-depletion-date-betalabel}
 
-Based on historical printing patterns, Print Tracker will attempt to predict when a supply will reach 0%. This is called the estimated depletion date. Some devices will calculate and report this metric to Print Tracker, however, if the device doesn't provide this metric, then Print Tracker will attempt to calculate it based on the device's historical printing patterns.
+Com base em padrões históricos de impressão, o Print Tracker tentará prever quando um suprimento atingirá 0%. Isso é chamado de data estimada de esgotamento. Alguns dispositivos calcularão e relatarão essa métrica ao Print Tracker, no entanto, se o dispositivo não fornecer essa métrica, o Print Tracker tentará calculá-la com base nos padrões históricos de impressão do dispositivo.
 
-## Managing Supplies {#managing-supplies}
+## Gerenciando suprimentos {#managing-supplies}
 
-You can configure some settings for your supplies to help Print Tracker provide better supply insights, and to help your supply fulfillment teams be more proactive about supply management.
+Você pode definir algumas configurações dos seus suprimentos para ajudar o Print Tracker a fornecer melhores insights de suprimentos e para ajudar suas equipes de atendimento de suprimentos a serem mais proativas em relação ao gerenciamento de suprimentos.
 
-### Part Number {#part-number}
-The supply part number is often helpful for supply management teams, allowing them to re-order the same part numbers that are currently installed in your devices. In some cases, Print Tracker will be able to automatically detect the part number of a supply.
+### Número da peça {#part-number}
+O número de peça de suprimento geralmente é útil para as equipes de gerenciamento de suprimentos, permitindo que elas solicitem novamente os mesmos números de peça que estão instalados atualmente em seus dispositivos. Em alguns casos, o Print Tracker será capaz de detectar automaticamente o número de peça de um suprimento.
 
-If knowing the supply part number is important to you and it is not collected by Print Tracker, you can manually specify the part number for a supply. This part number will automatically be applied to all future supplies of the same type. For example, if you manually specify a part number for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same part number.
+Se saber o número da peça de suprimento for importante para você e ele não for coletado pelo Print Tracker, você poderá especificar manualmente o número de peça de um suprimento. Este número de peça será automaticamente aplicado a todos os suprimentos futuros do mesmo tipo. Por exemplo, se você especificar manualmente um número de peça para um toner preto e o toner preto for eventualmente substituído, o toner preto de substituição também assumirá o mesmo número de peça.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-set-part-number.gif)
 
-To manually specify the part number for a supply:
-1. Using the sidebar, click **Devices > Manage supplies**
-2. Find the supply that you want to specify the part number for
-3. Click on the cell for the supply that you want to change, and in the **Part number** column
-4. Type in the part number for the supply
-5. Press **Enter** to save the part number
+Para especificar manualmente o número da peça de um suprimento:
+1. Usando a barra lateral, clique em **Dispositivos > ver suprimentos**
+2. Encontre o suprimento para o qual você deseja especificar o número da peça
+3. Clique na célula para o suprimento que você deseja alterar, e na coluna **Número da peça**
+4. Digite o número da peça para o suprimento
+5. Pressione **Enter** para salvar o número da peça
 
-### Expected Fill Rate {#expected-fill-rate}
-The fill rate (often referred to as coverage rate) is the average percentage of the page that is covered by supply. Usually a supply manufacturer will set a supply's [rated yield](#rated-yield) at a specific fill rate called the **Expected Fill Rate**. Most supplies have a rated yield with a 5% expected fill rate. This means that a supply may not print the rated yield if a customer has a fill rate that is higher than the expected fill rate, indicating that the customer is putting more supply on the same size page than what the supply was originally rated for.
+### Taxa de preenchimento esperada {#expected-fill-rate}
+A taxa de preenchimento (muitas vezes referida como taxa de cobertura) é a porcentagem média da página que é coberta pelo suprimento. Normalmente, um fabricante de suprimentos definirá o [rendimento nominal](#rated-yield) de um suprimento em uma taxa de preenchimento específica chamada **Taxa de Preenchimento Esperada**. A maioria dos suprimentos tem um rendimento nominal com uma taxa de preenchimento esperada de 5%. Isso significa que um suprimento pode não imprimir o rendimento nominal se um cliente tiver uma taxa de preenchimento maior do que a taxa de preenchimento esperada, indicando que o cliente está colocando mais suprimento na mesma página de tamanho do que o suprimento foi originalmente classificado.
 
-Unless otherwise specified, Print Tracker assumes that all supplies are rated at a 5% expected fill rate. If you know the expected fill rate for a supply, you can manually specify it. This expected fill rate will automatically be applied to all future supplies of the same type. For example, if you manually specify an expected fill rate for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same expected fill rate.
+A menos que especificado de outra forma, o Print Tracker assume que todos os suprimentos são classificados em uma taxa de preenchimento esperada de 5%. Se você souber a taxa de preenchimento esperada para um suprimento, poderá especificá-la manualmente. Esta taxa de preenchimento esperada será automaticamente aplicada a todos os suprimentos futuros do mesmo tipo. Por exemplo, se você especificar manualmente uma taxa de preenchimento esperada para um toner preto e o toner preto for eventualmente substituído, o toner preto de substituição também assumirá a mesma taxa de preenchimento esperada.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-set-expected-fill-rate.gif)
 
-To manually specify the expected fill rate for a supply:
-1. Using the sidebar, click **Devices > Manage supplies**
-2. Find the supply that you want to specify the expected fill rate for
-3. Click on the cell for the supply that you want to change, and in the **Expected fill rate** column
-4. Type in the expected fill rate for the supply
-5. Press **Enter** to save the expected fill rate
+Para especificar manualmente a taxa de preenchimento esperada para um suprimento:
+1. Usando a barra lateral, clique em **Dispositivos > ver suprimentos**
+2. Encontre o suprimento para o qual você deseja especificar a taxa de preenchimento esperada
+3. Clique na célula para o suprimento que você deseja alterar, e na coluna **Taxa de preenchimento esperada**
+4. Digite a taxa de preenchimento esperada para o suprimento
+5. Pressione **Enter** para salvar a taxa de preenchimento esperada
 
-### Rated Yield {#rated-yield}
-The rated yield is determined by a supply manufacturer and represents the expected number of pages that the supply should print given some standard assumptions (like the [expected fill rate](#expected-fill-rate)). The rated yield is used to calculate metrics like [lost pages](#lost-pages). In many cases it is provided by the device, however, if the device doesn't provide the rated yield, then you can manually enter the rated yield for each supply.
+### Rendimento nominal {#rated-yield}
+O rendimento nominal é determinado por um fabricante de suprimento e representa o número esperado de páginas que o suprimento deve imprimir, dadas algumas suposições padrão (como a [taxa de preenchimento esperada](#expected-fill-rate)). O rendimento nominal é usado para calcular métricas como [páginas perdidas](#lost-pages). Em muitos casos, ele é fornecido pelo dispositivo, no entanto, se o dispositivo não fornecer o rendimento nominal, você pode inserir manualmente o rendimento nominal para cada suprimento.
 
-This rated yield will automatically be applied to all future supplies of the same type. For example, if you manually specify a rated yield for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same rated yield.
+Este rendimento nominal será automaticamente aplicado a todos os suprimentos futuros do mesmo tipo. Por exemplo, se você especificar manualmente um rendimento nominal para um toner preto e o toner preto for eventualmente substituído, o toner preto de substituição também terá o mesmo rendimento nominal.
 
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-set-rated-yield.gif)
 
-To manually specify the rated yield for a supply:
-1. Using the sidebar, click **Devices > Manage supplies**
-2. Find the supply that you want to specify the rated yield for
-3. Click on the cell for the supply that you want to change, and in the **Rated yield** column
-4. Type in the rated yield for the supply
-5. Press **Enter** to save the rated yield
+Para especificar manualmente o rendimento nominal de um suprimento:
+1. Usando a barra lateral, clique em **Dispositivos > ver suprimentos**
+2. Encontre a suprimento para o qual você deseja especificar o rendimento nominal
+3. Clique na célula para o suprimento que você deseja alterar, e na coluna **Rendimento nominal**
+4. Digite o rendimento nominal para o suprimento
+5. Pressione **Enter** para salvar o rendimento nominal
 
-### Supply Cost {#supply-cost}
-The supply cost is the price that you pay for a supply. This is used to calculate the cost per page for a supply. Unfortunately, this data is not provided to Print Tracker by the device, so you will need to manually enter the supply cost for each supply if you care about any of the supply cost-based metrics.
+### Custo de Suprimento {#supply-cost}
+O custo de suprimento é o preço que você paga por um suprimento. Isso é usado para calcular o custo por página de um suprimento. Infelizmente, esses dados não são fornecidos ao Print Tracker pelo dispositivo, portanto, você precisará inserir manualmente o custo de suprimento para cada suprimento se você se importar com qualquer uma das métricas baseadas em custo de suprimento.
 
-This supply cost will automatically be applied to all future supplies of the same type for this device. For example, if you manually specify a supply cost for a black toner, and the black toner is eventually replaced, the replacement black toner will also take on the same supply cost.
+Este custo de suprimento será automaticamente aplicado a todos os suprimentos futuros do mesmo tipo para este dispositivo. Por exemplo, se você especificar manualmente um custo de suprimento para um toner preto e o toner preto for eventualmente substituído, o toner preto de substituição também assumirá o mesmo custo de suprimento.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/managing-supplies-set-supply-cost.gif)
 
-To manually specify the supply cost for a supply:
-1. Using the sidebar, click **Devices > Manage supplies**
-2. Find the supply that you want to specify the supply cost for
-3. Click on the cell for the supply that you want to change, and in the **Supply cost** column
-4. Type in the supply cost for the supply
-5. Press **Enter** to save the supply cost
-
+Para especificar manualmente o custo de suprimento de um suprimento:
+1. Usando a barra lateral, clique em **Dispositivos > gerenciar suprimentos**
+2. Encontre o suprimento para o qual você deseja especificar o custo de suprimento
+3. Clique na célula para o suprimento que você deseja alterar, e na coluna **Custo de fornecimento**
+4. Digite o custo de suprimento para o suprimento
+5. Pressione **Enter** para salvar o custo de suprimento
 
