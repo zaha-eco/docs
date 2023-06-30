@@ -3,12 +3,12 @@ slug: meters
 sidebar_position: 60
 ---
 
-# Meter Reads
-Our primary responsibility is consistently gathering your data from your devices, ensuring that your customers are billed accurately and on-time. Print Tracker's approach involves capturing all data reported by a device, and then providing you with the flexibility to select the most relevant data for your contracts.
+# Leituras do medidor
+Nossa principal responsabilidade é coletar consistentemente seus dados de seus dispositivos, garantindo que seus clientes sejam cobrados com precisão e no prazo. A abordagem do Print Tracker envolve a captura de todos os dados relatados por um dispositivo e, em seguida, fornece a flexibilidade para selecionar os dados mais relevantes para seus contratos.
 
-## What is a Meter Read? {#what-is-a-meter-read}
+## O que é um medidor de leitura? {#what-is-a-meter-read}
 
-Print Tracker tracks several different meters to help you understand how your customers are using your devices, for example:
+O Print Tracker rastreia vários medidores diferentes para ajudá-lo a entender como seus clientes estão usando seus dispositivos, por exemplo:
 * Total
 * Total Black
 * Total Color
@@ -20,32 +20,32 @@ Print Tracker tracks several different meters to help you understand how your cu
 * Tier 2 Prints
 * Tier 3 Prints
 
-We periodically collect these meters (and many others depending on the device), along with the supply levels, console messages, and any error codes that are reported by the device. A **meter read** is the combination of all of these data points that are collected at a specific point in time. By default, Print Tracker will collect meter reads several times a day, and upload at least one meter read per day.
+Coletamos periodicamente esses medidores (e muitos outros, dependendo do dispositivo), juntamente com os níveis de fornecimento, mensagens do console e quaisquer códigos de erro que são relatados pelo dispositivo. Um **medidor lido** é a combinação de todos esses pontos de dados que são coletados em um ponto específico no tempo. Por padrão, o Print Tracker coletará leituras de medidores várias vezes ao dia e carregará pelo menos um medidor lido por dia.
 
-## Uploading Meters {#uploading-meters}
+## Enviando Medidores {#uploading-meters}
 
-Print Tracker will securely collect and upload meters from devices automatically based on a schedule that you can customize, or you can also collect and upload the latest data anytime you'd like.
+O Print Tracker coletará e carregará medidores de dispositivos automaticamente com base em uma programação que você pode personalizar, ou você também pode coletar e carregar os dados mais recentes sempre que quiser.
 
-### On-demand Uploads {#on-demand-uploads}
+### Envio por demanda {#on-demand-uploads}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/meters-upload-on-demand.gif)
 
-To upload meters once, immediately:
-1. Using the sidebar, click **Devices > View devices**
-2. Click the **Upload meters** button
+Para carregar medidores uma vez e imediatamente:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Clique no botão **Subir medidores**
 
-### Automated Uploads {#automated-uploads}
+### Envios Automáticos {#automated-uploads}
 
-Print Tracker will automatically upload meters every day during one of the following windows:
+O Print Tracker carregará automaticamente medidores todos os dias durante uma das seguintes janelas:
 * 12am - 6am
 * 6am - 12pm
 * 12pm - 6pm
 * 6pm - 12am
 
-See [Scanning Schedule](./settings#scanning-schedule) for more details about changing the schedule to meet your needs.
+Consulte [Scanning Schedule](./settings#scanning-schedule) para obter mais detalhes sobre como alterar a agenda para atender às suas necessidades.
 
-## Viewing Meters and Supplies {#viewing-meters-and-supplies}
+## Visualizando Medidores e Suprimentos  {#viewing-meters-and-supplies}
 
-Once meter reads have been collected and securely uploaded, you can query them with a [custom report](./reports), query the meter history over time for a specific device, or visualize the data using Print Tracker's integrated visualization tools.
+Depois que as leituras do medidor forem coletadas e carregadas com segurança, você poderá consultá-las com um [relatório personalizado](./reports), consultar o histórico do medidor ao longo do tempo para um dispositivo específico ou visualizar os dados usando as ferramentas de visualização integradas do Print Tracker.
 
 [//]: # (### Device Details)
 
@@ -59,53 +59,53 @@ Once meter reads have been collected and securely uploaded, you can query them w
 [//]: # ()
 [//]: # (This will open details for a device. On the **Overview** tab, you can see the key billing meters and any supplies the device reports.)
 
-### Meter History {#meter-history}
+### Histórico de medidor {#meter-history}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-meter-history.gif)
 
-To view historical meter reads for a device:
-1. Using the sidebar, click **Devices > View devices**
-2. Find the device that you'd like to view the meter history for
-3. Click on the 3-dot icon in the last column of the **View devices** table
-4. Click **View meter history**
+Para exibir o histórico de leituras de medidor de um dispositivo:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Encontre o dispositivo para o qual você gostaria de ver o histórico do medidor
+3. Clique no ícone de 3 pontos na última coluna da tabela **Visualizar dispositivos**
+4. Clique em **Visualizar histórico do medidor**
 
-:::info Info
-Additional details on how to customize the data displayed can be found on the [Custom Reports](./reports) page.
+:::info Informação
+Detalhes adicionais sobre como personalizar os dados exibidos podem ser encontrados na página [Relatórios personalizados](./reports).
 :::
 
-### Volume Over Time {#volume-over-time}
+### Volume ao longo do tempo {#volume-over-time}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-volume.gif)
 
-To view usage behavior over time:
-1. Using the sidebar, click **Devices > View devices**
-2. Click on a device in the **View devices** table
-3. Click on the **Reports** tab
-4. View the **Page Counts** chart
+Para exibir o comportamento de uso ao longo do tempo:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Clique em um dispositivo na tabela **Visualizar dispositivos**
+3. Clique na guia **Relatórios**
+4. Veja o gráfico **Contagem de páginas**
 
-### Supply Burn-down {#supply-burn-down}
+### Uso de Suprimentos {#supply-burn-down}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/meters-view-supply-burndown.gif)
 
-To view how supply levels have burned-down over time:
-1. Using the sidebar, click **Devices > View devices**
-2. Click on a device in the **View devices** table
-3. Click on the **Reports** tab
-4. View the **Supplies** chart
+Para ver como os níveis de fornecimento diminuíram ao longo do tempo:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Clique em um dispositivo na tabela **Visualizar dispositivos**
+3. Clique na guia **Relatórios**
+4. Veja o gráfico **Suprimentos**
 
-## Billing Meters {#billing-meters}
+## Medidores de cobrança {#billing-meters}
 
-Billing meters are a collection of meters that you may use to bill your customer and allow you to specify which formats and counters you'd like to see in your reports, or send to your ERP if using a [third-party integration](./integrations). These defaults are displayed on the device's Overview tab, and in all the default custom reports. Because many devices measure page counts using different measurement formats and counters, Print Tracker allows you to customize on a per-device basis which of those measurement formats and counters you care about.
+Os medidores de cobrança são uma coleção de medidores que você pode usar para faturar seu cliente e permitir que especifique quais formatos e contadores você gostaria de ver em seus relatórios, ou enviar para seu ERP se estiver usando uma [integração de terceiros](./integrations). Esses padrões são exibidos na guia Visão geral do dispositivo e em todos os relatórios personalizados por padrão. Como muitos dispositivos medem contagens de páginas usando diferentes formatos de medição e contadores, o Print Tracker permite que você personalize por dispositivo quais desses formatos e contadores de medição você precisa
 
-### Formats and Counters {#formats-and-counters}
+### Formatos e Contadores {#formats-and-counters}
 
-A **format** is a calculation method used by a manufacturer to count pages. These calculation methodologies are defined by the manufacturer, not Print Tracker. Print Tracker has classified these methodologies into the following terms:
+Um **formato** é um método de cálculo usado por um fabricante para contar páginas. Essas metodologias de cálculo são definidas pelo fabricante, não pelo Print Tracker. O Print Tracker classificou essas metodologias nos seguintes termos:
 
-| Format                 | Description                                                                                                                                                                                                    |
+| Formato                 | Descrição                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Life**               | Generally counts any piece of paper the comes out of the machine as one page. If the manufacturer doesn't specifically denote one of the other formats, Print Tracker will assume it is using the life format. |
-| **Equivalent**         | A methodology designed to equivalize page counts based on factors such as simplex, duplex, paper size, etc. For example, a duplex print will count as 2 pages while an envelope may count as 1/3 of a page.    |
-| **Linear Feet/Meters** | Calculates meters based on the number of linear feet or meters printed by the device.                                                                                                                          |
-| **Square Feet/Meters** | Calculates meters based on the number of square feet or meters printed by the device.                                                                                                                          |
-| **Engine**             | A methodology used by HP to indicate the number of cycles the print engine has gone through.                                                                                                                   |
-Examples of **counters** include:
+| **Life**               | Geralmente conta qualquer pedaço de papel que sai da máquina como uma página. Se o fabricante não indicar especificamente um dos outros formatos, o Print Tracker assumirá que está usando o formato life. |
+| **Equivalent**         | Uma metodologia projetada para equivalizar contagens de páginas com base em fatores como simplex, duplex, tamanho do papel, etc. Por exemplo, uma impressão duplex contará como 2 páginas, enquanto um envelope poderá contar como 1/3 de uma página.    |
+| **Linear Feet/Meters** | Calcula os medidores com base no número de pés lineares ou metros impressos pelo dispositivo.                                                                                                                          |
+| **Square Feet/Meters** | Calcula os medidores com base no número de pés quadrados ou metros impressos pelo dispositivo.                                                                                                                          |
+| **Engine**             | Uma metodologia usada pela HP para indicar o número de ciclos pelos quais o mecanismo de impressão passou.                                                                                                                   |
+Exemplos de **contadores** incluem:
 * Total
 * Total Black
 * Total Color
@@ -115,12 +115,12 @@ Examples of **counters** include:
 * Tier 2 Prints
 * Tier 3 Prints
 
-In most cases, the same counter will appear in multiple formats, which is another way of saying that for a given device, the total counter can be represented in equivalent page counts as well as engine page counts (life). The billing meters that you choose should depend on how your device's contract is structured.
+Na maioria dos casos, o mesmo contador aparecerá em vários formatos, o que é outra maneira de dizer que, para um determinado dispositivo, o contador total pode ser representado em contagens de páginas equivalentes, bem como contagens de páginas do mecanismo (life). Os medidores de cobrança que você escolher devem depender de como o contrato do seu dispositivo está estruturado.
 
-### Configuring Preferences {#configuring-preferences}
-Because contracts can vary from one customer to the next or even one device to the next, billing meters can be customized by entity or device. To configure these settings, see [Configuring Billing Meters](./settings#meters).
+### Configurando preferências {#configuring-preferences}
+Como os contratos podem variar de um cliente para o outro ou até mesmo de um dispositivo para o outro, os medidores de cobrança podem ser personalizados por conta ou dispositivo. Para definir essas configurações, consulte [Configurando medidores de faturamento](./settings#meters).
 
-## Billing Schedule {#billing-schedule}
-The billing schedule is used to set the timing and frequency of when you bill your customers. For example, if Entity A has a billing schedule of "every 1 month on the 15th day of the month", Print Tracker will create a billing period that can be used to calculate all the volume printed at Entity A from January 15 through February 15 then February 15 through March 15, etc.
+## Agendamento de Cobrança {#billing-schedule}
+O cronograma de faturamento é usado para definir o tempo e a frequência de quando você fatura seus clientes. Por exemplo, se a Conta A tiver um cronograma de faturamento de "a cada 1 mês no 15º dia do mês", o Print Tracker criará um período de faturamento que poderá ser usado para calcular todo o volume impresso na Conta A de 15 de janeiro a 15 de fevereiro, depois de 15 de fevereiro a 15 de março, etc.
 
-To configure this setting, see [Billing Schedule](./settings#schedule).
+Para definir essa configuração, consulte [Agendamento de cobrança](./settings#schedule).
