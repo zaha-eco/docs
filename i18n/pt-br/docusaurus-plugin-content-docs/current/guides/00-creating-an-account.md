@@ -34,3 +34,4 @@ Reach out to Print Tracker Support at **+1 (866) 629-3342** when you're ready to
 ### How much does it cost to upgrade my account? {#how-much-does-it-cost-to-upgrade-my-account}
 
 You can see how our pricing works by going to [https://printtrackerpro.com/pricing/](https://printtrackerpro.com/pricing/).
+
