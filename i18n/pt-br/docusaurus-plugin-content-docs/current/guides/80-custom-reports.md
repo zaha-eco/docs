@@ -346,55 +346,55 @@ O relatório de período de cobrança leva em consideração essa ideia de agend
 
 Mencionamos anteriormente que o relatório de período de cobrança tem todas as mesmas colunas que o relatório de análise de volume, o que significa que o relatório nos dá acesso às colunas de leitura do primeiro e do último medidores no período de cobrança. Embora os carimbos de data/hora de leitura do último medidor sejam quase sempre a mesma data em todos os seus dispositivos (a data de cobrança do relatório), a primeira leitura do medidor pode variar de dispositivo para dispositivo. No exemplo anterior, quando recebermos nosso relatório de período de cobrança, a primeira leitura do medidor da HP LaserJet M477 será há dois meses, e a primeira leitura do medidor do HP OfficeJet 8700 será há um mês. 
 
-### Estimated Depletion {#estimated-depletion}
-The estimated depletion report can be used to help you predict when a currently installed supply will run out. Print Tracker analyzes the last 90 days of meter reads and uses historical printing patterns to make its prediction.
+### Esgotamento estimado {#estimated-depletion}
+O relatório de esgotamento estimado pode ser usado para ajudá-lo a prever quando um suprimento instalado se esgotará. O Print Tracker analisa os últimos 90 dias de leituras do medidor e usa padrões históricos de impressão para fazer sua previsão.
 
-:::caution Warning
-The estimated depletion report relies in historical printing patterns to predict future printing patterns. Volatile changes in printing patterns may affect the accuracy of the predicted depletion dates.
+:::caution Aviso
+O relatório de esgotamento estimado baseia-se em padrões de impressão históricos para prever padrões de impressão futuros. Mudanças voláteis nos padrões de impressão podem afetar a precisão das datas de esgotamento previstas.
 :::
 
-| Column Name                               | Column Type | Description                                                                                                                                |
+| Nome da Coluna                            | Tipo Da Coluna | Descrição                                                                                                                        |
 |-------------------------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                                      | `varchar`   | The unique identifier for the device                                                                                                       |
-| `dealer_id`                               | `varchar`   | The unique identifier for the dealer entity (if you're a dealer, this would be your root-level entity)                                     |
-| `dealer_name`                             | `varchar`   | The name of the dealer entity                                                                                                              |
-| `entity_id`                               | `varchar`   | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                    |
-| `entity_name`                             | `varchar`   | The name of the entity that this device belongs to                                                                                         |
-| `integration_id`                          | `varchar`   | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
-| `asset_id`                                | `varchar`   | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
-| `make`                                    | `varchar`   | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
-| `model`                                   | `varchar`   | The model of the device (e.g. OfficeJet 8600)                                                                                              |
-| `serial_number`                           | `varchar`   | The serial number of the device as specified by the device                                                                                 |
-| `custom_serial_number`                    | `varchar`   | The serial number of the device as specified by a user in the webadmin                                                                     |
-| `location`                                | `varchar`   | The location of the device as specified by the device                                                                                      |
-| `custom_location`                         | `varchar`   | The location of the device as configured by a user in the webadmin                                                                         |
-| `ip_address`                              | `varchar`   | The IP address of the device                                                                                                               |
-| `mac_address`                             | `varchar`   | The MAC address of the device                                                                                                              |
-| `hostname`                                | `varchar`   | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
-| `system_name`                             | `varchar`   | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
-| `firmware`                                | `varchar`   | The firmware version or datecode currently installed on the device                                                                         |
-| `note`                                    | `varchar`   | The notes attached to the device. Notes can be added within Print Tracker                                                                  |
-| `created_timestamp`                       | `datetime`  | The timestamp when this device was created in Print Tracker                                                                                |
-| `modified_timestamp`                      | `datetime`  | The timestamp when this device was modified in Print Tracker                                                                               |
-| `latest_meter_timestamp`                  | `datetime`  | The timestamp of the most recently uploaded meter                                                                                          |
-| `managed`                                 | `boolean`   | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                    |
-| `average_daily_volume_total`              | `integer`   | The average number of pages this device is printing every day                                                                              |
-| `average_daily_volume_totalColor`         | `integer`   | The average number of color pages this device is printing every day                                                                        |
-| `black_toner_estimated_depletion`         | `datetime`  | The estimated date that the black toner will reach 0% remaining                                                                            |
-| `black_toner_current_level`               | `real`      | The current percent remaining of the black toner                                                                                           |
-| `black_toner_estimated_pages_remaining`   | `integer`   | The estimated number of pages remaining in the black toner                                                                                 |
-| `cyan_toner_estimated_depletion`          | `datetime`  | The estimated date that the cyan toner will reach 0% remaining                                                                             |
-| `cyan_toner_current_level`                | `real`      | The current percent remaining of the cyan toner                                                                                            |
-| `cyan_toner_estimated_pages_remaining`    | `integer`   | The estimated number of pages remaining in the cyan toner                                                                                  |
-| `magenta_toner_estimated_depletion`       | `datetime`  | The estimated date that the magenta toner will reach 0% remaining                                                                          |
-| `magenta_toner_current_level`             | `real`      | The current percent remaining of the magenta toner                                                                                         |
-| `magenta_toner_estimated_pages_remaining` | `integer`   | The estimated number of pages remaining in the magenta toner                                                                               |
-| `yellow_toner_estimated_depletion`        | `datetime`  | The estimated date that the yellow toner will reach 0% remaining                                                                           |
-| `yellow_toner_current_level`              | `real`      | The current percent remaining of the yellow toner                                                                                          |
-| `yellow_toner_estimated_pages_remaining`  | `integer`   | The estimated number of pages remaining in the yellow toner                                                                                |
+| `id`                                      | `varchar`   | O identificador exclusivo do dispositivo                                                                                                 |
+| `dealer_id`                               | `varchar`   | O identificador exclusivo da Conta do revendedor (se você for um revendedor, essa será sua Conta de nível raiz)                                     |
+| `dealer_name`                             | `varchar`   | O nome da Conta da Revenda                                                                                                     |
+| `entity_id`                               | `varchar`   | O identificador exclusivo da Conta à qual este dispositivo pertence (a Conta diretamente acima do dispositivo)                              |
+| `entity_name`                             | `varchar`   | O nome da Conta à qual este dispositivo pertence                                                                                           |
+| `integration_id`                          | `varchar`   | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`                                | `varchar`   | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio |
+| `make`                                    | `varchar`   | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                     |
+| `model`                                   | `varchar`   | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                      |
+| `serial_number`                           | `varchar`   | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                   |
+| `custom_serial_number`                    | `varchar`   | O número de série do dispositivo conforme especificado por um usuário no webadmin                                                          |
+| `location`                                | `varchar`   | A localização do dispositivo conforme especificado pelo dispositivo                                                                        |
+| `custom_location`                         | `varchar`   | A localização do dispositivo conforme configurado por um usuário no webadmin                                                               |
+| `ip_address`                              | `varchar`   | O endereço IP do dispositivo                                                                                                               |
+| `mac_address`                             | `varchar`   | O endereço MAC do dispositivo                                                                                                              |
+| `hostname`                                | `varchar`   | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                        |
+| `system_name`                             | `varchar`   | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                    |
+| `firmware`                                | `varchar`   | A versão do firmware ou o datacode atualmente instalado no dispositivo                                                                     |
+| `note`                                    | `varchar`   | As notas anexadas ao dispositivo. As notas podem ser adicionadas no Print Tracker                                                          |
+| `created_timestamp`                       | `datetime`  | O carimbo de data/hora quando este dispositivo foi criado no Print Tracker                                                                 |
+| `modified_timestamp`                      | `datetime`  | O carimbo de data/hora quando este dispositivo foi modificado no Print Tracker                                                             |
+| `latest_meter_timestamp`                  | `datetime`  | O carimbo de data/hora do medidor carregado mais recentemente                                                                              |
+| `managed`                                 | `boolean`   | Indica se este dispositivo é [gerenciado ou não gerenciado](./discovery#managed-devices) in Print Tracker                                  |
+| `average_daily_volume_total`              | `integer`   | O número médio de páginas que este dispositivo imprime todos os dias                                                                       |
+| `average_daily_volume_totalColor`         | `integer`   | O número médio de páginas coloridas que este dispositivo está imprimindo todos os dias                                                     |
+| `black_toner_estimated_depletion`         | `datetime`  | A data estimada que o toner preto chegará a 0% restante                                                                                    |
+| `black_toner_current_level`               | `real`      | A porcentagem atual restante do toner preto                                                                                                |
+| `black_toner_estimated_pages_remaining`   | `integer`   | O número estimado de páginas restantes no toner preto                                                                                      |
+| `cyan_toner_estimated_depletion`          | `datetime`  | A data estimada que o toner ciano chegará a 0% restante                                                                                    |
+| `cyan_toner_current_level`                | `real`      | A porcentagem atual restante do toner ciano                                                                                                |
+| `cyan_toner_estimated_pages_remaining`    | `integer`   | O número estimado de páginas restantes no toner ciano                                                                                      |
+| `magenta_toner_estimated_depletion`       | `datetime`  | A data estimada que o toner magenta atingirá 0% restante                                                                                   |
+| `magenta_toner_current_level`             | `real`      | A porcentagem atual restante do toner magenta                                                                                              |
+| `magenta_toner_estimated_pages_remaining` | `integer`   | O número estimado de páginas restantes no toner magenta                                                                                    |
+| `yellow_toner_estimated_depletion`        | `datetime`  | A data estimada que o toner amarelo chegará a 0% restante                                                                                  |
+| `yellow_toner_current_level`              | `real`      | A porcentagem atual restante do toner amarelo                                                                                              |
+| `yellow_toner_estimated_pages_remaining`  | `integer`   | O número estimado de páginas restantes no toner amarelo  n                                                                                 |
 
-#### Devices Depleting Within 42 Days {#devices-depleting-within-42-days}
-The following query will return devices where the estimated depletion date of any of the toner supplies is within 42 days of the current date.
+#### Dispositivos se esgotando dentro de 42 dias {#devices-depleting-within-42-days}
+A consulta a seguir retornará dispositivos em que a data estimada de esgotamento de qualquer um dos suprimentos de toner estiver dentro de 42 dias da data atual.
 
 ```sql
 SELECT 
@@ -428,78 +428,78 @@ WHERE DATE(black_toner_estimated_depletion) < DATE('now', '+42 days')
     OR DATE(yellow_toner_estimated_depletion) < DATE('now', '+42 days')
 ```
 
-### Monthly Volume <BetaLabel/> {#monthly-volume-betalabel}
-The monthly volume report is helpful for getting a month-over-month view of the number of pages printed by each device, over the last year. You can think of this report as aggregating all daily meter reads into monthly **buckets** which can then be used to analyze volume over time. The default query for this report is exported as a CSV, and it's usually most helpful to combine the CSV data with a pivot table in Excel. This report does not support including children. The following columns are supported by this report:
+### Volume mensal <BetaLabel/> {#monthly-volume-betalabel}
+O relatório de volume mensal é útil para obter uma visualização mês a mês do número de páginas impressas por cada dispositivo, ao longo do último ano. Você pode pensar neste relatório como agregando todas as leituras diárias do medidor em **baldes** mensais que podem ser usados para analisar o volume ao longo do tempo. A consulta padrão para este relatório é exportada como um CSV e geralmente é mais útil combinar os dados CSV com uma tabela dinâmica no Excel. Este relatório não suporta a inclusão de filhas. As seguintes colunas são suportadas por este relatório:
 
-| Column Name            | Column Type | Description                                                                                                                                |
+| Nome da Coluna Name    | Tipo da Coluna | Descrição                                                                                                                               |
 |------------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                   | `varchar`   | The unique identifier for the device                                                                                                       |
-| `integration_id`       | `varchar`   | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
-| `asset_id`             | `varchar`   | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
-| `make`                 | `varchar`   | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
-| `model`                | `varchar`   | The model of the device (e.g. OfficeJet 8600)                                                                                              |
-| `serial_number`        | `varchar`   | The serial number of the device as specified by the device                                                                                 |
-| `location`             | `varchar`   | The location of the device as specified by the device                                                                                      |
-| `ip_address`           | `varchar`   | The IP address of the device                                                                                                               |
-| `mac_address`          | `varchar`   | The MAC address of the device                                                                                                              |
-| `hostname`             | `varchar`   | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
-| `system_name`          | `varchar`   | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
-| `firmware`             | `varchar`   | The firmware version or datecode currently installed on the device                                                                         |                        
-| `year`                 | `integer`   | The year number associated with this volume bucket (e.g. 2023)                                                                             |                        
-| `month_number`         | `integer`   | The month number associated with this volume bucket (e.g. 1)                                                                               |                        
-| `month`                | `integer`   | The month in string form (e.g. January)                                                                                                    |                        
-| `meter_read_timestamp` | `datetime`  | The latest meter read uploaded within this volume bucket                                                                                   |                        
-| `total`                | `integer`   | The latest value of the total counter within this volume bucket                                                                            |                        
-| `total_black`          | `integer`   | The latest value of the total black counter within this volume bucket                                                                      |                        
-| `total_color`          | `integer`   | The latest value of the total color counter within this volume bucket                                                                      |                        
-| `total_volume`         | `integer`   | The total number of pages printed during the timeframe of this bucket                                                                      |                        
-| `total_black_volume`   | `integer`   | The total number of monochrome pages printed during the timeframe of this bucket                                                           |                        
-| `total_color_volume`   | `integer`   | The total number of color pages printed during the timeframe of this bucket                                                                |                        
+| `id`                   | `varchar`   | O identificador exclusivo do dispositivo                                                                                                   |
+| `integration_id`       | `varchar`   | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`             | `varchar`   | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio |
+| `make`                 | `varchar`   | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                     |
+| `model`                | `varchar`   | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                      |
+| `serial_number`        | `varchar`   | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                   |
+| `location`             | `varchar`   | A localização do dispositivo conforme especificado pelo dispositivo                                                                        |
+| `ip_address`           | `varchar`   | O endereço IP do dispositivo                                                                                                               |
+| `mac_address`          | `varchar`   | O endereço MAC do dispositivo                                                                                                              |
+| `hostname`             | `varchar`   | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                        |
+| `system_name`          | `varchar`   | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                    |
+| `firmware`             | `varchar`   | A versão do firmware ou o datecode atualmente instalado no dispositivo                                                                     |                        
+| `year`                 | `integer`   | O número do ano associado a este volume (por exemplo, 2023)                                                                                |                        
+| `month_number`         | `integer`   | O número do mês associado a esse "balde" de volume (por exemplo, 1)                                                                        |                        
+| `month`                | `integer`   | O mês em forma de cadeia de caracteres (por exemplo, janeiro)                                                                              |                        
+| `meter_read_timestamp` | `datetime`  | A leitura mais recente do medidor carregado dentro deste balde de volume                                                                   |                        
+| `total`                | `integer`   | O valor mais recente do contador total dentro deste balde de volume                                                                        |                        
+| `total_black`          | `integer`   | O valor mais recente do contador total preto dentro deste bucket de volume                                                                 |                        
+| `total_color`          | `integer`   | O valor mais recente do contador total cor dentro deste bucket de volume                                                                   |                        
+| `total_volume`         | `integer`   | O número total de páginas impressas durante o período de tempo deste balde                                                                 |                        
+| `total_black_volume`   | `integer`   | O número total de páginas monocromáticas impressas durante o período de tempo deste balde                                                  |                        
+| `total_color_volume`   | `integer`   | O número total de páginas coloridas impressas durante o período de tempo deste balde                                                       |                        
 
-When parsed using an Excel pivot table, this report can help give you a quick overview about the volume of your devices over time, for a particular entity.
+Quando analisado usando uma tabela dinâmica do Excel, esse relatório pode ajudar a fornecer uma visão geral rápida sobre o volume de seus dispositivos ao longo do tempo para uma Conta específica.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-pivot-table.png)
 
-### Supplies <BetaLabel/> {#supplies-betalabel}
+### Suprimentos <BetaLabel/> {#supplies-betalabel}
 The supplies report provides data about every supply (currently installed, and replaced) in your devices. The following columns are supported by this report:
 
-| Column Name                | Column Type | Description                                                                                                                                                                                                                                          |
+| Nome da Coluna Name    | Tipo da Coluna | Descrição                                                                                                                                                                                                                                             |
 |----------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `entity_id`                | `varchar`   | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                                                                                                                              |
-| `entity_name`              | `varchar`   | The name of the entity that this device belongs to                                                                                                                                                                                                   |
-| `device_id`                | `varchar`   | The unique identifier for the device                                                                                                                                                                                                                 |
-| `device_integration_id`    | `varchar`   | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)                                                                                                                  |
-| `device_asset_id`          | `varchar`   | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business                                                                                                           |
-| `device_make`              | `varchar`   | The manufacturer of the device (e.g. HP, Brother)                                                                                                                                                                                                    |
-| `device_model`             | `varchar`   | The model of the device (e.g. OfficeJet 8600)                                                                                                                                                                                                        |
-| `device_serial_number`     | `varchar`   | The serial number of the device as specified by the device                                                                                                                                                                                           |
-| `device_location`          | `varchar`   | The location of the device as specified by the device                                                                                                                                                                                                |
-| `device_ip_address`        | `varchar`   | The IP address of the device                                                                                                                                                                                                                         |
-| `device_mac_address`       | `varchar`   | The MAC address of the device                                                                                                                                                                                                                        |
-| `device_hostname`          | `varchar`   | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                                                                                                                                 |
-| `device_system_name`       | `varchar`   | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                                                                                                                             |
-| `device_firmware`          | `varchar`   | The firmware version or datecode currently installed on the device                                                                                                                                                                                   |
-| `installed_date`           | `datetime`  | The timestamp when this supply was installed in the machine                                                                                                                                                                                          |
-| `replaced_date`            | `datetime`  | The timestamp when this supply was replaced. If the supply is currently installed in the device, this will be null                                                                                                                                   |
-| `confirmed_replaced_date`  | `datetime`  | The timestamp when Print Tracker confirmed that this replacement ocurred. This usually is a few hours after the `replaced_date`                                                                                                                      |
-| `estimated_depletion_date` | `datetime`  | The date that the supply is expected to reach 0% based on historical printing patterns                                                                                                                                                               |
-| `name`                     | `varchar`   | The name of the supply (e.g. Black Toner, Waste)                                                                                                                                                                                                     |
-| `type`                     | `varchar`   | The supply type (e.g. toner, drum, waste)                                                                                                                                                                                                            |
-| `color`                    | `varchar`   | The color of the supply (e.g. black, cyan), if the supply supports a color. If the supply is not a colored supply, this field will be null                                                                                                           |
-| `part_number`              | `varchar`   | The part number of the supply as identified by the device                                                                                                                                                                                            |
-| `serial_number`            | `varchar`   | The serial number of the supply as identified by the device                                                                                                                                                                                          |
-| `description`              | `varchar`   | The SNMP description of the supply. This is usually a human-friendly description of the supply installed in the machine                                                                                                                              |
-| `remaining`                | `integer`   | The supply level currently remaining in the device                                                                                                                                                                                                   |
-| `remaining_at_install`     | `integer`   | The supply level remaining in the supply at the time the supply was installed. In high-volume situations, Print Tracker will not always detect the new supply the moment it's installed by a user.                                                   |
-| `remaining_at_replacement` | `integer`   | The supply level remaining in the supply at the time the supply was replaced. This is helpful in identifying how much unconsumed supply was "left on the table" when the supply was replaced. This will be null if the supply has not been replaced. |
-| `fill_rate`                | `integer`   | The fill or coverage rate of the supply as provided by the device. If not provided Print Tracker will attempt to calculate the fill rate if possible.                                                                                                |
-| `pages_printed`            | `integer`   | The number of pages printed since the supply was installed.                                                                                                                                                                                          |
-| `expected_yield`           | `integer`   | The number of pages that this supply should have printed.                                                                                                                                                                                            |
-| `actual_cost_per_page`     | `integer`   | If a supply cost is specified in Print Tracker, this value is the cost of each page printed on the supply.                                                                                                                                           |
-| `lost_pages`               | `integer`   | When a supply is replaced, this is the difference between the expected yield of the supply, and the number of pages printed on the supply.                                                                                                           |
+| `entity_id`                | `varchar`   | O identificador exclusivo da Conta à qual este dispositivo pertence (a Conta diretamente acima do dispositivo)                                                                                                                                       |
+| `entity_name`              | `varchar`   | O nome da Conta à qual este dispositivo pertence                                                                                                                                                                                                     |
+| `device_id`                | `varchar`   | O identificador exclusivo do dispositivo                                                                                                                                                                                                             |
+| `device_integration_id`    | `varchar`   | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)                                                                                                                 |
+| `device_asset_id`          | `varchar`   | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio                                                        |
+| `device_make`              | `varchar`   | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                                                                                                                               |
+| `device_model`             | `varchar`   | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                                                                                                                                |
+| `device_serial_number`     | `varchar`   | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                                                                                                                             |
+| `device_location`          | `varchar`   | A localização do dispositivo conforme especificado pelo dispositivo                                                                                                                                                                                  |
+| `device_ip_address`        | `varchar`   | O endereço IP do dispositivo                                                                                                                                                                                                                         |
+| `device_mac_address`       | `varchar`   | O endereço MAC do dispositivo                                                                                                                                                                                                                        |
+| `device_hostname`          | `varchar`   | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                                                                                                                                  |
+| `device_system_name`       | `varchar`   | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                                                                                                                              |
+| `device_firmware`          | `varchar`   | A versão do firmware ou o datecode atualmente instalado no dispositivo                                                                                                                                                                               |
+| `installed_date`           | `datetime`  | O carimbo de data/hora quando esta fonte foi instalada na máquina                                                                                                                                                                                    |
+| `replaced_date`            | `datetime`  | O carimbo de data/hora quando esse suprimento foi substituído. Se o suprimento estiver instalado atualmente no dispositivo, o valor será nulo                                                                                                      |
+| `confirmed_replaced_date`  | `datetime`  | O carimbo de data/hora quando o Print Tracker confirmou que essa substituição ocorreu. Isso geralmente ocorre algumas horas após o 'replaced_date'                                                                                                |
+| `estimated_depletion_date` | `datetime`  | A data em que o suprimento deve atingir 0% com base em padrões históricos de impressão                                                                                                                                                               |
+| `name`                     | `varchar`   | O nome do suprimento (por exemplo, Black Toner, Resíduos)                                                                                                                                                                                            |
+| `type`                     | `varchar`   | O tipo de suprimento (por exemplo, toner, tambor, resíduos)                                                                                                                                                                                          |
+| `color`                    | `varchar`   | A cor do suprimento (por exemplo, preto, ciano), se for colorido. Se não for um suprimento colorido, este campo será nulo                                                                                                                           |
+| `part_number`              | `varchar`   | O número de peça do suprimento identificado pelo dispositivo                                                                                                                                                                                         |
+| `serial_number`            | `varchar`   | O número de série do suprimento identificado pelo dispositivo                                                                                                                                                                                        |
+| `description`              | `varchar`   | A descrição SNMP do suprimento. Esta é geralmente uma descrição amigável do suprimento instalado na máquina                                                                                                                                          |
+| `remaining`                | `integer`   | O nível do suprimento atualmente restante no dispositivo                                                                                                                                                                                             |
+| `remaining_at_install`     | `integer`   | O nível de suprimento restante no momento em que foi instalado. Em situações de grande volume, o Print Tracker nem sempre detectará o novo suprimento no momento em que for instalado por um usuário.                                              |
+| `remaining_at_replacement` | `integer`   | O nível de suprimento restante quando foi substituído. Isso é útil para identificar quanto de suprimento não consumido e foi "deixado na mesa". Isso será nulo se o suprimento não tiver sido substituído.                                       |
+| `fill_rate`                | `integer`   | A taxa de preenchimento ou cobertura do suprimento conforme fornecido pelo dispositivo. Se não for fornecido, o Print Tracker tentará calcular a taxa de preenchimento, se possível.                                                                |
+| `pages_printed`            | `integer`   | O número de páginas impressas desde que o suprimento foi instalado.                                                                                                                                                                                  |
+| `expected_yield`           | `integer`   | O número de páginas que este suprimento deveria ter impresso                                                                                                                                                                                         |
+| `actual_cost_per_page`     | `integer`   | Se um custo de suprimento for especificado no Print Tracker, esse valor será o custo de cada página impressa no suprimento.                                                                                                                         |
+| `lost_pages`               | `integer`   | Quando um suprimento é substituído, essa é a diferença entre o rendimento esperado e o número de páginas impressas no suprimento.                                                                                                            |
 
-#### All Supplies from All Devices {#all-supplies-from-all-devices}
-This example query returns all supply information for all devices.
+#### Todos os suprimentos de todos os dispositivos {#all-supplies-from-all-devices}
+Esta consulta de exemplo retorna todas as informações de suprimento para todos os dispositivos.
 
 ```sql
 SELECT
@@ -527,39 +527,39 @@ SELECT
 FROM supplies;
 ```
 
-### Billable Devices <BetaLabel/> {#billable-devices-betalabel}
+### Dispositivos faturáveis <BetaLabel/> {#billable-devices-betalabel}
 :::info
-Print Tracker does not bill your customers. The billable devices report can help you understand _your_ Print Tracker costs, and how your customers are contributing to those costs.
+O Print Tracker não fatura seus clientes. O relatório de dispositivos faturáveis pode ajudá-lo a entender os custos do Print Tracker e como seus clientes estão contribuindo para esses custos.
 :::
 
-The billable devices report can help you better understand your Print Tracker costs. It contains device information for each month where Print Tracker billed you for the device. 
+O relatório de dispositivos faturáveis pode ajudá-lo a entender melhor os custos do Print Tracker. Ele contém informações do dispositivo para cada mês em que o Print Tracker cobrou pelo dispositivo. 
 
-The following columns are available in the billable devices report:
+As colunas a seguir estão disponíveis no relatório de dispositivos faturáveis:
 
 | Column Name      | Data Type | Description                                                                                                                                |
 |------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `entity_name`    | `varchar` | The name of the entity where the device is located                                                                                         |
-| `entity_id`      | `varchar` | The id of the entity where the device is located                                                                                           |
-| `dealer_name`    | `varchar` | The name of the dealer entity                                                                                                              |
-| `dealer_id`      | `varchar` | The id of the dealer entity                                                                                                                |
-| `id`             | `varchar` | The unique identifier for the device                                                                                                       |
-| `integration_id` | `varchar` | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
-| `asset_id`       | `varchar` | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
-| `make`           | `varchar` | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
-| `model`          | `varchar` | The model of the device (e.g. OfficeJet 8600)                                                                                              |
-| `serial_number`  | `varchar` | The serial number of the device as specified by the device                                                                                 |
-| `location`       | `varchar` | The location of the device as specified by the device                                                                                      |
-| `ip_address`     | `varchar` | The IP address of the device                                                                                                               |
-| `mac_address`    | `varchar` | The MAC address of the device                                                                                                              |
-| `hostname`       | `varchar` | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
-| `system_name`    | `varchar` | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
-| `firmware`       | `varchar` | The firmware version or datecode currently installed on the device                                                                         |                        
-| `year`           | `integer` | The year number associated with this record when this device was billed                                                                    |                        
-| `month_number`   | `integer` | The month number associated with this record when this device was billed                                                                   |                        
-| `month`          | `integer` | The month in string form (e.g. January)                                                                                                    |                        
+| `entity_name`    | `varchar` | O nome da Conta onde o dispositivo está localizado                                                                                         |
+| `entity_id`      | `varchar` | O id da Conta onde o dispositivo está localizado                                                                                           |
+| `dealer_name`    | `varchar` | O nome da Conta da Revenda                                                                                                                 |
+| `dealer_id`      | `varchar` | O id da Conta da Revenda                                                                                                                   |
+| `id`             | `varchar` | O identificador exclusivo do dispositivo                                                                                                   |
+| `integration_id` | `varchar` | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations) |
+| `asset_id`       | `varchar` | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio  |
+| `make`           | `varchar` | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                     |
+| `model`          | `varchar` | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                      |
+| `serial_number`  | `varchar` | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                   |
+| `location`       | `varchar` | A localização do dispositivo conforme especificado pelo dispositivo                                                                        |
+| `ip_address`     | `varchar` | O endereço IP do dispositivo                                                                                                               |
+| `mac_address`    | `varchar` | O endereço MAC do dispositivo                                                                                                              |
+| `hostname`       | `varchar` | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                        |
+| `system_name`    | `varchar` | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                    |
+| `firmware`       | `varchar` | A versão do firmware ou datecode atualmente instalado no dispositivo                                                                       |                        
+| `year`           | `integer` | O número do ano associado a este registro quando este dispositivo foi faturado                                                             |                        
+| `month_number`   | `integer` | O número do mês associado a este registo quando este dispositivo foi faturado                                                              |                        
+| `month`          | `integer` | O mês em forma de cadeia de caracteres (por exemplo, janeiro)                                                                              |                        
 
-#### Billable Devices Grouped by Entity {#billable-devices-grouped-by-entity}
-This query is helpful for understanding which of your customers are most significantly contributing to your Print Tracker costs.
+#### Dispositivos faturáveis agrupados por Conta {#billable-devices-grouped-by-entity}
+Essa consulta é útil para entender quais de seus clientes estão contribuindo de forma mais significativa para os custos do Print Tracker.
 ```sql
 SELECT
     entity_name as 'Entity',
@@ -571,8 +571,8 @@ GROUP BY entity_id, year, month
 ORDER BY entity, year, month_number;
 ```
 
-#### Billable Devices Grouped by Dealer {#billable-devices-grouped-by-dealer}
-This example groups billable devices by dealer. If you are a Print Tracker authorized reseller, this query will help you understand which of your customers are most significantly contributing to your Print Tracker costs.
+#### Dispositivos faturáveis agrupados por revendedor {#billable-devices-grouped-by-dealer}
+Este exemplo agrupa dispositivos faturáveis por revendedor. Se você for um revendedor autorizado do Print Tracker, essa consulta o ajudará a entender quais de seus clientes estão contribuindo de forma mais significativa para os custos do Print Tracker.
 
 ```sql
 SELECT
@@ -585,25 +585,25 @@ GROUP BY dealer_id, year, month
 ORDER BY dealer_name, year, month_number;
 ```
 
-## Meter and Supply Columns {#meter-and-supply-columns}
+## Colunas de medidor e suprimento {#meter-and-supply-columns}
 :::tip
-Questions? Our support team is ready and willing to help you configure your custom reports. [support@printtrackerpro.com](mailto:support@printtrackerpro.com)
+Perguntas? Nossa equipe de suporte está pronta e disposta a ajudá-lo a configurar seus relatórios personalizados. [support@printtrackerpro.com] (mailto:support@printtrackerpro.com)
 :::
 
-Custom reports supports over 450 different page count columns and over 375 different supply columns. We are always adding meter-related columns to our custom reports so the list of supported columns is always changing. If you're wondering what columns are available to you, try searching "pageCounts" in the [schema viewer](#schema-viewer).)
+Os relatórios personalizados suportam mais de 450 colunas de contagem de páginas diferentes e mais de 375 colunas de suprimentos diferentes. Estamos sempre adicionando colunas relacionadas ao medidor aos nossos relatórios personalizados para que a lista de colunas com suporte esteja sempre mudando. Se você está se perguntando quais colunas estão disponíveis para você, tente pesquisar "pageCounts" no [visualizador de esquema](#schema-viewer).)
 
-The general structure of the columns follows this pattern:
+A estrutura geral das colunas segue este padrão:
 ```
-pageCounts_<format>_<counter>
-supplies_<supply>_<attribute>
+pageCounts_<formato>_<contador>
+supplies_<suprimento>_<atributo>
 ```
 
-* Format: The format represents the format that the counter is measured in. Common formats are equivalent, engine, and life (otherwise known as non-equivalent).
-* Counter: The actual name of the counter. Common counters are Total, Total Black, Total Color, Total Copies, Total Prints, etc.
-* Supply: The name of the supply. Common supplies are Black Toner, Magenta Toner, Yellow Toner, Cyan Toner, Waste Toner, etc.
-* Attribute: The attribute on the supply. Supported attributes vary by device. Most devices support the Percent Remaining, Description, and Type attributes, while other devices might provide Fill Rate, Estimated Depletion Date, etc.
+* Formato: Representa o formato em que o contador é medido. Os formatos comuns são equivalente, motor e vida útil (também conhecidos como não equivalentes).
+* Contador: O nome real do contador. Contadores comuns são Total, Total Black, Total Color, Total Copies, Total Prints, etc.
+* Suprimento: O nome do suprimento. Os suprimentos comuns são Black Toner, Magenta Toner, Yellow Toner, Cyan Toner, Waste Toner, etc.
+* Atributo: O atributo no suprimento. Os atributos suportados variam de acordo com o dispositivo. A maioria dos dispositivos oferece suporte aos atributos Porcentagem Restante, Descrição e Tipo, enquanto outros dispositivos podem fornecer Taxa de Preenchimento, Data de Esgotamento Estimada, etc.
 
-Here are some examples of the most commonly used columns
+Aqui estão alguns exemplos das colunas mais usadas
 * `pageCount_equiv_total`
 * `pageCount_equiv_totalBlack`
 * `pageCount_equiv_totalColor`
