@@ -5,146 +5,145 @@ sidebar_position: 80
 
 import BetaLabel from '@site/src/components/BetaLabel'
 
-# Custom Reports
-Having access to the right data can help businesses find answers to important questions and make better decisions. Print Tracker's custom reports lets users explore their data in a way that suits their needs by allowing them to create and save personalized reports.
+# Relatórios Personalizados
+Ter acesso aos dados certos pode ajudar as empresas a encontrar respostas para perguntas importantes e tomar melhores decisões. Os relatórios personalizados do Print Tracker permitem que os usuários explorem seus dados de uma maneira que atenda às suas necessidades, permitindo que eles criem e salvem relatórios personalizados.
 
-## Overview {#overview}
-Custom reports supports a variety of report types, such as device, install, and meter reports, making it versatile for different types of business questions. This flexibility allows you to focus on specific aspects of your operations. To build and customize these reports, the feature utilizes [SQLite](#structured-query-language-sql), a variant of SQL that is lightweight and efficient. By leveraging SQLite, you can easily manage and manipulate their data, creating tailored reports that help you better understand their business and make data-driven decisions.
+## Visão geral {#overview}
+Os relatórios personalizados oferecem suporte a uma variedade de tipos de relatório, como relatórios de dispositivo, instalação e medidor, tornando-os versáteis para diferentes tipos de perguntas comerciais. Essa flexibilidade permite que você se concentre em aspectos específicos de suas operações. Para criar e personalizar esses relatórios, o recurso utiliza [SQLite](#structured-query-language-sql), uma variante do SQL que é leve e eficiente. Ao aproveitar o SQLite, você pode gerenciar e manipular facilmente seus dados, criando relatórios personalizados que ajudam você a entender melhor seus negócios e tomar decisões orientadas por dados.
 
-## Structured Query Language (SQL) {#structured-query-language-sql}
-In order to allow you to customize your reports, custom reports utilizes SQL, or Structured Query Language, a programming language specifically designed to help you access and retrieve information. SQL allows you to select and filter the precise pieces of information, while also enabling you to sort, group, and perform calculations on that data. This makes it a powerful and user-friendly tool to quickly obtain and analyze information stored in a structured format, meeting your specific requirements or interests.
+## Linguagem de Consulta Estruturada (SQL) {#structured-query-language-sql}
+Para permitir que você personalize seus relatórios, os relatórios personalizados utilizam SQL, ou Structured Query Language, uma linguagem de programação projetada especificamente para ajudá-lo a acessar e recuperar informações. O SQL permite selecionar e filtrar as informações precisas, além de permitir que você classifique, agrupe e execute cálculos nesses dados. Isso o torna uma ferramenta poderosa e fácil de usar para obter e analisar rapidamente as informações armazenadas em um formato estruturado, atendendo às suas necessidades ou interesses específicos.
 
 :::info
-Custom reports utilizes a variant of SQL called [SQLite](https://www.sqlite.org/lang.html).
+Os relatórios personalizados utilizam uma variante do SQL chamada [SQLite](https://www.sqlite.org/lang.html).
 :::
 
-## Creating Reports {#creating-reports}
+## Criando relatórios {#creating-reports}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-creating-report.gif)
 
-To create a custom report:
-1. Using the sidebar, click **Insights > Reports**
-2. Click **New report**
-3. Enter a name for the report
-4. Click **Confirm**
-5. Your new report has been created and will have appeared in the list of custom reports
-6. Click on your new report to open it
+Para criar um relatório personalizado:
+1. Usando a barra lateral, clique em **Relatórios > Relatórios**
+2. Clique em **Novo relatório**
+3. Digite um nome para o relatório
+4. Clique em **Confirmar**
+5. Seu novo relatório foi criado e terá aparecido na lista de relatórios personalizados
+6. Clique no seu novo relatório para abri-lo
 
-### Report Configuration {#report-configuration}
+### Configuração do Relatório {#report-configuration}
 ![img.png](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-report-configuration.png)
 
-You can configure a report using the report editor. The report editor allows you to:
-* Change the name and description of the report
-* Change the report type
-* View the report's schema (the columns that fields that are available for use in the report)
-* Change the SQL query used to generate the report
-* Run the report to view a sample of the report
-* Export the report to a CSV file
+Você pode configurar um relatório usando o editor de relatórios. O editor de relatórios permite:
+* Alterar o nome e a descrição do relatório
+* Alterar o tipo de relatório
+* Exibir o esquema do relatório (as colunas que campos que estão disponíveis para uso no relatório)
+* Alterar a consulta SQL usada para gerar o relatório
+* Execute o relatório para visualizar uma amostra do relatório
+* Exportar o relatório para um arquivo CSV
 
-For more information on the report types that are available, see [Report Types](#report-types).
+Para obter mais informações sobre os tipos de relatório disponíveis, consulte [Tipos de relatório](#report-types).
 
-### Schema Viewer {#schema-viewer}
+### Visualizador de esquemas {#schema-viewer}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-table-schema.png)
 
-Each [report type](#report-types) has its own schema. The schema determines which columns are available for use in your custom report. Each column has a name and a particular data type. For example, to utilize the device's firmware in a report, you could reference the `firmware` column. The data type of this column is [`varchar`](https://en.wikipedia.org/wiki/Varchar) which is a string of characters. On the other hand the `created_timestamp` column is of time `datetime` indicating that we can perform custom date-related calculations on this column, such as calculating the number of days since this device was created.
+Cada [tipo de relatório](#report-types) tem seu próprio esquema. O esquema determina quais colunas estão disponíveis para uso em seu relatório personalizado. Cada coluna tem um nome e um tipo de dados específico. Por exemplo, para utilizar o firmware do dispositivo em um relatório, você pode fazer referência à coluna `firmware`. O tipo de dados desta coluna é [`varchar`](https://en.wikipedia.org/wiki/Varchar), que é uma cadeia de caracteres. Por outro lado, a coluna `created_timestamp` é de time `datetime` indicando que podemos executar cálculos personalizados relacionados à data nesta coluna, como calcular o número de dias desde que este dispositivo foi criado.
 
-### Query Editor {#query-editor}
+### Editor de Consultas {#query-editor}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-query-editor.png)
 
-The query editor is where you will build, customize, and test your reports. Each [report type](#report-types) comes with a default query that you can use as a starting point. You can also use the schema viewer to help you build your query. Queries are written in SQL using the [SQLite](#structured-query-language-sql) dialect. 
+O editor de consultas é onde você criará, personalizará e testará seus relatórios. Cada [tipo de relatório](#report-types) vem com uma consulta padrão que você pode usar como ponto de partida. Você também pode usar o visualizador de esquema para ajudá-lo a criar sua consulta. As consultas são escritas em SQL usando a linguagem [SQLite](#structured-query-language-sql). 
 
-
-### Query Results {#query-results}
+### Resultados da consulta {#query-results}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-query-results.png)
 
-Whenever you click the **Run** button in the [query editor](#query-editor), the results will be displayed below the editor. The results are only a sample of your data which allows you to quickly test your reports on a small subset of your data without having to wait for the entire report to run.
+Sempre que você clicar no botão **Executar** no [editor de consultas](#query-editor), os resultados serão exibidos abaixo do editor. Os resultados são apenas uma amostra de seus dados, o que permite que você teste rapidamente seus relatórios em um pequeno subconjunto de seus dados sem ter que esperar que todo o relatório seja executado.
 
 :::info No results?
-When adding `WHERE` clauses to your query, you might find that no results are returned when you test your query. This is because when testing the report by clicking **Run**, the query is only run on a sample of your data, and there's no guarantee that the rows in the sample will also match the `WHERE` clause. For these types of queries, you can use the **Export** button to export the entire report to a CSV file and then open the file in a spreadsheet application to view the results.
+Ao adicionar cláusulas 'WHERE' à sua consulta, você pode descobrir que nenhum resultado é retornado quando você testa sua consulta. Isso ocorre porque ao testar o relatório clicando em **Executar**, a consulta é executada apenas em uma amostra de seus dados, e não há garantia de que as linhas no exemplo também corresponderão à cláusula 'WHERE'. Para esses tipos de consultas, você pode usar o botão **Exportar** para exportar o relatório inteiro para um arquivo CSV e, em seguida, abrir o arquivo em um aplicativo de planilha para exibir os resultados.
 :::
 
-## Editing and Saving Reports {#editing-and-saving-reports}
+## Editando e salvando relatórios {#editing-and-saving-reports}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-saving.gif)
 
-You can change your report type, the name, description, or query at anytime. To save your changes, click the **Save** button in the bottom right-hand corner.
+Você pode alterar o tipo de relatório, o nome, a descrição ou a consulta a qualquer momento. Para salvar suas alterações, clique no botão **Salvar** no canto inferior direito.
 
-## Scheduling Reports {#scheduling-reports}
+## Agendamento de Relatórios {#scheduling-reports}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-new-schedule.gif)
 
-You have the flexibility to run ad-hoc reports whenever you need to access specific information quickly. However, you may need to receive a report on a predetermined schedule, such as a monthly billing report. Print Tracker allows you to attach any number of schedules to a custom report. By scheduling a report, you can pick the interval, time of day, the entities where the report should run and Print Tracker will automatically generate the report and send it to your email. This way, you receive the most up-to-date report directly in your inbox without having to manually run it each time.
+Você tem a flexibilidade de executar relatórios ad-hoc sempre que precisar acessar informações específicas rapidamente. No entanto, talvez seja necessário receber um relatório em um agendamento predeterminado, como um relatório de faturamento mensal. O Print Tracker permite anexar qualquer número de agendamentos a um relatório personalizado. Ao agendar um relatório, você pode escolher o intervalo, a hora do dia, as contas onde o relatório deve ser executado e o Print Tracker irá gerar automaticamente o relatório e enviá-lo para o seu e-mail. Dessa forma, você recebe o relatório mais atualizado diretamente em sua caixa de entrada, sem precisar executá-lo manualmente todas as vezes.
 
-To schedule a custom report:
-1. Using the sidebar, click **Insights > Reports**
-2. Click on the report you want to schedule
-3. Click on the **Schedules** tab
-4. Click **New schedule**
+Para agendar um relatório personalizado:
+1. Usando a barra lateral, clique em **Relatórios > Relatórios**
+2. Clique no relatório que deseja agendar
+3. Clique na guia **Agendamentos**
+4. Clique em **Novo Agendamento**
 
-### Schedule Configuration {#schedule-configuration}
+### Configuração do Agendamento {#schedule-configuration}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-edit-schedule-report.png)
 
-There are several options available when scheduling a report:
-* Entity: You can create a single custom report, but create scheduled reports that run on different schedules, and for different entities. For example, you may want to create a current meter report for each of your customers. In this case you'd [create a single report](#creating-reports) and then create a schedule for each one of your customer entities.
-* Enabled: In some cases, you may want to prevent a scheduled report from being sent without having to delete the report, or the schedule. In this case you can disable the **Enabled** toggle, and the report will no longer be sent.
-* Report schedule: You can configure the report to run on any interval you'd like. Refer to [Choosing the Report Schedule](#choosing-the-report-schedule) for more information on how to pick the correct schedule for your report.
-* Timezone: Many printer fleets are distributed across multiple timezones. To ensure that the report is sent at the correct time, you can select the timezone that the report should be sent in.
-* Email: You can configure the report to be sent to any number of email addresses.
-* Subject: You can customize the subject of the email. See [Email Template Variables](#email-template-variables) for a list of variables that you can use in the subject line.
-* Body: You can customize the body of the email.  See [Email Template Variables](#email-template-variables) for a list of variables that you can use in the body.
+Há várias opções disponíveis ao agendar um relatório:
+* Conta: Você pode criar um único relatório personalizado, mas criar relatórios agendados que são executados em agendamentos diferentes e para contas diferentes. Por exemplo, talvez você queira criar um relatório de medidor atual para cada um de seus clientes. Nesse caso, você [criaria um único relatório](#creating-reports) e, em seguida, criaria um agendamento para cada uma de suas contas de clientes.
+* Habilitado: Em alguns casos, você pode querer impedir que um relatório agendado seja enviado sem ter que excluir o relatório, ou o agendamento. Nesse caso, você pode desativar o botão de alternância **Habilitado** e o relatório não será mais enviado.
+* Agendamento de relatório: Você pode configurar o relatório para ser executado em qualquer intervalo que desejar. Consulte [Escolhendo o agendamento do relatório](#choosing-the-report-schedule) para obter mais informações sobre como escolher o agendamento correto para o seu relatório.
+* Fuso horário: Muitas frotas de impressoras são distribuídas em fusos horários distintos. Para garantir que o relatório seja enviado na hora correta, você pode selecionar o fuso horário no qual o relatório deve ser enviado.
+* E-mail: Você pode configurar o relatório para ser enviado para qualquer número de endereços de e-mail.
+* Assunto: Você pode personalizar o assunto do e-mail. Consulte [Modelo de Variáveis de Email](#email-template-variables) para obter uma lista de variáveis que você pode usar na linha de assunto.
+* Corpo: Você pode personalizar o corpo do e-mail.  Consulte [Modelo de Variáveis de Email](#email-template-variables) para obter uma lista de variáveis que você pode usar no corpo.
 
-### Choosing the Report Schedule {#choosing-the-report-schedule}
-The right report schedule depends on the [report type](#report-types) that you're using. Understanding how schedules work in conjunction with the report type will help you pick the correct schedule for your report.
+### Escolhendo o agendamento do relatório {#choosing-the-report-schedule}
+O correto agendamento do relatório depende do [tipo de relatório](#report-types) que você está usando. Entender como os agendamentos funcionam em conjunto com o tipo de relatório ajudará você a escolher a agenda correta para o relatório.
 
-### Email Template Variables {#email-template-variables}
-Scheduled custom report emails can be configured with a custom subject and body line. In order to make it easier to customize these fields, you can use variables in the subject and body. The following variables are available:
-
-| Variable          | Description                                                                              |
-|-------------------|------------------------------------------------------------------------------------------|
-| `{{.ReportName}}` | The name of the report. In the example screenshots above, the report name is "My Report" |
+### Modelo de Variáveis de E-mail {#email-template-variables}
+Os e-mails de relatório personalizados agendados podem ser configurados com um assunto e uma linha de corpo personalizados. Para facilitar a personalização desses campos, você pode usar variáveis no assunto e no corpo. As seguintes variáveis estão disponíveis:
+   
+| Variável          | Descrição                                                                                     |
+|-------------------|-----------------------------------------------------------------------------------------------|
+| `{{.ReportName}}` | O nome do relatório. Nas capturas de tela de exemplo acima, o nome do relatório é "My Report" |
 
 :::info
-Email template variables are a newer feature. Please reach out to [support@printtrackerpro.com](mailto:support@printtrackerpro.com) if you'd like to see additional variables supported.
+O modelo de variáveis de e-mail são um recurso mais recente. Entre em contato com [support@printtrackerpro.com](mailto:support@printtrackerpro.com) se quiser ver variáveis adicionais suportadas.
 :::
 
 [//]: # (### Billing Period Report)
 
-## Report Types {#report-types}
-Each custom report must specify a report type. A report type determines the data that is available for use in your custom report. For example, the [Device](#device) report type will only have columns that are related to devices, whereas the [Volume Analysis](#volume-analysis) report type will have columns comparing meter reads between two different dates. When creating a custom report, you'll pick the report type that best fits your needs.
+## Tipos de relatório {#report-types}
+Cada relatório personalizado deve especificar um tipo de relatório. Um tipo de relatório determina os dados que estão disponíveis para uso em seu relatório personalizado. Por exemplo, o tipo de relatório [Dispositivo](#device) terá apenas colunas relacionadas a dispositivos, enquanto o tipo de relatório [Análise de Volume](#volume-analysis) terá colunas comparando leituras de medidor entre duas datas diferentes. Ao criar um relatório personalizado, você escolherá o tipo de relatório que melhor atende às suas necessidades.
 
-### Device {#device}
-Device reports contain only information about the device. These reports are often useful for understanding your fleet. The device report contains the following columns:
+### Dispositivo {#device}
+Os relatórios de dispositivo contêm apenas informações sobre o dispositivo. Esses relatórios geralmente são úteis para entender sua frota. O relatório de dispositivo contém as seguintes colunas:
 
 | Column Name                         | Data Type  | Description                                                                                                                                |
 |-------------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`                                | `varchar`  | The unique identifier for the device                                                                                                       |
-| `dealer_id`                         | `varchar`  | The unique identifier for the dealer entity (if you're a dealer, this would be your root-level entity)                                     |
-| `dealer_name`                       | `varchar`  | The name of the dealer entity                                                                                                              |
-| `entity_id`                         | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                    |
-| `entity_name`                       | `varchar`  | The name of the entity that this device belongs to                                                                                         |
-| `integration_id`                    | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)        |
-| `asset_id`                          | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business |
-| `make`                              | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                          |
-| `model`                             | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                              |
-| `serial_number`                     | `varchar`  | The serial number of the device as specified by the device                                                                                 |
-| `custom_serial_number`              | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                     |
-| `location`                          | `varchar`  | The location of the device as specified by the device                                                                                      |
-| `custom_location`                   | `varchar`  | The location of the device as configured by a user in the webadmin                                                                         |
-| `ip_address`                        | `varchar`  | The IP address of the device                                                                                                               |
-| `mac_address`                       | `varchar`  | The MAC address of the device                                                                                                              |
-| `hostname`                          | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                       |
-| `system_name`                       | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                   |
-| `firmware`                          | `varchar`  | The firmware version or datecode currently installed on the device                                                                         |
-| `note`                              | `varchar`  | The notes attached to the device. Notes can be added within Print Tracker                                                                  |
-| `source_install_name`               | `varchar`  | The machine name of the computer running the Print Tracker data collection agent that is managing this device                              |
-| `source_install_private_ip_address` | `varchar`  | The private IP address of the computer running the Print Tracker data collection agent.                                                    |
-| `source_install_public_ip_address`  | `varchar`  | The public IP address of the computer running the Print Tracker data collection agent.                                                     |
-| `created_timestamp`                 | `datetime` | The timestamp when this device was created in Print Tracker                                                                                |
-| `modified_timestamp`                | `datetime` | The timestamp when this device was modified in Print Tracker                                                                               |
-| `latest_meter_timestamp`            | `datetime` | The timestamp of the most recently uploaded meter                                                                                          |
-| `managed`                           | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                    |
+| `id`                                | `varchar`  | O identificador exclusivo do dispositivo                                                                                                   |
+| `dealer_id`                         | `varchar`  | O identificador exclusivo da Conta do revendedor (se você for um revendedor, essa será sua Conta de nível raiz)                       |
+| `dealer_name`                       | `varchar`  | O nome da Conta do revendedor                                                                                                              |
+| `entity_id`                         | `varchar`  | O identificador exclusivo da Conta à qual este dispositivo pertence (a Conta diretamente acima do dispositivo)                      |
+| `entity_name`                       | `varchar`  | O nome da Conta à qual este dispositivo pertence                                                                                           |
+| `integration_id`                    | `varchar`  | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)        |
+| `asset_id`                          | `varchar`  | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio  |
+| `make`                              | `varchar`  | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                     |
+| `model`                             | `varchar`  | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                      |
+| `serial_number`                     | `varchar`  | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                   |
+| `custom_serial_number`              | `varchar`  | O número de série do dispositivo conforme especificado por um usuário no webadmin |                                                        |
+| `location`                          | `varchar`  | A localização do dispositivo conforme especificado pelo dispositivo                                                                        |
+| `custom_location`                   | `varchar`  | A localização do dispositivo conforme configurado por um usuário no webadmin                                                               |
+| `ip_address`                        | `varchar`  | O endereço IP do dispositivo                                                                                                               |
+| `mac_address`                       | `varchar`  | O endereço MAC do dispositivo                                                                                                              |
+| `hostname`                          | `varchar`  | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                        |
+| `system_name`                       | `varchar`  | O [nome do sistema SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                |
+| `firmware`                          | `varchar`  | A versão do firmware ou o datecode atualmente instalado no dispositivo                                                                     |
+| `note`                              | `varchar`  | As notas anexadas ao dispositivo. As notas podem ser adicionadas no Print Tracker                                                          |
+| `source_install_name`               | `varchar`  | O nome do computador que executa o agente de coleta de dados do Print Tracker que está gerenciando este dispositivo                       |
+| `source_install_private_ip_address` | `varchar`  | O endereço IP privado do computador que executa o agente de coleta de dados do Print Tracker.                                              |
+| `source_install_public_ip_address`  | `varchar`  | O endereço IP público do computador que executa o agente de coleta de dados do Print Tracker.                                              |
+| `created_timestamp`                 | `datetime` | O carimbo de data/hora quando este dispositivo foi criado no Print Tracker |                                                               |
+| `modified_timestamp`                | `datetime` | O carimbo de data/hora quando este dispositivo foi modificado no Print Tracker                                                             |
+| `latest_meter_timestamp`            | `datetime` | O carimbo de data/hora do medidor carregado mais recentemente                                                                              |
+| `managed`                           | `boolean`  | Indica se este dispositivo é [gerenciado ou não gerenciado](./discovery#managed-devices) no Print Tracker                           |
 
-Here are some examples of how you might utilize the device report type:
+Aqui estão alguns exemplos de como você pode utilizar o tipo de relatório de dispositivo:
 
-#### Number of Days Since Last Meter by Device {#number-of-days-since-last-meter-by-device}
-This report returns the number of days since the last meter was uploaded for each device. This is useful for identifying devices that are stale and may need to be reviewed manually.
+#### Número de dias desde o último medidor por dispositivo  {#number-of-days-since-last-meter-by-device}
+Esse relatório retorna o número de dias desde que o último medidor foi carregado para cada dispositivo. Isso é útil para identificar dispositivos que estão obsoletos e talvez precisem ser revisados manualmente.
 
 ```sql
 SELECT
@@ -165,7 +164,7 @@ WHERE managed = true
 ORDER BY latest_meter_timestamp desc
 ```
 
-#### Number of Devices by Make and Model {#number-of-devices-by-make-and-model}
+#### Número de dispositivos por marca e modelo {#number-of-devices-by-make-and-model}
 This report returns the number of devices by make and model, ordered by the most popular model.
 
 ```sql
@@ -178,35 +177,35 @@ GROUP BY make, model
 ORDER BY COUNT(*) DESC
 ```
 
-### Install {#install}
-The install report contains information about the Print Tracker data collection agent. The install report contains the following columns:
+### Instalação {#install}
+O relatório de instalação contém informações sobre o agente de coleta de dados do Print Tracker. O relatório de instalações contém as seguintes colunas:
 
-| Column Name               | Data Type  | Description                                                                                                       |                                                                                                                  
+| Nome da Coluna            | Data Type  | Descrição                                                                                                         |                                                                                                                  
 |---------------------------|------------|-------------------------------------------------------------------------------------------------------------------|
-| `id`                      | `varchar`  | The unique identifier for the install                                                                             |
-| `entity_id`               | `varchar`  | The unique identifier for the entity that this install belongs to (the entity directly above the install)         |
-| `entity_name`             | `varchar`  | The name of the entity that this install belongs to                                                               |
-| `hostname`                | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                              |
-| `created_timestamp`       | `datetime` | The timestamp when this install was registered in Print Tracker                                                   |
-| `modified_timestamp`      | `datetime` | The timestamp when this install was modified in Print Tracker                                                     |
-| `last_check_in_timestamp` | `datetime` | The last time this install checked in with Print Tracker                                                          |
-| `ip_address`              | `varchar`  | The private IP address of the install                                                                             |
-| `public_ip_address`       | `varchar`  | The public IP address of the install                                                                              |
-| `version`                 | `varchar`  | The version of the Print Tracker data collection agent                                                            |
-| `os`                      | `varchar`  | The operating system of the computer (e.g. Microsoft Windows 10 Pro)                                              |
-| `os_family`               | `varchar`  | The operating system family of the computer (e.g. Standalone Workstation)                                         |
-| `os_version`              | `varchar`  | The operating system version of the computer (e.g. 10.0.19045 Build 19045)                                        |
-| `cpu_architecture`        | `varchar`  | The CPU architecture of the computer (e.g. 64 or 32)                                                              |
-| `antivirus`               | `varchar`  | The antivirus application installed on this computer                                                              |
-| `is_laptop`               | `boolean`  | Indicates whether the agent is installed on a laptop computer                                                     |
-| `is_local`                | `boolean`  | Indicates whether the agent is configured to track USB-connected devices (Windows only)                           |
-| `reporting_devices`       | `integer`  | The number of managed devices tracked by this install that have reported a meter this month                       |
-| `active_devices`          | `integer`  | The number of managed devices tracked by this install regardless of whether they have reported a meter this month |
+| `id`                      | `varchar`  | O identificador exclusivo para a instalação                                                                       |
+| `entity_id`               | `varchar`  | O identificador exclusivo da Conta à qual esta instalação pertence (a Conta diretamente acima da instalação       |
+| `entity_name`             | `varchar`  | O nome da Conta à qual esta instalação pertence                                                                   |
+| `hostname`                | `varchar`  | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                               |
+| `created_timestamp`       | `datetime` | O carimbo de data/hora quando esta instalação foi registrada no Print Tracker                                     |
+| `modified_timestamp`      | `datetime` | O carimbo de data/hora quando esta instalação foi modificada no Print Tracker                                     |
+| `last_check_in_timestamp` | `datetime` | A última vez que esta instalação fez check-in com o Print Tracker                                                 |
+| `ip_address`              | `varchar`  | O endereço IP privado da instalação                                                                               |
+| `public_ip_address`       | `varchar`  | O endereço IP público da instalação                                                                               |
+| `version`                 | `varchar`  | A versão do agente de coleta de dados do Print Tracker                                                            |
+| `os`                      | `varchar`  | O sistema operacional do computador (por exemplo, Microsoft Windows 10 Pro)                                       |
+| `os_family`               | `varchar`  | A família de sistemas operacionais do computador (por exemplo, Standalone Workstation)                            |
+| `os_version`              | `varchar`  | A versão do sistema operacional do computador (por exemplo, 10.0.19045 Build 19045)                               |
+| `cpu_architecture`        | `varchar`  | A arquitetura da CPU do computador (por exemplo, 64 ou 32)                                                        |
+| `antivirus`               | `varchar`  | O aplicativo antivírus instalado neste computador                                                                 |
+| `is_laptop`               | `boolean`  | Indica se o agente está instalado em um laptop                                                                    |
+| `is_local`                | `boolean`  | Indica se o agente está configurado para rastrear dispositivos conectados por USB (somente Windows)               |
+| `reporting_devices`       | `integer`  | O número de dispositivos gerenciados rastreados por esta instalação que relataram um medidor este mês             |
+| `active_devices`          | `integer`  | O número de dispositivos gerenciados rastreados por esta instalação, independentemente de terem relatado um medidor este mês|
 
-Here are some examples of how you might utilize the install report type:
+Aqui estão alguns exemplos de como você pode utilizar o tipo de relatório de instalação:
 
-#### Stale Installs {#stale-installs}
-This report returns all the installs that have not checked-in in more than 24 hours.
+#### Instalações Obsoletas {#stale-installs}
+Esse relatório retorna todas as instalações que não fizeram check-in em mais de 24 horas.
 
 ```sql
 SELECT
@@ -232,37 +231,37 @@ WHERE status = 1
 ORDER BY last_check_in_timestamp DESC
 ```
 
-### Current Meter {#current-meter}
-The current meter read report allows you to view your devices and the latest values of all their meters. The current meter report contains the following columns:
+### Medidor de Atual {#current-meter}
+O relatório de leitura do medidor atual permite que você visualize seus dispositivos e os valores mais recentes de todos os seus medidores. O relatório do medidor atual contém as seguintes colunas:
 
-| Column Name              | Data Type  | Description                                                                                                                                                                                                                                                                                                  |
+| Nome da coluna           | Data Type  | Descrição                                                                                                                                                                                                                                                                                                    |
 |--------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `device_id`              | `varchar`  | The unique identifier for the device                                                                                                                                                                                                                                                                         |
-| `entity_id`              | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                                                                                                                                                                                      |
-| `entity_name`            | `varchar`  | The name of the entity that this device belongs to                                                                                                                                                                                                                                                           |
-| `integration_id`         | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)                                                                                                                                                                          |
-| `asset_id`               | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business                                                                                                                                                                   |
-| `make`                   | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                                                                                                                                                                                            |
-| `model`                  | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                                                                                                                                                                                                |
-| `serial_number`          | `varchar`  | The serial number of device collected during the latest meter read. This should always match the `device_serial number`                                                                                                                                                                                      |
-| `device_serial_number`   | `varchar`  | The serial number of the device as specified by the device                                                                                                                                                                                                                                                   |
-| `custom_serial_number`   | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                                                                                                                                                                                       |
-| `location`               | `varchar`  | The location of the device as specified by the device                                                                                                                                                                                                                                                        |
-| `custom_location`        | `varchar`  | The location of the device as configured by a user in the webadmin                                                                                                                                                                                                                                           |
-| `ip_address`             | `varchar`  | The IP address of the device                                                                                                                                                                                                                                                                                 |
-| `mac_address`            | `varchar`  | The MAC address of the device                                                                                                                                                                                                                                                                                |
-| `hostname`               | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                                                                                                                                                                                         |
-| `system_name`            | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                                                                                                                                                                                     |
-| `firmware`               | `varchar`  | The firmware version or datecode currently installed on the device                                                                                                                                                                                                                                           |
-| `latest_meter_timestamp` | `datetime` | The timestamp of the most recently uploaded meter                                                                                                                                                                                                                                                            |
-| `managed`                | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                                                                                                                                                                                      |
-| `pageCounts_*`           |            | All available counter columns start with the prefix `pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                                 |
-| `supplies_*`             |            | All available supply columns start with the prefix `supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns) |
+| `device_id`              | `varchar`  | O identificador exclusivo do dispositivo                                                                                                                                                                                                                                                                     |
+| `entity_id`              | `varchar`  | O identificador exclusivo da Conta à qual este dispositivo pertence (a Conta diretamente acima do dispositivo)                                                                                                                                                                                               |
+| `entity_name`            | `varchar`  | O nome da Conta à qual este dispositivo pertence                                                                                                                                                                                                                                                             |
+| `integration_id`         | `varchar`  | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)                                                                                                                                                                      |
+| `asset_id`               | `varchar`  | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio                                                                                                                             |
+| `make`                   | `varchar`  | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                                                                                                                                                                                       |
+| `model`                  | `varchar`  | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                                                                                                                                                                                        |
+| `serial_number`          | `varchar`  | O número de série do dispositivo coletado durante a última leitura do medidor. Isso deve sempre corresponder ao `device_serial number`                                                                                                                                                                   |
+| `device_serial_number`   | `varchar`  | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                                                                                                                                                                                     |
+| `custom_serial_number`   | `varchar`  | O número de série do dispositivo conforme especificado por um usuário no webadmin                                                                                                                                                                                                                            |
+| `location`               | `varchar`  | A localização do dispositivo conforme especificado pelo dispositivo                                                                                                                                                                                                                                          |
+| `custom_location`        | `varchar`  | A localização do dispositivo conforme configurado por um usuário no webadmin                                                                                                                                                                                                                                 |
+| `ip_address`             | `varchar`  | O endereço IP do dispositivo                                                                                                                                                                                                                                                                                 |
+| `mac_address`            | `varchar`  | O endereço MAC do dispositivo                                                                                                                                                                                                                                                                                |
+| `hostname`               | `varchar`  | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                                                                                                                                                                                          |
+| `system_name`            | `varchar`  | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                                                                                                                                                                                      |
+| `firmware`               | `varchar`  | A versão do firmware ou o datecode atualmente instalado no dispositivo                                                                                                                                                                                                                                       |
+| `latest_meter_timestamp` | `datetime` | O carimbo de data/hora do medidor carregado mais recentemente                                                                                                                                                                                                                                                |
+| `managed`                | `boolean`  | Indica se este dispositivo é [gerenciado ou não gerenciado](./discovery#managed-devices) no Print Tracker                                                                                                                                                                                                    |
+| `pageCounts_*`           |            | | Todas as colunas de contador disponíveis começam com o prefixo `pageCounts_` seguido pelo contador. O Print Tracker suporta mais de 450 contagens de páginas diferentes. Para obter mais detalhes sobre as contagens de página disponíveis em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns)                                 |
+| `supplies_*`             |            | Todas as colunas de suprimento disponíveis começam com o prefixo 'supplies_' seguido pelos atributos e valores de fornecimento. O Print Tracker suporta mais de 375 suprimentos e atributos diferentes. Para obter mais detalhes sobre os suprimentos e atributos em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns) |
 
-Here are some examples of how you might utilize the current meter report type:
+Aqui estão alguns exemplos de como você pode utilizar o tipo de relatório de medidor atual:
 
-#### Current Counter Values by Device {#current-counter-values-by-device}
-This report returns the current values of all the counters for each device.
+#### Valores atuais do contador por dispositivo {#current-counter-values-by-device}
+Esse relatório retorna os valores atuais de todos os contadores para cada dispositivo.
 
 ```sql
 SELECT
@@ -281,37 +280,37 @@ WHERE managed = true
 ORDER BY latest_meter_timestamp desc
 ```
 
-### Volume Analysis {#volume-analysis}
-The volume analysis report allows you to compare the meter reads between two dates. The default volume analysis report calculates additional volume columns by subtracting the current counters from the previous counters. The volume analysis report contains the following columns:
+### Análise de Volume {#volume-analysis}
+O relatório de análise de volume permite comparar as leituras do medidor entre duas datas. O relatório de análise de volume padrão calcula volumes adicionais de colunas subtraindo os contadores atuais dos contadores anteriores. O relatório de análise de volume contém as seguintes colunas:
 
-| Column Name              | Data Type  | Description                                                                                                                                                                                                                                                                                                                                |
+| Nome da Coluna           | Data Type  | Descrição                                                                                                                                                                                                                                                                                                                                  |
 |--------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `device_id`              | `varchar`  | The unique identifier for the device                                                                                                                                                                                                                                                                                                       |
-| `entity_id`              | `varchar`  | The unique identifier for the entity that this device belongs to (the entity directly above the device)                                                                                                                                                                                                                                    |
-| `entity_name`            | `varchar`  | The name of the entity that this device belongs to                                                                                                                                                                                                                                                                                         |
-| `integration_id`         | `varchar`  | The unique identifier for the device imported from [other integrations such as E-Automate](./integrations#third-party-integrations)                                                                                                                                                                                                        |
-| `asset_id`               | `varchar`  | A custom identifier that you can specify for a device. These are usually human-friendly identifiers that are propreitary for your business                                                                                                                                                                                                 |
-| `make`                   | `varchar`  | The manufacturer of the device (e.g. HP, Brother)                                                                                                                                                                                                                                                                                          |
-| `model`                  | `varchar`  | The model of the device (e.g. OfficeJet 8600)                                                                                                                                                                                                                                                                                              |
-| `serial_number`          | `varchar`  | The serial number of device collected during the latest meter read. This should always match the `device_serial number`                                                                                                                                                                                                                    |
-| `device_serial_number`   | `varchar`  | The serial number of the device as specified by the device                                                                                                                                                                                                                                                                                 |
-| `custom_serial_number`   | `varchar`  | The serial number of the device as specified by a user in the webadmin                                                                                                                                                                                                                                                                     |
-| `location`               | `varchar`  | The location of the device as specified by the device                                                                                                                                                                                                                                                                                      |
-| `custom_location`        | `varchar`  | The location of the device as configured by a user in the webadmin                                                                                                                                                                                                                                                                         |
-| `ip_address`             | `varchar`  | The IP address of the device                                                                                                                                                                                                                                                                                                               |
-| `mac_address`            | `varchar`  | The MAC address of the device                                                                                                                                                                                                                                                                                                              |
-| `hostname`               | `varchar`  | The [hostname](https://en.wikipedia.org/wiki/Hostname) of the device                                                                                                                                                                                                                                                                       |
-| `system_name`            | `varchar`  | The [SNMP system name](https://oidref.com/1.3.6.1.2.1.1.5) of the device                                                                                                                                                                                                                                                                   |
-| `firmware`               | `varchar`  | The firmware version or datecode currently installed on the device                                                                                                                                                                                                                                                                         |
-| `latest_meter_timestamp` | `datetime` | The timestamp of the most recently uploaded meter                                                                                                                                                                                                                                                                                          |
-| `managed`                | `boolean`  | Indicates whether this device is [managed or non-managed](./discovery#managed-devices) in Print Tracker                                                                                                                                                                                                                                    |
-| `first_pageCounts_*`     |            | All available counter columns from the first/earliest meter read start with the prefix `first_pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                      |
-| `last_pageCounts_*`      |            | All available counter columns from the last/latest meter read start with the prefix `last_pageCounts_` followed by the counter. Print Tracker supports over 450 different page counts. For more details on the page counts available in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)                          |
-| `first_supplies_*`       |            | All available supply columns from the first/earliest start with the prefix `first_supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns) |
-| `last_supplies_*`        |            | All available supply columns from the last/latest start with the prefix `first_supplies_` followed by the supply attributes and values. Print Tracker supports over 375 different supplies and attributes. For more details on the supplies and attributes in custom reports, see [Meter and Supply Columns](#meter-and-supply-columns)    |
+| `device_id`              | `varchar`  | O identificador exclusivo do dispositivo                                                                                                                                                                                                                                                                                                   |
+| `entity_id`              | `varchar`  | O identificador exclusivo da Conta à qual este dispositivo pertence (a Conta diretamente acima do dispositivo)                                                                                                                                                                                                                             |
+| `entity_name`            | `varchar`  | O nome da Conta à qual este dispositivo pertence                                                                                                                                                                                                                                                                                           |
+| `integration_id`         | `varchar`  | O identificador exclusivo do dispositivo importado de [outras integrações, como E-Automate](./integrations#third-party-integrations)                                                                                                                                                                                                    |
+| `asset_id`               | `varchar`  | Um identificador personalizado que você pode especificar para um dispositivo. Estes são geralmente identificadores amigáveis para humanos que são exclusivos para o seu negócio                                                                                                                                                           |
+| `make`                   | `varchar`  | O fabricante do dispositivo (por exemplo, HP, Brother)                                                                                                                                                                                                                                                                                     |
+| `model`                  | `varchar`  | O modelo do dispositivo (por exemplo, OfficeJet 8600)                                                                                                                                                                                                                                                                                       |
+| `serial_number`          | `varchar`  | O número de série do dispositivo coletado durante a última leitura do medidor. Isso deve sempre corresponder ao `device_serial number`                                                                                                                                                                                                                    |
+| `device_serial_number`   | `varchar`  | O número de série do dispositivo, conforme especificado pelo dispositivo                                                                                                                                                                                                                                                                    |
+| `custom_serial_number`   | `varchar`  | O número de série do dispositivo conforme especificado por um usuário no webadmin                                                                                                                                                                                                                                                           |
+| `location`               | `varchar`  | A localização do dispositivo conforme especificado pelo dispositivo                                                                                                                                                                                                                                                                         |
+| `custom_location`        | `varchar`  | A localização do dispositivo conforme configurado por um usuário no webadmin                                                                                                                                                                                                                                                                |
+| `ip_address`             | `varchar`  | O endereço IP do dispositivo                                                                                                                                                                                                                                                                                                                |
+| `mac_address`            | `varchar`  | O endereço MAC do dispositivo                                                                                                                                                                                                                                                                                                              |
+| `hostname`               | `varchar`  | O [hostname](https://en.wikipedia.org/wiki/Hostname) do dispositivo                                                                                                                                                                                                                                                                       |
+| `system_name`            | `varchar`  | O [system name SNMP](https://oidref.com/1.3.6.1.2.1.1.5) do dispositivo                                                                                                                                                                                                                                                                    |
+| `firmware`               | `varchar`  | A versão do firmware ou o datecode atualmente instalado no dispositivo                                                                                                                                                                                                                                                                         |
+| `latest_meter_timestamp` | `datetime` | O carimbo de data/hora do medidor carregado mais recentemente                                                                                                                                                                                                                                                                                   |
+| `managed`                | `boolean`  | Indica se este dispositivo é [gerenciado ou não gerenciado](./discovery#managed-devices) no Print Tracker                                                                                                                                                                                                                                    |
+| `first_pageCounts_*`     |            | Todas as colunas de contador disponíveis a partir da leitura do primeiro/mais antigo medidor começam com o prefixo 'first_pageCounts_' seguido pelo contador. O Print Tracker suporta mais de 450 contagens de páginas diferentes. Para obter mais detalhes sobre as contagens de página disponíveis em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns)                      |
+| `last_pageCounts_*`      |            | Todas as colunas de contador disponíveis a partir do último/mais recente medidor lido começam com o prefixo 'last_pageCounts_' seguido pelo contador. O Print Tracker suporta mais de 450 contagens de páginas diferentes. Para obter mais detalhes sobre as contagens de página disponíveis em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns)                          |
+| `first_supplies_*`       |            | Todas as colunas de suprimento disponíveis a partir do primeiro/mais antigo começam com o prefixo 'first_supplies_' seguido pelos atributos e valores do suprimento. O Print Tracker suporta mais de 375 suprimentos e atributos diferentes. Para obter mais detalhes sobre os suprimentos e atributos em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns) |
+| `last_supplies_*`        |            | Todas as colunas de suprimento disponíveis a partir da última/mais antiga começam com o prefixo 'first_supplies_' seguido pelos atributos e valores de fornecimento. O Print Tracker suporta mais de 375 suprimentos e atributos diferentes. Para obter mais detalhes sobre os suprimentos e atributos em relatórios personalizados, consulte [Colunas de medidor e suprimento](#meter-and-supply-columns)    |
 
-#### Total Volume by Device {#total-volume-by-device}
-This example query returns the total number of pages printed for each device:
+#### Volume total por dispositivo {#total-volume-by-device}
+Esta consulta de exemplo retorna o número total de páginas impressas para cada dispositivo:
 ```sql
 SELECT
     entity_name as 'Entity',
@@ -329,23 +328,23 @@ SELECT
 FROM meters
 ```
 
-### Billing Period {#billing-period}
-The billing period report has the same schema (columns) as the [volume analysis report](#volume-analysis), however instead of picking a start date and an end date like you would for a volume analysis report, you specify only a **billing date**. This report is based on a [device's billing schedule](./20-configuring-settings.md#schedules). Device's will be included in this report, as long as the device's billing schedule aligns with your chosen billing date.
+### Período de cobrança {#billing-period}
+O relatório de período de faturamento tem o mesmo esquema (colunas) que o [relatório de análise de volume](#volume-analysis), no entanto, em vez de escolher uma data de início e uma data de término como faria para um relatório de análise de volume, você especifica apenas uma **data de faturamento**. Esse relatório é baseado em um [agendamento de cobrança do dispositivo](./20-configuring-settings.md#schedules). Os dispositivos serão incluídos neste relatório, desde que o agendamento de cobrança do dispositivo esteja alinhado com a data de cobrança escolhida.
 
-Billing periods are sometimes tricky to understand, so let's walk through an example. Let's assume that we have the following devices each with a different billing schedule:
+Os períodos de cobrança às vezes são difíceis de entender, então vamos a um exemplo. Vamos supor que tenhamos os seguintes dispositivos, cada um com uma programação de cobrança diferente:
 
-| Device            | Billing Schedule                 |
+| Dispositivo       | Agendamento de Cobrança          |
 |-------------------|----------------------------------|
-| HP LaserJet M477  | 1st day of the month, bi-monthly |
-| HP OfficeJet 8700 | 1st day of the month, monthly    |
+| HP LaserJet M477  | 1º dia do mês, a cada 2 meses    |
+| HP OfficeJet 8700 | 1º dia do mês, todo mês          |
 
-You may notice that while these two devices have differing billing schedules, they actually both need to be billed on the same day, every other month. In the following diagram, notice how in month 1 (first blue circle) we only bill the customer for the HP OfficeJet 8600 device. However in the second month (second blue circle) we bill the customer for both devices, since once of the devices should only be billed bi-monthly.
+Você pode notar que, embora esses dois dispositivos tenham agendas de faturamento diferentes, na verdade ambos precisam ser cobrados no mesmo dia, a cada dois meses. No diagrama a seguir, observe como no mês 1 (primeiro círculo azul) cobramos apenas o cliente pelo dispositivo HP OfficeJet 8600. No entanto, no segundo mês (segundo círculo azul) faturamos o cliente por ambos os dispositivos, já que um dos dispositivos só deve ser faturado bimestralmente.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/custom-reports-billing-schedules.png)
 
-The billing period report takes into consideration this idea of differing billing schedules by device and allows you to create a single report that includes all devices whose billing schedules land on the date that you select when configuring the report regardless of the interval of each device's billing schedule. 
+O relatório de período de cobrança leva em consideração essa ideia de agendamentos de cobrança diferentes por dispositivo e permite que você crie um único relatório que inclua todos os dispositivos cujas agendas de cobrança chegam na data selecionada ao configurar o relatório, independentemente do intervalo do agendamento de cobrança de cada dispositivo. 
 
-We mentioned previously that the billing period report has all the same columns as the volume analysis report, which means that the report gives us access to meter read columns from both the first and the last meters in the billing period. While the last meter read timestamps will almost always be the same date across your devices (the report's billing date), the first meter read can vary from device to device. In the previous example, when we receive our billing period report, the first meter read of the HP LaserJet M477 will be two months ago, and the first meter read of the HP OfficeJet 8700 will be one month ago. 
+Mencionamos anteriormente que o relatório de período de cobrança tem todas as mesmas colunas que o relatório de análise de volume, o que significa que o relatório nos dá acesso às colunas de leitura do primeiro e do último medidores no período de cobrança. Embora os carimbos de data/hora de leitura do último medidor sejam quase sempre a mesma data em todos os seus dispositivos (a data de cobrança do relatório), a primeira leitura do medidor pode variar de dispositivo para dispositivo. No exemplo anterior, quando recebermos nosso relatório de período de cobrança, a primeira leitura do medidor da HP LaserJet M477 será há dois meses, e a primeira leitura do medidor do HP OfficeJet 8700 será há um mês. 
 
 ### Estimated Depletion {#estimated-depletion}
 The estimated depletion report can be used to help you predict when a currently installed supply will run out. Print Tracker analyzes the last 90 days of meter reads and uses historical printing patterns to make its prediction.
