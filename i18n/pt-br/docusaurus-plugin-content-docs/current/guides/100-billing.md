@@ -3,38 +3,38 @@ slug: billing
 sidebar_position: 100
 ---
 
-# Billing and Payments
+# Faturamento e Pagamentos
 
-:::caution Under Construction
-This guide is currently under construction. Please check back soon for updates.
+:::caution Em Construção
+Este guia está atualmente em construção. Por favor, volte em breve para atualizações.
 :::
 
-## How Does Billing Work? {#how-does-billing-work}
-Print Tracker invoices customers based on the number of managed devices that report meters in a given calendar month. Any managed device that reports a meter during that month will be included in the corresponding invoice, with the exception of newly discovered devices. When a device is first discovered, dealers have a 7-day window to mark it as "non-managed." If the device is still labeled as "managed" after this 7-day period, it will be included in that calendar month's invoice.
+## Como funciona o faturamento? {#how-does-billing-work}
+O Print Tracker fatura os clientes com base no número de dispositivos gerenciados que relatam medidores em um determinado mês do calendário. Qualquer dispositivo gerenciado que relate um medidor durante esse mês será incluído na fatura correspondente, com exceção dos dispositivos recém-descobertos. Quando um dispositivo é descoberto pela primeira vez, os revendedores têm uma janela de 7 dias para marcá-lo como "não gerenciado". Se o dispositivo ainda for rotulado como "gerenciado" após esse período de 7 dias, ele será incluído na fatura do mês do calendário.
 
-### What if I don’t want to monitor certain devices? {#what-if-i-dont-want-to-monitor-certain-devices}
-If Print Tracker discovers devices that a dealer does not want to monitor, dealers can [disable](./50-dicovering-devices.md#enablingdisabling-devices) the device. This will remove that device from all future invoices. Dealers receive a free meter read each quarter from all non-managed devices.
+### E se eu não quiser monitorar determinados dispositivos? {#what-if-i-dont-want-to-monitor-certain-devices}
+Se o Print Tracker descobrir dispositivos que um revendedor não deseja monitorar, os revendedores poderão [desativar](./50-dicovering-devices.md#enablingdisabling-devices) o dispositivo. Isso removerá esse dispositivo de todas as faturas futuras. Os revendedores recebem um medidor gratuito lido a cada trimestre de todos os dispositivos não gerenciados.
 
-### I set a device to non-managed. Why was I billed for that device? {#i-set-a-device-to-non-managed-why-was-i-billed-for-that-device}
-If you have set a device to non-managed but were still billed for it, it may be because the device had already reported a meter during that month. In such cases, the device will be included in the current month's invoice but will not be billed in subsequent months.
+### Eu defini um dispositivo como não gerenciado. Por que fui cobrado por esse dispositivo? {{#i-set-a-device-to-non-managed-why-was-i-billed-for-that-device}
+Se você definiu um dispositivo como não gerenciado, mas ainda foi cobrado por ele, pode ser porque o dispositivo já havia relatado um medidor durante esse mês. Nesses casos, o dispositivo será incluído na fatura do mês atual, mas não será cobrado nos meses subsequentes.
 
 ![](images/billing-example-non-managed-device.png)
 
-### New devices automatically show up in Print Tracker. Why does this happen and how do I stop it? {#new-devices-automatically-show-up-in-print-tracker-why-does-this-happen-and-how-do-i-stop-it}
-Print Tracker automatically scans a customer’s network every Monday and Thursday to search for newly added devices. When a new device is discovered, it appears on the “New devices” page of the Web Admin. This gives dealers the opportunity to mark them as non-managed within the first 7 days after discovery to avoid being billed for those devices.
-If a dealer does not want Print Tracker to search for new devices each week, this setting can be disabled using the following steps:
-1.	Navigate to the customer’s entity
-2.	Open the entity settings (Admin > Manage Entity > Settings tab)
-3.	Expand the section titled “Data Collection Agent”
-4.	Uncheck all boxes in the “Scan for new device on days” setting
+### Novos dispositivos aparecem automaticamente no Print Tracker. Por que isso acontece e como faço para impedir isso?{#new-devices-automatically-show-up-in-print-tracker-why-does-this-happen-and-how-do-i-stop-it}
+O Print Tracker verifica automaticamente a rede de um cliente todas as segundas e quintas-feiras para procurar dispositivos recém-adicionados. Quando um novo dispositivo é descoberto, ele aparece na página "Novos dispositivos" do Webadmin. Isso dá aos revendedores a oportunidade de marcá-los como não gerenciados nos primeiros 7 dias após a descoberta para evitar serem cobrados por esses dispositivos.
+Se um revendedor não quiser que o Print Tracker pesquise novos dispositivos a cada semana, essa configuração poderá ser desativada usando as seguintes etapas:
+1.	Navegue até a conta do cliente
+2.	Abra as configurações da conta (guia Admin > Gerenciar Conta > Configurações)
+3.	Expanda a seção intitulada "Agente de coleta de dados"
+4.	Desmarque todas as caixas na configuração "Procurar por novos dispositivos nos dias"
 
-## Viewing Invoices {#viewing-invoices}
+## Visualizando faturas {#viewing-invoices}
 
-## Paying Invoices {#paying-invoices}
+## Pagamento de faturas {#paying-invoices}
 
-## Saving Payment Methods {#saving-payment-methods}
+## Salvando Métodos de Pagamento {#saving-payment-methods}
 
 ## Autopay {#autopay}
 
-## Billing Support {#billing-support}
-For billing inquiries, please contact accounting@printtrackerpro.com.
+## Suporte de faturamento {#billing-support}
+Para consultas de faturamento, entre em contato com accounting@printtrackerpro.com.
