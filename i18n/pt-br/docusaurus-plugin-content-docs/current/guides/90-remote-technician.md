@@ -3,76 +3,77 @@ slug: remote-technician
 sidebar_position: 90
 ---
 
-# Remote Technician
-Remote Technician allows remote access to a device's embedded webserver from anywhere. It does not require any special network or firewall configuration and works out of the box. Remote Technician allows users to restart the device, upgrade firmware, view the front-panel, change settings, and more [^1].
+# Técnico Remoto
+O Técnico Remoto permite o acesso remoto a interface web de um dispositivo a partir de qualquer lugar. Ele não requer nenhuma configuração especial de rede ou firewall e funciona por padrão. Ele permite que os usuários reiniciem o dispositivo, atualizem o firmware, visualizem o painel frontal, alterem as configurações e muito mais  [^1].
 
 :::info
-Wondering about security? Check out the [Remote Technician Security Overview](../security/remote-technician.md).
+Quer saber sobre segurança? Confira a [Visão geral da segurança do técnico remoto](../security/remote-technician.md).
 :::
 
-## Opening a Session {#opening-a-session}
+## Abrindo uma sessão {#opening-a-session}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-start.gif)
 
-To open a Remote Technician session:
-1. Using the sidebar, click **Devices > View devices**
-2. Find the device you want to access in the list of devices
-3. Click on the **Remote Technician** tab
-4. Click **Open Device Webpage**
+Para abrir uma sessão do Técnico Remoto:
+1. Usando a barra lateral, clique em **Dispositivos > Visualizar dispositivos**
+2. Encontre o dispositivo que você deseja acessar na lista de dispositivos
+3. Clique na guia **Técnico Remoto**
+4. Clique em **Abrir página da Web do dispositivo**
 
-A new browser tab will appear. It may take a few seconds to connect to the device. Once connected, you will be able to access the device's embedded webserver.
+Uma nova guia do navegador será exibida. Pode levar alguns segundos para se conectar ao dispositivo. Uma vez conectado, você poderá acessar a interface web do dispositivo.
 
-:::caution Note
+:::caution Nota
 Remote Technician will not be able to connect to the device if:
-* The device is turned off
-* The device is not connected to the local network
-* The data collection agent is not on the same network as the device (for example, if the data collection agent is on a laptop, and the laptop is taken home)
+O Técnico Remoto não poderá se conectar ao dispositivo se:
+* O dispositivo estiver desligado
+* O dispositivo não estiver conectado à rede local
+* O agente de coleta de dados não estiver na mesma rede que o dispositivo (por exemplo, se o agente de coleta de dados estiver em um laptop e o laptop for levado para casa)
 :::
 
-## Restricting Access {#restricting-access}
-For sensitive customers, you can restrict access to Remote Technician by user, by install, or even by entity. When you restrict access by install, or entity, even users that have the Remote Technician User role will not be able to access the device.
+## Restringindo o acesso {#restricting-access}
+Para clientes mais sensíveis com as informações, você pode restringir o acesso ao Técnico Remoto por usuário, por instalação ou até mesmo por conta. Quando você restringe o acesso por instalação ou conta, mesmo os usuários que têm a função de Usuário Técnico Remoto não poderão acessar o dispositivo.
 
-### By User {#by-user}
+### Por Usuário {#by-user}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-user.gif)
 
-When you restrict access to Remote Technician at the user level, you are restricting the ability for that user to access any device through Remote Technician. This is the easiest way to prevent unauthorized personal from using Remote Technician without preventing other authorized users from using it.
+Quando você restringe o acesso ao Técnico Remoto no nível do usuário, você está restringindo a capacidade desse usuário acessar qualquer dispositivo por meio do Técnico Remoto. Essa é a maneira mais fácil de impedir que pessoas não autorizadas usem o Técnico Remoto sem impedir que outros usuários autorizados o utilizem.
 
-To prevent a user from using Remote Technician:
-1. Using the sidebar, click **Admin > Manage users**
-2. Find the user you want to restrict
-3. Click the **Pencil** icon to edit the user
-4. Click on the **Permissions** tab
-5. Deselect the **Remote Technician User** role
+Para impedir que um usuário use o Técnico Remoto:
+1. Usando a barra lateral, clique em **Admin > Gerenciar usuários**
+2. Encontre o usuário que você deseja restringir
+3. Clique no ícone do **Lápis** para editar o usuário
+4. Clique na guia **Permissões**
+5. Desmarque a função **Remote Technician User**
 
-### By Entity {#by-entity}
+### Por Conta {#by-entity}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-entity.gif)
 
-When you restrict access to Remote Technician at the entity level, you are restricting access to all devices that underneath that entity. This is the recommended way to restrict access to Remote Technician across an entire site.
+Quando você restringe o acesso ao Técnico Remoto no nível da conta, você está restringindo o acesso a todos os dispositivos que estão abaixo dessa conta. Essa é a maneira recomendada de restringir o acesso ao Técnico Remoto em uma localidade inteira.
 
-To prevent users from using Remote Technician for a specific entity and its children:
-1. Ensure that the selected entity is the entity that you'd like to restrict
-2. Using the sidebar, click **Admin > Manage entity**
-3. Click the **Settings** tab
-4. Expand the **Remote Technician** section
-5. Click on the **Enabled** toggle to disable Remote Technician
+Para impedir que os usuários usem o Técnico Remoto para uma conta específica e seus filhos:
+1. Certifique-se de que a conta selecionada é a conta que você deseja restringir
+2. Usando a barra lateral, clique em **Admin > Gerenciar conta**
+3. Clique na guia **Configurações**
+4. Expanda a seção **Técnico Remoto**
+5. Clique no botão de alternância **Ativado** para desativar o Técnico Remoto
 
-### By Install {#by-install}
+### Por instalação {#by-install}
 ![](https://www.cdn.printtrackerpro.com/images/documentation/remote-technician-restrict-access-install.gif)
 
-When you restrict access to Remote Technician at the install level, you are restricting access to all devices that are managed by that install[^2]. In most cases, you should restrict access to Remote Technician at the [entity level](#by-entity), however there may be some cases where you want to restrict access to a specific install (such as due to antivirus, or system network policy configurations on the specific install).
+Quando você restringe o acesso ao Técnico Remoto no nível de instalação, você está restringindo o acesso a todos os dispositivos que são gerenciados por essa instalação[^2]. Na maioria dos casos, você deve restringir o acesso ao Técnico Remoto no [nível da conta](#by-entity), no entanto, pode haver alguns casos em que você deseja restringir o acesso a uma instalação específica (como devido a antivírus ou configurações de diretiva de rede do sistema na instalação específica).
 
-To prevent users from using Remote Technician for a specific install:
-1. Using the sidebar, click **Installs > View installs**
-2. Click the install you want to restrict access through in the list of installs
-3. Click the **Settings** tab
-4. Expand the **Remote Technician** section
-5. Click on the **Enabled** toggle to disable Remote Technician
+Para impedir que os usuários usem o Técnico Remoto para uma instalação específica:
+1. Usando a barra lateral, clique em **Instalações > Exibir instalações**
+2. Clique na instalação que você deseja restringir o acesso na lista de instalações
+3. Clique na guia **Configurações**
+4. Expanda a seção **Técnico Remoto**
+5. Clique no botão de alternância **Habilitar** para desativar o Técnico Remoto
 
-## Compatibility {#compatibility}
-Remote Technician is compatible with nearly all devices regardless of manufacturer, however for some devices, not all features are guaranteed to work. The following devices are known to have compatibility issues:
+## Compatibilidade {#compatibility}
+O Técnico Remoto é compatível com quase todos os dispositivos, independentemente do fabricante, no entanto, para alguns dispositivos, nem todos os recursos podem funcionar. Os seguintes dispositivos são conhecidos por terem problemas de compatibilidade:
 
-| Device                                     | Issue                                                                                                                                                              |
+| Dispositivo                                     | Problema                                                                                                                                                              |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Canon iR-ADV C5240<br/> Canon iR-ADV C5850 | Authentication does not work. If the device has some pages that are protected by a username and password, you may not be able login or access the protected pages. |
+| Canon iR-ADV C5240<br/> Canon iR-ADV C5850 | A autenticação não funciona. Se o dispositivo tiver algumas páginas protegidas por nome de usuário e senha, talvez você não consiga fazer login ou acessar as páginas protegidas.|
 
-[^1]: Remote Technician only allows remote access to a device's embedded webserver. Only operations that can be performed from the device's webpage can be performed. These operations are supported on some devices, but may not be supported by all devices.
-[^2]: If there are multiple installs tracking the same device and Remote Technician is not disabled on all of the installs, the device will still be accessible via Remote Technician.
+[^1]: O Técnico Remoto só permite o acesso remoto a interface web de um dispositivo. Somente operações que podem ser executadas a partir da página da Web do dispositivo podem ser executadas. Essas operações são suportadas em alguns dispositivos, mas podem não ser suportadas por todos os dispositivos.
+[^2]: Se houverem várias instalações rastreando o mesmo dispositivo e o Técnico Remoto não estiver desabilitado em todas as instalações, o dispositivo ainda estará acessível via Técnico Remoto.
