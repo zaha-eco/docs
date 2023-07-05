@@ -78,7 +78,7 @@ Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a i
 3. Quando a instalação estiver concluída, abra [localhost:1301](http://localhost:1301/) para ativar o agente com seu [datalink code](#datalink-code)
 
 ```shell
-source <(curl -fsSL printtrackerpro.com/install.sh)
+source <(curl -fsSL https://www.cdn.printtrackerpro.com/modules/dca/install.sh)
 ```
 
 </TabItem>
@@ -117,7 +117,7 @@ Você deve ter acesso sudo para instalar o agente. Se você não fizer isso, a i
 4. Execute o comando para baixar e instalar o agente
 
 ```shell
-datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL printtrackerpro.com/install.sh)
+datalink_code='<YOUR DATALINK CODE>'; source <(curl -fsSL https://www.cdn.printtrackerpro.com/modules/dca/install.sh)
 ```
 
 </TabItem>
@@ -204,7 +204,7 @@ sudo bash /Library/PrintTracker/DataCollectionAgent/uninstall.sh
 2. Copie e execute o seguinte comando
 
 ```shell
-source <(curl -fsSL printtrackerpro.com/uninstall.sh)
+source <(curl -fsSL https://www.cdn.printtrackerpro.com/modules/dca/uninstall.sh)
 ```
 
 </TabItem>
