@@ -5,42 +5,42 @@ sidebar_position: 20
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 
-# Installs
+# Instalações
 
-## Antivirus {#antivirus}
-In some cases, antivirus software can interfere with the installation and operation of Print Tracker. While this is uncommon on most computers, some enterprise-grade antivirus solutions may flag Print Tracker malware. It's important to understand that Print Tracker is not malware, and that it is safe to install and run on your computer. Sometimes malware will falsely assume that Print Tracker is malware because it exhibits many of the same behaviors as actual malware, for example Print Tracker :
+## Antivírus {#antivirus}
+Em alguns casos, o software antivírus pode interferir na instalação e operação do Print Tracker. Embora isso seja incomum na maioria dos computadores, algumas soluções antivírus de nível empresarial podem sinalizar o Print Tracker como malware. É importante entender que o Print Tracker não é malware e que é seguro instalar e executar no seu computador. Às vezes, o antivírus assume falsamente que o Print Tracker é malware porque exibe muitos dos mesmos comportamentos que o malware real, por exemplo, o Print Tracker :
 
-* Automatically upgrades itself when a new version is available.
-* Automatically starts when your computer starts.
-* Scans your network using various protocols.
-* Collects data from devices on your network and uploads that data to a server.
-* Makes low-level system calls to the Windows API in order to talk to the Windows printer spooler.
-* Stores and retrieves values from the Windows registry.
-* Scans the process list to find other instances of Print Tracker that may be running.
-* Reads and writes log and database files to the local system.
+* Atualiza-se automaticamente quando uma nova versão está disponível.
+* Inicia automaticamente quando o computador é iniciado.
+* Verifica sua rede usando vários protocolos.
+* Coleta dados de dispositivos em sua rede e carrega esses dados para um servidor.
+* Faz chamadas de sistema de baixo nível para a API do Windows, a fim de falar com o spooler de impressora do Windows.
+* Armazena e recupera valores do registro do Windows.
+* Verifica a lista de processos para encontrar outras instâncias do Print Tracker que possam estar em execução.
+* Lê e grava arquivos de log e banco de dados para o sistema local.
 
-While there are similarities in the heuristics of Print Tracker and malware, Print Tracker is a well-known data collection agent provider and has been in the industry for 19 years.
+Embora existam semelhanças nas heurísticas do Print Tracker e do malware, o Print Tracker é um conhecido provedor de agentes de coleta de dados e está na indústria há 19 anos.
 
-### Installation Issues {#installation-issues}
+### Problemas de instalação {#installation-issues}
 :::tip
-If you are having trouble installing Print Tracker, try using a generic installer instead of a one-click installer.
+Se você estiver tendo problemas para instalar o Print Tracker, tente usar um instalador genérico em vez de um instalador com um clique.
 :::
-Print Tracker supports [several different methods](../guides/40-installing-agents.md#deployment-strategies) and some methods are more prone to antivirus interference than others. For example, Print Tracker provides one-click installers which are more likely to be flagged by antivirus software because these installers are generated on-the-fly and are not signed using our signing certificates, whereas our generic installers are signed using our signing certificates and are less likely to be flagged by antivirus software.
+O Print Tracker suporta [vários métodos diferentes](.. /guides/40-installing-agents.md#deployment-strategies) e alguns métodos são mais propensos à interferência antivírus do que outros. Por exemplo, o Print Tracker fornece instaladores de um clique que são mais propensos a serem sinalizados por software antivírus porque esses instaladores são gerados em tempo real e não são assinados usando nossos certificados de assinatura, enquanto nossos instaladores genéricos são assinados usando nossos certificados de assinatura e são menos propensos a serem sinalizados por software antivírus.
 
 ![](https://www.cdn.printtrackerpro.com/images/documentation/troubleshooting-installs-download-page.png)
 
-Click the button below to download a generic Print Tracker installer. This installer will not automatically register so you will need to obtain a data link code from your dealer.
+Clique no botão abaixo para baixar um instalador genérico do Print Tracker. Este instalador não se registrará automaticamente, então você precisará obter um código de link de dados do seu revendedor.
 
 <Box mb={2}>
-    <Button fullWidth size="lg" onClick={() => window.open("https://printtrackerpro.com/download")}>Download Generic Installer</Button>
+    <Button fullWidth size="lg" onClick={() => window.open("https://printtrackerpro.com/download")}>Baixar instalador genérico</Button>
 </Box>
 
-## Network Policies {#network-policies}
-Most networks support all Print Tracker features out-of-the box without any modifications. We've found that some more restrictive networks may require some additional configuration in order to allow Print Tracker to communicate with the printers on your network or with the our servers.
+## Políticas de Rede {#network-policies}
+A maioria das redes suporta todos os recursos do Print Tracker prontos para uso, sem modificações. Descobrimos que algumas redes mais restritivas podem exigir alguma configuração adicional para permitir que o Print Tracker se comunique com as impressoras em sua rede ou com nossos servidores.
 
-If you are experiencing issues getting Print Tracker to work properly, please make sure your network is compatible with the our [network requirements](../system-requirements/overview.md#network-requirements).
+Se você estiver enfrentando problemas para fazer com que o Print Tracker funcione corretamente, verifique se sua rede é compatível com os nossos [requisitos de rede](.. /system-requirements/overview.md#network-requirements).
 
 ## Laptops {#laptops}
-While Print Tracker can be installed on many different platforms and hardware, we generally advise against installing Print Tracker on laptops. Laptops are often removed from the network, are taken home at nights and weekends, or are put into sleep mode. 
+Embora o Print Tracker possa ser instalado em muitas plataformas e hardwares diferentes, geralmente desaconselhamos a instalação do Print Tracker em laptops. Os laptops são frequentemente removidos da rede, são levados para casa à noite e nos fins de semana, ou são colocados em modo de suspensão. 
 
-The accuracy of the data Print Tracker collects relies on the agent being online and able to communicate with the printers as much as possible. If the agent is offline, it will not be able to collect data from the printers. If the agent is offline for an extended period of time, it may miss critical like supply replacements.
+A precisão dos dados que o Print Tracker coleta depende de o agente estar on-line e ser capaz de se comunicar com as impressoras o máximo possível. Se o agente estiver offline, ele não poderá coletar dados das impressoras. Se o agente estiver offline por um longo período de tempo, ele pode perder informações críticas como substituições de suprimentos.
