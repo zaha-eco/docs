@@ -6,11 +6,11 @@ sidebar_position: 0
 import Button from '@mui/joy/Button';
 import Box from '@mui/joy/Box';
 
-# Quickstart
+# Guia de início rápido
 
-## 1. Start your Trial {#1-start-your-trial}
+## 1. Comece sua avaliação {#1-start-your-trial}
 
-Print Tracker offers a free, no obligation 30-day trial with no restrictions. You can start your trial by registering for an account. Click below to get started!
+O Print Tracker oferece uma avaliação gratuita de 30 dias sem compromisso, sem restrições. Você pode iniciar sua avaliação registrando-se para uma conta. Clique abaixo para começar!
 
 <Box mb={2}>
     <Button fullWidth size="lg" onClick={() => window.open("https://app.printtrackerpro.com/auth/register")}>Register</Button>
@@ -19,36 +19,36 @@ Print Tracker offers a free, no obligation 30-day trial with no restrictions. Yo
 
 [//]: # (![]&#40;./images/quickstart-register.png&#41;)
 
-## 2. Install the Agent {#2-install-the-agent}
-Print Tracker collects data from your devices by installing a small software agent on your network. The agent is available for Windows, Mac, and Linux. You can download the agent by clicking the button below.
+## 2. Instalar o agente {#2-install-the-agent}
+O Print Tracker coleta dados de seus dispositivos instalando um pequeno agente de software em sua rede. O agente está disponível para Windows, Mac e Linux. Você pode baixar o agente clicando no botão abaixo.
 
 <iframe src="https://app-v2.printtrackerpro.com/download" width="100%" height="300px" frameborder="0"></iframe>
 
-## 3. Activate the Agent {#3-activate-the-agent}
-Once you've installed the agent, you'll need to activate it. You can activate the agent by following [these directions](./guides/installation#datalink-code)
+## 3. Ativar o agente {#3-activate-the-agent}
+Depois de instalar o agente, você precisará ativá-lo. Você pode ativar o agente seguindo [estas instruções](./guides/installation#datalink-code)
 
-## 3. Discover Devices {#3-discover-devices}
-After activation, the agent will begin to discover devices on your network. You can view the discovered devices by following [these directions](./guides/installation#discovered-devices).
+## 3. Descobrir dispositivos {#3-discover-devices}
+Após a ativação, o agente começará a descobrir dispositivos em sua rede. Você pode exibir os dispositivos descobertos seguindo [estas instruções](./guides/installation#discovered-devices).
 
-:::info Missing devices?
-Can't find the device's you're looking for? Try manually scanning their IP addresses.
+:::info Dispositivos ausentes?
+Não consegue encontrar o dispositivo que procura? Tente verificar manualmente seus endereços IP.
 <Box mb={2}>
-    <Button fullWidth size="lg" onClick={() => window.open("/docs/guides/discovery#discovering-devices")}>Learn How</Button>
+    <Button fullWidth size="lg" onClick={() => window.open("/docs/guides/discovery#discovering-devices")}>Saiba como</Button>
 </Box>
 :::
 
-## 4. Upload Meters {#4-upload-meters}
-Once devices are discovered, they'll automatically start uploading meters! You can view the meters by following [these directions](./guides/meters#viewing-meters-and-supplies).
+## 4. Carregar Medidores {#4-upload-meters}
+Assim que os dispositivos forem descobertos, eles começarão automaticamente a carregar medidores! Você pode visualizar os medidores seguindo [estas instruções](./guides/meters#viewing-meters-and-supplies).
 
-:::info Missing Meters?
-Meters not uploading? Try manually uploading meters for your devices.
+:::info Faltam medidores?
+Os medidores não carregam? Tente carregar manualmente medidores para seus dispositivos.
 <Box mb={2}>
-<Button fullWidth size="lg" onClick={() => window.open("/docs/guides/meters#on-demand-uploads")}>Learn How</Button>
+<Button fullWidth size="lg" onClick={() => window.open("/docs/guides/meters#on-demand-uploads")}>Saiba como</Button>
 </Box>
 :::
 
-## What's Next? {#whats-next}
-There's a lot more to learn about Print Tracker, and there are many strategies for effectively managing large fleets of printers. Here are some resources to help you get started:
-* [Configuring Settings and Alerts](guides/20-configuring-settings.md)
-* [Creating and Organizing Entities](guides/30-creating-entities.md)
-* [Creating Custom Reports](guides/80-custom-reports.md)
+## O que vem a seguir? {#whats-next}
+Há muito mais a aprender sobre o Print Tracker e há muitas estratégias para gerenciar com eficiência grandes frotas de impressoras. Aqui estão alguns recursos para ajudá-lo a começar:
+* [Configurações e alertas](guides/20-configuring-settings.md)
+* [Criação e Organização de contas](guides/30-creating-entities.md)
+* [Criação de relatórios personalizados](guides/80-custom-reports.md)
