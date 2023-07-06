@@ -3,39 +3,39 @@ slug: remote-technician
 sidebar_position: 2
 description: Allows users to quickly connect to a printers webpage directly from anywhere.
 ---
-# Remote Technician
+# Técnico Remoto
 
-Remote Technician allows remote access to a device's embedded webserver (EWS) from anywhere. It does not require any special network or firewall configuration and works out of the box.
+O Técnico Remoto permite o acesso remoto ao servidor web incorporado (EWS) de um dispositivo a partir de qualquer lugar. Ele não requer nenhuma configuração especial de rede ou firewall.
 
-## Managing Permissions {#managing-permissions}
-Print Tracker Pro’s web interface has fine-grained role based access controls. There are two roles that pertain to the Remote Technician feature.
+## Gerenciando permissões {#managing-permissions}
+A interface web do Print Tracker Pro tem controles de acesso refinados baseados em função. Há duas funções que pertencem ao recurso Técnico Remoto.
 
-* **Remote Technician Configurer** Gives a user the ability to enable/disable Remote Technician for devices managed by the user.
-* **Remote Technician User** Gives a user the ability to use the Remote Technician feature for enabled devices.
+* **Remote Technician Configurer** Dá ao usuário a capacidade de ativar/desativar o Técnico Remoto para dispositivos gerenciados pelo usuário.
+* **Remote Technician User** Dá ao usuário a capacidade de usar o recurso Técnico Remoto para dispositivos habilitados.
 
-## Enabling the Feature {#enabling-the-feature}
-Once a user has the Remote Technician Configurer role, a new setting will become visible within each device allowing them to enable/disable Remote Technician for any device.
+## Ativando o recurso {#enabling-the-feature}
+Depois que um usuário tiver a função Remote Technician Configurer, uma nova configuração ficará visível em cada dispositivo, permitindo que ele habilite/desabilite o Técnico Remoto para qualquer dispositivo.
 
-## Security {#security}
-The following describes the behavior of the system when an authorized user successfully initiates a Remote Technician session.
+## Segurança {#security}
+A seguir é descrito o comportamento do sistema quando um usuário autorizado inicia com êxito uma sessão do Técnico Remoto.
 
-1. The web UI sends a message securely via mTLS GPRC to the install.
-2. The install verifies the mac address or serial number of the device.
-3. The install initiates a persistent TLS connection to the Remote Technician server.
-4. The user’s browser initiates an OAuth 2.1 PKCE token exchange with the Remote Technician server.
-5. The user’s browser is redirected via HTTPS to the Remote Technician server.
-6. Requests from the user’s browser are passed securely over TLS between the device and the user's browser.
+1. A interface do usuário da Web envia uma mensagem com segurança via mTLS GPRC para a instalação.
+2. A instalação verifica o endereço mac ou número de série do dispositivo.
+3. A instalação inicia uma conexão TLS persistente com o servidor Técnico Remoto.
+4. O navegador do usuário inicia uma troca de token PKCE OAuth 2.1 com o servidor Técnico Remoto.
+5. O navegador do usuário é redirecionado via HTTPS para o servidor Técnico Remoto.
+6. As solicitações do navegador do usuário são passadas com segurança por TLS entre o dispositivo e o navegador do usuário.
 
-Remote Technician does not require any special port-forwarding rules or firewall configurations. The install initiates the persistent TLS connection with the server (outbound traffic) and uses that connection to allow the user to communicate with the device.
+O Técnico Remoto não requer regras especiais de encaminhamento de porta ou configurações de firewall. A instalação inicia a conexão TLS persistente com o servidor (tráfego de saída) e usa essa conexão para permitir que o usuário se comunique com o dispositivo.
 
-## Session Management {#session-management}
-Each Remote Technician session lasts for a maximum of 30 minutes. After 30 minutes, a new session must be created via the UI.
+## Gerenciamento de Sessão {#session-management}
+Cada sessão do Técnico Remoto dura no máximo 30 minutos. Após 30 minutos, uma nova sessão deve ser criada por meio da interface do usuário.
 
-## Content Security Policy {#content-security-policy}
-Restricted Cross Origin Resource Sharing and a strict Content Security Policy applied to traffic traversing the Remote Technician server severely limits any sort of lateral movement that might be attempted by a malicious device as well as eliminating any potential for cross site request forgery.
+## Política de Segurança de Conteúdo {#c  ontent-security-policy}
+O Restrito Compartilhamento de Recursos de Origem Cruzada e uma rigorosa Política de Segurança de Conteúdo aplicada ao tráfego que atravessa o servidor do Técnico Remoto limitam severamente qualquer tipo de movimento lateral que possa ser tentado por um dispositivo mal-intencionado, além de eliminar qualquer potencial de falsificação de solicitação entre sites.
 
-## Auditing {#auditing}
-Each session is represented as an Open Device Webpage job. Viewing any job of this type in the Jobs tab will display a Remote Technician Log at the bottom which contains the complete HTTP access logs for the session.
+## Auditoria {#auditing}
+Cada sessão é representada como um trabalho da Página da Web do Dispositivo Aberto. A exibição de qualquer trabalho desse tipo na guia Trabalhos exibirá um Log do Técnico Remoto na parte inferior, que contém os logs de acesso HTTP completos para a sessão.
 
-## Conclusion {#conclusion}
-With Role Based Access Control, OAuth 2.1, TLS, and a strict Content Security Policy, the new Remote Technician feature enables new capabilities while maintaining a robust security profile.
+## Conclusão {#conclusion}
+Com o Controle de Acesso Baseado em Função, OAuth 2.1, TLS e uma rigorosa Política de Segurança de Conteúdo, o novo recurso Técnico Remoto habilita novos recursos e, ao mesmo tempo, mantém um perfil de segurança robusto.
