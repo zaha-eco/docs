@@ -3,59 +3,57 @@ slug: atm
 sidebar_position: 3
 description: Allows Print Tracker engineers to quickly connect directly to your printers to troubleshoot issues.
 ---
-# Advanced Troubleshooting Mode
+# Modo de solução de problemas avançado
 
 import Admonition from '@theme/Admonition';
 
 <Admonition type="caution" icon="⍺" title="Alpha Feature">
   <p>
-    This feature has not been released, and is only provided in specially-compiled patch versions of the data collection agent on request.
+    Esse recurso não foi lançado e só é fornecido em versões de patch especialmente compiladas do agente de coleta de dados mediante solicitação.
   </p>
 </Admonition>
 
-This mode allows designated Print Tracker engineers to connect directly to a printing device by creating a temporary virtual private network between Print Tracker engineers and the printing device. This technology is powered by Tailscale which enables private, secure connections between Print Tracker and the printing device using an industry-standard technology called Wireguard. These temporary connections are only created between Print Tracker engineers and the printing device, other devices on customer networks are not exposed; this behavior ensures that Print Tracker engineers access only authorized devices.
+Esse modo permite que os engenheiros designados do Print Tracker se conectem diretamente a um dispositivo de impressão, criando uma rede privada virtual temporária entre os engenheiros do Print Tracker e o dispositivo de impressão. Esta tecnologia é alimentada pelo Tailscale, que permite conexões privadas e seguras entre o Print Tracker e o dispositivo de impressão usando uma tecnologia padrão da indústria chamada Wireguard. Essas conexões temporárias são criadas apenas entre os engenheiros do Print Tracker e o dispositivo de impressão, outros dispositivos nas redes do cliente não são expostos; esse comportamento garante que os engenheiros do Print Tracker acessem apenas dispositivos autorizados.
 
-## Enabling {#enabling}
-To turn on Advanced Troubleshooting Mode, make sure you have physical or remote access to the data collection agent.
+## Habilitando {#enabling}
+Para ativar o Modo de Solução de Problemas Avançado, verifique se você tem acesso físico ou remoto ao agente de coleta de dados.
 
-1. Navigate to [localhost:1301](http://localhost:1301)
-2. Click the toggle switch under the Advanced Troubleshooting Mode section.
+1. Navegue até [localhost:1301](http://localhost:1301)
+2. Clique no botão de alternância na seção Modo de Solução de Problemas Avançado.
 
 :::info
-If the Advanced Troubleshooting Mode option is not shown, it may not be available for your Data Collection Agent yet. Please reach out to [support@printtrackerpro.com](mailto:support@printtrackerpro.com) for additional questions.
+Se a opção Modo de Solução de Problemas Avançado não for exibida, talvez ela ainda não esteja disponível para o Agente de Coleta de Dados. Entre em contato com [support@printtrackerpro.com](mailto:support@printtrackerpro.com) para perguntas adicionais.
 :::
 
 ![Advanced Troubleshooting Mode](images/atm.png)
 
-## Frequently Asked Questions {#frequently-asked-questions}
-### Why would I need to use Advanced Troubleshooting Mode? {#why-would-i-need-to-use-advanced-troubleshooting-mode}
-In most cases, you don’t, however, there are some situations that previously required a Zoom/Team Viewer meeting between Print Tracker engineers and someone onsite at the customer location. In these situations, Advanced Troubleshooting Mode may allow Print Tracker to perform these troubleshooting steps remotely rather than requiring a meeting to be scheduled with the end customer. Examples of situations where Advanced Troubleshooting Mode may be required:
+## Perguntas Frequentes {#frequently-asked-questions}
+### Por que eu precisaria usar o Modo de Solução de Problemas Avançado? {#why-would-i-need-to-use-advanced-troubleshooting-mode}
+Na maioria dos casos, você não precisa, no entanto, há algumas situações que anteriormente exigiam uma reunião do Zoom/Team Viewer entre os engenheiros do Print Tracker e alguém no local do cliente. Nessas situações, o Modo de Solução de Problemas Avançado pode permitir que o Print Tracker execute essas etapas de solução de problemas remotamente, em vez de exigir que uma reunião seja agendada com o cliente final. Exemplos de situações em que o Modo de Solução de Problemas Avançado pode ser necessário:
 
-* Remote technician is not working for a particular model.
-* Print Tracker is not able to connect to a device but the device is on the network.
+* O técnico remoto não está funcionando para um modelo específico.
+* Print Tracker não é capaz de se conectar a um dispositivo, mas o dispositivo está na rede.
 
-Advanced Troubleshooting Mode will not help you if:
+O Modo de Solução de Problemas Avançado não o ajudará se:
 
-* The Print Tracker data collection agent is being stopped by antivirus software.
-* The computer running the Print Tracker data collection agent does not have internet connectivity.
+* O agente de coleta de dados do Print Tracker está sendo interrompido pelo software antivírus.
+* O computador que executa o agente de coleta de dados do Print Tracker não tem conectividade com a Internet.
 
-### How is this different then what Print Tracker does normally? {#how-is-this-different-then-what-print-tracker-does-normally}
-Print Tracker normally makes various types of network requests directly from the agent installed within customer networks to printing devices. Print Tracker engineers have configured Print Tracker to make those requests, but the requests are not made by Print Tracker engineers directly. Advanced Troubleshooting Mode allows Print Tracker engineers to make requests to the printing device directly.
+### Como isso é diferente do que o Print Tracker faz normalmente? {#how-is-this-different-then-what-print-tracker-does-normally}
+O Print Tracker normalmente faz vários tipos de solicitações de rede diretamente do agente instalado nas redes do cliente para dispositivos de impressão. Os engenheiros do Print Tracker configuraram o Print Tracker para fazer essas solicitações, mas as solicitações não são feitas diretamente pelos engenheiros do Print Tracker. O Modo de Solução de Problemas Avançado permite que os engenheiros do Print Tracker façam solicitações diretamente ao dispositivo de impressão.
 
-### What does this technology allow Print Tracker to do? {#what-does-this-technology-allow-print-tracker-to-do}
-This allows Print Tracker engineers to make network requests to printing devices that are managed by Print Tracker remotely through the Print Tracker data collection agent. It does not allow Print Tracker engineers to connect to other devices on your network that are not managed by Print Tracker.
+### O que essa tecnologia permite que o Print Tracker faça? {#what-does-this-technology-allow-print-tracker-to-do}
+Isso permite que os engenheiros do Print Tracker façam solicitações de rede para dispositivos de impressão que são gerenciados pelo Print Tracker remotamente por meio do agente de coleta de dados do Print Tracker. Ele não permite que os engenheiros do Print Tracker se conectem a outros dispositivos em sua rede que não sejam gerenciados pelo Print Tracker.
 
-### What would happen in the unlikely event that Print Tracker were compromised by an attacker? {#what-would-happen-in-the-unlikely-event-that-print-tracker-were-compromised-by-an-attacker}
-We’ve taken several steps to make sure that Advanced Troubleshooting Mode cannot be used in the event that Print Tracker is compromised:
+### O que aconteceria no caso improvável de o Print Tracker ser comprometido por um invasor? {#what-would-happen-in-the-unlikely-event-that-print-tracker-were-compromised-by-an-attacker}
+Tomamos várias medidas para garantir que o Modo de Solução de Problemas Avançado não possa ser usado no caso de o Rastreador de Impressão ser comprometido:
 
-* Connections are only allowed if Advanced Troubleshooting Mode has been enabled directly on the data collection agent by someone with physical access to the Print Tracker data collection agent.
-* Tailscale requires that all users of the network are registered as authorized users in our Tailscale account. This account is authorized using [Microsoft SSO](https://www.microsoft.com/en-us/security/business/identity-access/azure-active-directory-single-sign-on) which requires two-factor authentication.
-* Tailscale ACLs ensure that each customer using Advanced Troubleshooting Mode is isolated to their own “virtual network”. This ensures that one compromised customer could not compromise another customer.
-* Tailscale ACLs ensure that only specific Print Tracker engineers are authorized to connect to printing devices. These engineers are also authorized using Microsoft SSO.
-* It is not possible to initiate a connection from the customer network side and connect to Print Tracker due to the use of a user-space networking stack.
-* The virtual network between Print Tracker engineers and printing devices is temporary: it is turned on for the duration of the troubleshooting session and then it is disabled. This ensures that there aren’t any persistent virtual networks that exist into perpetuity.
+* As conexões só são permitidas se o Modo de Solução de Problemas Avançado tiver sido ativado diretamente no agente de coleta de dados por alguém com acesso físico ao agente de coleta de dados do Print Tracker.
+* O Tailscale requer que todos os usuários da rede estejam registrados como usuários autorizados em nossa conta Tailscale. Essa conta é autorizada usando [Microsoft SSO](https://www.microsoft.com/en-us/security/business/identity-access/azure-active-directory-single-sign-on) que requer autenticação de dois fatores.
+* As ACLs Tailscale garantem que cada cliente que usa o Modo de Solução de Problemas Avançado esteja isolado em sua própria "rede virtual". Isso garante que um cliente comprometido não possa comprometer outro cliente.
+* As ACLs Tailscale garantem que apenas engenheiros específicos do Print Tracker estejam autorizados a se conectar a dispositivos de impressão. Esses engenheiros também são autorizados usando o Microsoft SSO.
 
-### How do I know if my agent has Advanced Troubleshooting Mode enabled? {#how-do-i-know-if-my-agent-has-advanced-troubleshooting-mode-enabled}
-Advanced Troubleshooting Mode is disabled by default and can only be enabled by someone with physical access to the Print Tracker data collection agent. You can check whether Advanced Troubleshooting Mode is enabled by navigating to [localhost:1301](http://localhost:1301)
+### Como saber se meu agente tem o Modo de Solução de Problemas Avançado habilitado? {#how-do-i-know-if-my-agent-has-advanced-troubleshooting-mode-enabled}
+O Modo de Solução de Problemas Avançado é desabilitado por padrão e só pode ser habilitado por alguém com acesso físico ao agente de coleta de dados do Print Tracker. Você pode verificar se o Modo de Solução de Problemas Avançado está habilitado navegando até [localhost:1301](http://localhost:1301)
 
 ![Advanced Troubleshooting Mode](images/atm.png)
