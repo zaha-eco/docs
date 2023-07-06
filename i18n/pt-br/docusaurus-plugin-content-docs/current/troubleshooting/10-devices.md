@@ -2,10 +2,10 @@
 sidebar_position: 10
 ---
 
-# Devices
+# Dispositivos
 
-:::caution Under Construction
-This guide is currently under construction. Please check back soon for updates.
+:::caution Em construção
+Este guia está atualmente em construção. Por favor, volte em breve para atualizações.
 :::
 
 ## Discovering Devices {#discovering-devices}
