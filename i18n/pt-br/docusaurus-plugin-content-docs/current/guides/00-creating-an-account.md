@@ -3,7 +3,7 @@ slug: account
 sidebar_position: 0
 ---
 
-# Criando uma conta
+# Criando seu acesso
 
 A criação de uma conta abre o acesso ao portal de administração Web on-line, que pode ser visualizado usando qualquer navegador suportado de qualquer lugar onde o serviço de Internet esteja disponível. Este acesso lhe dará a capacidade de criar e gerenciar dispositivos de impressão conectados à internet em qualquer lugar do mundo.
 
