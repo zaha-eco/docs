@@ -7,104 +7,104 @@ description: The Print Tracker data collection agent is a small piece of softwar
 import Box from "@mui/joy/Box";
 import DownloadButton from "@site/src/components/DownloadButton";
 
-# Data Collection Agents
+# Agentes de Coleta de Dados
 
 <Box mb={3}>
     <DownloadButton link="https://cdn.printtrackerpro.com/misc/printtracker-dca-whitepaper.pdf">Download PDF</DownloadButton>
 </Box>
 
 
-Print Tracker Pro data collection agent (DCA) is a light-weight monitoring software for printer and copier devices. Each new release version of Print Tracker Pro is submitted to several major virus-protection companies for review prior to its public release. After download, Print Tracker Pro is installed by default within the C:\Program Files (x86)\Print Tracker Pro folder. The installation consists of the data collection agent (a Windows service and graphical interface) and configuration files.
+O agente de coleta de dados (DCA) Print Tracker Pro é um software de monitoramento leve para impressoras e multifuncionais. Cada nova versão do Print Tracker Pro é submetida a várias grandes empresas de proteção contra vírus para revisão antes de seu lançamento público. Após o download, o Print Tracker Pro é instalado por padrão na pasta C:\Program Files (x86)\Print Tracker Pro. A instalação consiste no agente de coleta de dados (um serviço do Windows e uma interface gráfica) e arquivos de configuração.
 
-Print Tracker Pro software can be installed to run from an end user’s workstation, virtual machine or server within a network.
+O software Print Tracker Pro pode ser instalado para ser executado a partir da estação de trabalho de um usuário final, máquina virtual ou servidor dentro de uma rede.
 
-Print Tracker Pro utilizes a network layer abstraction called gRPC (or Google Remote Procedure Call) that is powered by the new major revision of HTTP, called HTTP/2. Additional details about HTTP/2 can be found [here](https://developers.google.com/web/fundamentals/performance/http2). This article will be referenced throughout this whitepaper for explanations as to the advancements in HTTP/2 over HTTP, and how these new features affect the print tracking industry.
+O Print Tracker Pro utiliza uma abstração de camada de rede chamada gRPC (ou Google Remote Procedure Call) que é alimentada pela nova grande revisão do HTTP, chamada HTTP/2. Detalhes adicionais sobre HTTP/2 podem ser encontrados [aqui](https://developers.google.com/web/fundamentals/performance/http2). Este artigo será referenciado ao longo deste whitepaper para obter explicações sobre os avanços em HTTP/2 sobre HTTP e como esses novos recursos afetam o setor de rastreamento de impressão.
 
-The technology used by Print Tracker and outlined in this whitepaper is used by top companies such as Netflix, Microsoft, Google, and more to provide a reliable and high-performance experience interacting with information. It is our goal at Print Tracker to take the technology that already impacts other aspects of our lives and bring it to the print tracking industry.
+A tecnologia usada pelo Print Tracker e descrita neste whitepaper é usada pelas principais empresas, como Netflix, Microsoft, Google e muitas outras, para fornecer uma experiência confiável e de alto desempenho interagindo com as informações. É nosso objetivo na Print Tracker usar uma tecnologia que já impacta outros aspectos de nossas vidas e trazê-la para a indústria de rastreamento de impressão.
 
-## General Functionality {#general-functionality}
-### Network device discovery {#network-device-discovery}
+## Funcionalidade Geral {#general-functionality}
+### Descoberta de dispositivo de rede {#network-device-discovery}
 
-Using SNMP version 1, 2 or 3 over port 161, Print Tracker Pro is designed to discover any network-connected and locally-attached print device (MFPs, copiers and printers, etc.) in the environment in which it is run or installed. Particular network segments or IPs can be specified along with limiting the scan to X number of hops from the original network segment where it is installed. If SNMP provided information is incomplete, Print Tracker Pro may request data from the device’s embedded web server over port 80 or other common HTTP ports as defined by the device manufacturer. Collected information includes the device’s network name, MAC address, model, serial number, various counters and supply information. Print Tracker Pro cannot gather printed content.
+Usando o SNMP versão 1, 2 ou 3 sobre a porta 161, o Print Tracker Pro foi projetado para descobrir qualquer dispositivo de impressão conectado à rede e conectado localmente (MFPs, copiadoras e impressoras, etc.) no ambiente em que é executado ou instalado. Segmentos de rede ou IPs específicos podem ser definidos juntamente com a limitação da varredura a X número de saltos do segmento de rede original onde ele está instalado. Se as informações fornecidas pelo SNMP estiverem incompletas, o Print Tracker Pro poderá solicitar dados do servidor Web incorporado do dispositivo pela porta 80 ou outras portas HTTP comuns, conforme definido pelo fabricante do dispositivo. As informações coletadas incluem o nome da rede do dispositivo, endereço MAC, modelo, número de série, vários contadores e informações de suprimento. O Print Tracker Pro não pode coletar conteúdo impresso.
 
-### Functionality of the Print Tracker Pro Data Collection Agent {#functionality-of-the-print-tracker-pro-data-collection-agent}
-Print Tracker Pro has a very small impact on network performance by running as a service in the background. Periodically it pulls meters to analyze data coming from existing devices for low-toner alerts and events. When and how often the software runs these scans throughout the day can be configured within the webadmin. For a typical network segment, Print Tracker Pro will send or receive about 80 KB of data per device when it pulls the meters.
+### Funcionalidade do Print Tracker Pro Data Collection Agent {#functionality-of-the-print-tracker-pro-data-collection-agent}
+O Print Tracker Pro tem um impacto muito pequeno no desempenho da rede ao ser executado como um serviço em segundo plano. Periodicamente, ele puxa medidores para analisar dados provenientes de dispositivos existentes para alertas e eventos de baixo toner. Quando e com que frequência o software executa essas varreduras ao longo do dia podem ser configuradas dentro do webadmin. Para um segmento de rede típico, o Print Tracker Pro enviará ou receberá cerca de 80 KB de dados por dispositivo quando puxar os medidores.
 
-Print Tracker Pro periodically performs a search of user-selected network segments to see if new devices have been added. Any new devices discovered will be added to a total list of devices and will automatically be tracked and managed from that point forward.
+O Print Tracker Pro realiza periodicamente uma pesquisa de segmentos de rede selecionados pelo usuário para ver se novos dispositivos foram adicionados. Todos os novos dispositivos descobertos serão adicionados a uma lista total de dispositivos e serão automaticamente rastreados e gerenciados a partir desse ponto.
 
-After meters are collected they are securely uploaded to Print Tracker servers. All data is encrypted in-transit and at-rest.
+Depois que os medidores são coletados, eles são carregados com segurança nos servidores do Print Tracker. Todos os dados são criptografados em trânsito e em repouso.
 
-In the event a DCA has issues that require assistance from the Print Tracker support team, log files will be uploaded to secure web servers for review. These files contain only information relating to the Print Tracker software, the host machine, and the device information gathered.
+No caso de um DCA ter problemas que exijam assistência da equipe de suporte do Print Tracker, os arquivos de log serão carregados em servidores Web seguros para revisão. Esses arquivos contêm apenas informações relacionadas ao software Print Tracker, à máquina host e às informações do dispositivo coletadas.
 
-### SNMP v1, v2 and v3 compliance {#snmp-v1-v2-and-v3-compliance}
-Print Tracker Pro discovers network devices that respond to Simple Network Management Protocol (SNMP) requests. A version of SNMP (either v1, v2 or v3) must be enabled for Print Tracker Pro to capture device information.
+### Conformidade SNMP v1, v2 e v3 {#snmp-v1-v2-and-v3-compliance}
+O Print Tracker Pro descobre dispositivos de rede que respondem a solicitações SNMP (Simple Network Management Protocol). Uma versão do SNMP (v1, v2 ou v3) deve estar habilitada para que o Print Tracker Pro capture informações do dispositivo.
 
-## Working with Anti-Virus Software {#working-with-anti-virus-software}
-Antivirus software is designed to detect and remove malicious software from a user's computer or network. However, in some cases, legitimate software can be falsely flagged as malicious by antivirus software. This can happen when the antivirus software detects behavior or code that is similar to that used by malware, or when it identifies a legitimate application as a potential threat due to a false positive in its signature-based detection algorithm.
+## Trabalhando com software antivírus {#working-with-anti-virus-software}
+O software antivírus foi projetado para detectar e remover software mal-intencionado do computador ou da rede de um usuário. No entanto, em alguns casos, o software legítimo pode ser falsamente sinalizado como malicioso pelo software antivírus. Isso pode acontecer quando o software antivírus detecta um comportamento ou código semelhante ao usado pelo malware, ou quando identifica um aplicativo legítimo como uma ameaça potencial devido a um falso positivo em seu algoritmo de detecção baseado em assinatura.
 
-Print Tracker uploads all releases to several antivirus providers so that they can update their definitions. However, ultimately the responsibility remains with the customer to make sure their environment is not uninstalling Print Tracker Pro. Most antivirus solutions allow for whitelisting of applications, and Print Tracker Pro can be added to the whitelist to prevent it from being uninstalled.c
+O Print Tracker carrega todas as versões para vários provedores de antivírus para que eles possam atualizar suas definições. No entanto, em última análise, a responsabilidade permanece com o cliente para garantir que seu ambiente não esteja desinstalando o Print Tracker Pro. A maioria das soluções antivírus permite uma lista de exceção de aplicativos, e o Print Tracker Pro pode ser adicionado à lista para evitar que ele seja desinstalado.
 
-## Print Tracker Pro Compliance {#print-tracker-pro-compliance}
-### HIPAA compliance {#hipaa-compliance}
-The Health Insurance Portability and Accountability Act (HIPAA) of 1996 (P.L.104-191) [HIPAA] was enacted by the U.S. Congress in 1996. Title II of HIPAA, known as the Administrative Simplification provisions, required the establishment of national standards for electronic health care transactions while aiming to increase the efficiency of the health care system.
+## Conformidade do Print Tracker Pro {#print-tracker-pro-compliance}
+### Conformidade com HIPAA {#hipaa-compliance}
+A Lei de Portabilidade e Responsabilidade de Seguros de Saúde (HIPAA) de 1996 (P.L.104-191) [HIPAA] foi promulgada pelo Congresso dos EUA em 1996. O Título II da HIPAA, conhecido como as disposições de Simplificação Administrativa, exigia o estabelecimento de padrões nacionais para transações eletrônicas de cuidados de saúde, visando aumentar a eficiência do sistema de saúde.
 
-The Department of Health and Human Services drafted rules for the use and dissemination of health care information under Title II. The Administrative Simplification rules, including the HIPAA Privacy Rule, address the security and privacy of health data.
+O Departamento de Saúde e Serviços Humanos elaborou regras para o uso e divulgação de informações sobre cuidados de saúde sob o Título II. As regras de Simplificação Administrativa, incluindo a Regra de Privacidade da HIPAA, abordam a segurança e a privacidade dos dados de saúde.
 
-The HIPAA Privacy Rule regulates and establishes regulations for the use and disclosure of Protected Health Information (PHI). PHI is any information held by an entity which concerns health status, provision of health care, or payment for health care that can be linked to an individual. The HIPAA Privacy Rule also encourages the widespread use of electronic data interchange in the U.S. health care system.
+A Regra de Privacidade da HIPAA regula e estabelece regulamentos para o uso e divulgação de Informações de Saúde Protegidas (PHI). PHI é qualquer informação detida por uma entidade que diga respeito ao estado de saúde, prestação de cuidados de saúde ou pagamento de cuidados de saúde que possam estar ligados a um indivíduo. A Regra de Privacidade da HIPAA também incentiva o difundido uso do intercâmbio eletrônico de dados no sistema de saúde dos EUA.
 
-Print Tracker Pro can only access an imaging device’s meter information in the form of:
+O Print Tracker Pro só pode acessar as informações do medidor de um dispositivo de imagem na forma de:
 
-* Page counts
-* Copy counts
-* Scan counts
-* Fax counts
-* Supply levels
-* Device service needs
+* Contagem de páginas
+* Contagem de cópias
+* Contagens de digitalizações
+* Contagem de fax
+* Níveis de suprimento
+* Necessidades de serviço do dispositivo
 
-Printed, copied, scanned or faxed content is inaccessible to Print Tracker Pro and therefore security of patient or business information is guaranteed.
+O conteúdo impresso, copiado, digitalizado ou enviado por fax é inacessível ao Print Tracker Pro e, portanto, a segurança das informações do paciente ou da empresa é garantida.
 
-**Print Tracker Pro is HIPAA compliant** because the software does not have the ability to capture PHI including: health status, provision of health care, or payment for health care and cannot link to files or this information stored electronically or printed on a page.
+**O Print Tracker Pro é compatível com HIPAA** porque o software não tem a capacidade de capturar informações pessoais do paciente, incluindo: estado de saúde, prestação de cuidados de saúde ou pagamento por cuidados de saúde e não pode vincular a arquivos ou essas informações armazenadas eletronicamente ou impressas em uma página.
 
-### GDPR compliance {#gdpr-compliance}
-**Print Tracker Pro is General Data Protection Regulation compliant.** All Print Tracker Pro data is stored on GDPR-compliant servers.
+### Conformidade com o GDPR {#gdpr-compliance}
+**O Print Tracker Pro está em conformidade com o Regulamento Geral de Proteção de Dados.** Todos os dados do Print Tracker Pro são armazenados em servidores compatíveis com o GDPR.
 
-### Sarbanes-Oxley compliance {#sarbanes-oxley-compliance}
-Sometimes referred to as the Public Company Accounting Reform and Investor Protection Act of 2002, Sarbanes – Oxley is geared toward accountability. Compliance is not optional, all publicly traded corporations must comply with the mandates of the act.
+### Conformidade Sarbanes-Oxley {#sarbanes-oxley-compliance}
+Às vezes referida como a Lei de Reforma Contábil e Proteção ao Investidor de Empresas Públicas de 2002, a Sarbanes – Oxley é voltada para a prestação de contas. O compliance não é opcional, todas as sociedades anônimas de capital aberto devem cumprir os mandatos do ato.
 
-**Print Tracker Pro is Sarbanes - Oxley compliant** because it does not store, process, transmit or come in contact with any financial documents or reports.
+**O Print Tracker Pro está em conformidade com a Sarbanes - Oxley** porque não armazena, processa, transmite ou entra em contato com quaisquer documentos ou relatórios financeiros.
 
-### FISMA compliance {#fisma-compliance}
-The Federal Information Security Management Act (FISMA) is a United States federal law as Title III of the EGovernment Act. The act recognizes the importance of information security to the economic and national security interests of the United States. The act requires agencies to develop, document, and implement programs that provide information security for the information and systems that support the operations and assets of the agency, including those provided or managed by a contractor or other source. The E-Government Act is a United States statute. Its stated purpose is to improve the management and promotion of electronic services and processes by establishing a framework of measures for Internet-based information technology. All government agencies must comply with the mandates of both acts.
+### Conformidade FISMA {#fisma-compliance}
+O Federal Information Security Management Act (FISMA) é uma lei federal dos Estados Unidos como Título III do EGovernment Act. O ato reconhece a importância da segurança da informação para os interesses econômicos e de segurança nacional dos Estados Unidos. A lei exige que as agências desenvolvam, documentem e implementem programas que forneçam segurança da informação para as informações e sistemas que suportam as operações e os ativos da agência, incluindo aqueles fornecidos ou gerenciados por um contratante ou outra fonte. O E-Government Act é um estatuto dos Estados Unidos. O seu objectivo declarado é melhorar a gestão e a promoção dos serviços e processos electrónicos através do estabelecimento de um quadro de medidas para as tecnologias da informação baseadas na Internet. Todos os órgãos governamentais devem cumprir os mandatos de ambos os atos.
 
-**Print Tracker Pro is Federal Information Security Management Act compliant** because the software can be installed on any managed computer or system, does not increase risk vulnerability or allow changes to systems or security controls, and the information it gathers can be used to maintain cost objectives for any government agency.
+**O Print Tracker Pro está em conformidade com a Lei Federal de Gerenciamento de Segurança da Informação** porque o software pode ser instalado em qualquer computador ou sistema gerenciado, não aumenta a vulnerabilidade de risco ou permite alterações nos sistemas ou controles de segurança, e as informações que ele coleta podem ser usadas para manter os objetivos de custo para qualquer agência governamental.
 
-## Connectivity with the DCA {#connectivity-with-the-dca}
-Print Tracker Pro brings cutting-edge technology to the print tracking industry by merging time tested, industry-standard principles with new ideas, creating the best possible printer tracking experience with the lowest overhead possible.
+## Conectividade com o DCA {#connectivity-with-the-dca}
+O Print Tracker Pro traz tecnologia de ponta para a indústria de rastreamento de impressão, mesclando princípios padrão do setor testados pelo tempo com novas ideias, criando a melhor experiência possível de rastreamento de impressora com a menor sobrecarga possível.
 
-### Service Mode vs Normal {#service-mode-vs-normal}
-Print Tracker Pro offers two forms of connection with the Web Admin. The first is the standard pull-connection where the DCA checks in with the server on a regular interval for new settings, instructions or jobs to complete. Print Tracker Pro checks in with the server about every 5 minutes allowing for a relatively quick time frame for new settings and instructions to be picked up by the DCA. While this solution is adequate for most needs, it takes a significant amount of time to troubleshoot, make remote changes, and update settings. In the past, solutions were presented to accomplish a more real-time connection between DCAs and remote servers by maintaining open ports where the two parties could push and pull data between each other. This, however, presents major network vulnerability risks that organization should not and are not willing to make.
+### Modo de Serviço vs Normal {#service-mode-vs-normal}
+O Print Tracker Pro oferece duas formas de conexão com o administrador da Web. A primeira é a conexão normal, em que o DCA faz check-in com o servidor em um intervalo regular para que novas configurações, instruções ou tarefas sejam concluídas. O Print Tracker Pro faz check-in com o servidor a cada 5 minutos, permitindo um período de tempo relativamente rápido para que novas configurações e instruções sejam captadas pelo DCA. Embora essa solução seja adequada para a maioria das necessidades, leva uma quantidade significativa de tempo para solucionar problemas, fazer alterações remotas e atualizar configurações. No passado, soluções foram apresentadas para realizar uma conexão mais em tempo real entre DCAs e servidores remotos, mantendo portas abertas onde as duas partes podiam enviar e extrair dados entre si. Isso, no entanto, apresenta grandes riscos de vulnerabilidade de rede que as organizações não devem e não estão dispostas a fazer.
 
-Print Tracker Pro also offers a new industry-changing option called ServiceMode in which a real-time streaming connection is opened between the Web Admin and a single DCA. This allows the Web Admin to work with the DCA as if they were on the same machine, sending instructions and receiving responses immediately.
+O Print Tracker Pro também oferece uma nova opção que muda o setor chamada Mode de serviço, na qual uma conexão de streaming em tempo real é aberta entre o webadmin e um único DCA. Isso permite que o administrador da Web trabalhe com o DCA como se estivessem na mesma máquina, enviando instruções e recebendo respostas imediatamente.
 
-There are a number of security issues to consider when connecting the Web Admin to a remote DCA installed within a private network. Several new protocols that sit on top of existing networking layers have been developed and implemented that bridge the gap between security and real-time capabilities, allowing for a new generation of print tracking technology and near real-time connectivity.
+Há várias questões de segurança a serem considerados ao conectar o webadmin a um DCA remoto instalado em uma rede privada. Vários novos protocolos que ficam sobre as camadas de rede existentes foram desenvolvidos e implementados que preenchem a lacuna entre segurança e recursos em tempo real, permitindo uma nova geração de tecnologia de rastreamento de impressão e conectividade quase em tempo real.
 
 ### HTTP/2 {#http2}
-The primary goal of HTTP/2 is to reduce latency by enabling full request and response multiplexing, minimize protocol overhead via efficient compression of HTTP header fields, and add support for request prioritization and server push. HTTP/2 does not modify the application semantics of HTTP in any way. All core concepts, such as HTTP methods, status codes, URIs, and header fields, remain in place. Instead, HTTP/2 modifies how the data is framed (formatted) and transported between the client and server, both of which manage the entire process, and hides all the complexity from applications within the new framing layer.
+O principal objetivo do HTTP/2 é reduzir a latência permitindo a multiplexação completa de solicitações e respostas, minimizar a sobrecarga de protocolo por meio da compactação eficiente de campos de cabeçalho HTTP e adicionar suporte para priorização de solicitações e envio por push de servidor. HTTP/2 não modifica a semântica do aplicativo HTTP de forma alguma. Todos os conceitos principais, como métodos HTTP, códigos de status, URIs e campos de cabeçalho, permanecem em vigor. Em vez disso, o HTTP/2 modifica como os dados são enquadrados (formatados) e transportados entre o cliente e o servidor, que gerenciam todo o processo e oculta toda a complexidade dos aplicativos dentro da nova camada de enquadramento.
 
-The current paradigm that has driven DCA development to this point is the standard client to server request and response mechanism: a client makes a single request, a server responds with a single response. HTTP/2 allows the server to send multiple responses for a single client request. That is, in addition to the response to the original request, the server can push additional resources to the client, without the client having to request each one explicitly. This abstraction allows for what we call "server push".
+O paradigma atual que tem impulsionado o desenvolvimento do DCA até este ponto é o mecanismo padrão de solicitação e resposta de cliente para servidor: um cliente faz uma única solicitação, um servidor responde com uma única resposta. HTTP/2 permite que o servidor envie várias respostas para uma única solicitação de cliente. Ou seja, além da resposta à solicitação original, o servidor pode enviar recursos adicionais para o cliente, sem que o cliente precise solicitar cada uma explicitamente. Essa abstração permite o que chamamos de "push do servidor".
 
-### Security {#security}
-The ability for a remote party to push data and trigger remote actions can seem like a security vulnerability at first glance, however, there are several security mechanisms that minimize the risk to the same level as the risks that standard HTTP present. Under the hood, clients in an HTTP/2 stream always have the option to decline information pushed from a server, however, in a scenario where the remote server is a trusted party, there is usually no reason for a client to deny remote information.
+### Segurança {#security}
+A capacidade de uma parte remota enviar dados por push e acionar ações remotas pode parecer uma vulnerabilidade de segurança à primeira vista, no entanto, existem vários mecanismos de segurança que minimizam o risco no mesmo nível que os riscos que o HTTP padrão apresenta. Sob o capô, os clientes em um fluxo HTTP/2 sempre têm a opção de recusar informações enviadas por push de um servidor, no entanto, em um cenário em que o servidor remoto é uma parte confiável, geralmente não há razão para um cliente negar informações remotas.
 
-In a web browser, malicious attacks are prevented by now allowing the remote execution of code based on the origin of the server that is providing it. Print Tracker Pro uses a similar concept where both the DCA and the server engage in a mutual TLS handshake when a DCA is registered. This handshake ensures communication can now only be done between that specific instance of a DCA, and the specific remote server with which the DCA requested a handshake. This prevents malicious third-party attacks because they were neither the requesting DCA nor the remote server.
+Em um navegador da Web, ataques maliciosos são evitados, permitindo agora a execução remota de código com base na origem do servidor que o está fornecendo. O Print Tracker Pro usa um conceito semelhante em que o DCA e o servidor se envolvem em um handshake TLS mútuo quando um DCA é registrado. Esse handshake garante que a comunicação agora só possa ser feita entre essa instância específica de um DCA e o servidor remoto específico com o qual o DCA solicitou um handshake. Isso evita ataques mal-intencionados de terceiros porque eles não eram nem o DCA solicitante nem o servidor remoto.
 
-### Restricted scope of actions {#restricted-scope-of-actions}
-Every DCA has a predefined set of abilities which can be remotely triggered, these abilities include (but are not limited to) updating local DCA settings, scanning the local network for devices that respond on port 161 (SNMP), etc. This is identical to how current DCA technology works, where a DCA will receive instructions to perform a specific task and will then execute that task based on predetermined logic that was installed with the DCA. Print Tracker Pro brings the ability to send these tasks to individual DCAs over the HTTP/2 stream with which the DCA established connectivity when it was started, allowing a near real-time interaction between dealers, and their customer's machines.
+### Escopo restrito de ações {#restricted-scope-of-actions}
+Cada DCA tem um conjunto predefinido de habilidades que podem ser acionadas remotamente, essas habilidades incluem (mas não estão limitadas a) atualizar as configurações locais do DCA, varrer a rede local em busca de dispositivos que respondem na porta 161 (SNMP), etc. Isso é idêntico a como a tecnologia DCA atual funciona, onde um DCA receberá instruções para executar uma tarefa específica e, em seguida, executará essa tarefa com base na lógica predeterminada que foi instalada com o DCA. O Print Tracker Pro traz a capacidade de enviar essas tarefas para DCAs individuais através do fluxo HTTP/2 com o qual o DCA estabeleceu conectividade quando foi iniciado, permitindo uma interação quase em tempo real entre os revendedores e as máquinas de seus clientes.
 
 ### gRPC {#grpc}
-Print Tracker Pro does not deal directly with the HTTP/2 transport, but instead utilizes an abstraction layer developed by Google called gRPC (Google Remote Procedure Call). The goal of gRPC is to provide a simple and secure way to initiate an action on another computer across a network. Within the first year of its launch, gRPC was adopted by CoreOS, Netflix, Square, and Cockroach Labs among others. Etcd by CoreOS, a distributed key/value store, uses gRPC for peer communication. Telecom companies such as Cisco, Juniper, and Arista are using gRPC for streaming the telemetry data and network configuration from their networking devices. gRPC has SSL/TLS integration and promotes the use of SSL/TLS to authenticate the server, and to encrypt all the data exchanged between the client and the server. Print Tracker Pro utilizes the mutual TLS authentication method to secure client to server (and vice versa) communication.
+O Print Tracker Pro não lida diretamente com o transporte HTTP/2, mas utiliza uma camada de abstração desenvolvida pelo Google chamada gRPC (Google Remote Procedure Call). O objetivo do gRPC é fornecer uma maneira simples e segura de iniciar uma ação em outro computador através de uma rede. No primeiro ano de seu lançamento, o gRPC foi adotado pelo CoreOS, Netflix, Square e Cockroach Labs, entre outros. O Etcd by CoreOS, um armazenamento de chave/valor distribuído, usa gRPC para comunicação entre pares. Empresas de telecomunicações como Cisco, Juniper e Arista estão usando o gRPC para transmitir os dados de telemetria e a configuração de rede de seus dispositivos de rede. O gRPC tem integração SSL/TLS e promove o uso de SSL/TLS para autenticar o servidor e criptografar todos os dados trocados entre o cliente e o servidor. O Print Tracker Pro utiliza o método de autenticação TLS mútuo para proteger a comunicação entre clientes e servidores (e vice-versa).
 
-gRPC has SSL/TLS integration and promotes the use of SSL/TLS to authenticate the server, and to encrypt all the data exchanged between the client and the server. Print Tracker Pro utilizes the mutual TLS authentication method to secure client to server (and vice versa) communication.
+O gRPC tem integração SSL/TLS e promove o uso de SSL/TLS para autenticar o servidor e criptografar todos os dados trocados entre o cliente e o servidor. O Print Tracker Pro utiliza o método de autenticação TLS mútuo para proteger a comunicação entre clientes e servidores (e vice-versa).
 
-### Network traffic {#network-traffic}
-A core concern when facilitating this real-time communication was the amount of network traffic that HTTP/2 streams would bring to a customer’s local network. gRPC uses an IDL (interface definition language) to prescribe the type of data that will be sent over the wire. This allows Print Tracker to send data faster and smaller than most other wire-format protocols would allow.
+### Tráfego de rede {#network-traffic}
+Uma preocupação central ao facilitar essa comunicação em tempo real era a quantidade de tráfego de rede que os fluxos HTTP/2 trariam para a rede local de um cliente. O gRPC usa uma IDL (linguagem de definição de interface) para prescrever o tipo de dados que serão enviados pelo fio. Isso permite que o Print Tracker envie dados mais rápido e menor do que a maioria dos outros protocolos de formato de fio permitiriam.
