@@ -3,34 +3,34 @@ slug: account
 sidebar_position: 0
 ---
 
-# Creating an Account
+# Criando uma conta
 
-Creating an account opens access to the online Web Admin portal which can be viewed using any supported browser from anywhere internet service is available. This access will give you the ability to create and manage printing devices connected to the internet anywhere in the world.
+A criação de uma conta abre o acesso ao portal de administração Web on-line, que pode ser visualizado usando qualquer navegador suportado de qualquer lugar onde o serviço de Internet esteja disponível. Este acesso lhe dará a capacidade de criar e gerenciar dispositivos de impressão conectados à internet em qualquer lugar do mundo.
 
-## Starting Your Trial {#starting-your-trial}
+## Iniciando sua avaliação {#starting-your-trial}
 
-To start your free trial:
+Para iniciar sua avaliação gratuita:
 
-1. Complete the registration form found here [https://app.printtrackerpro.com/auth/register](https://app.printtrackerpro.com/auth/register) and click the **Register** button
-2. Open the confirmation email sent to the email address you provided (make sure to check your Spam folder)
-3. Create your new password and click **Create password**
+1. Preencha o formulário de inscrição encontrado aqui [https://app.printtrackerpro.com/auth/register](https://app.printtrackerpro.com/auth/register) e clique no botão **Registrar**
+2. Abra o e-mail de confirmação enviado para o endereço de e-mail que você forneceu (certifique-se de verificar sua pasta de spam)
+3. Crie sua nova senha e clique em **Criar senha**
 
 <!-- ![Registration form](https://www.cdn.printtrackerpro.com/images/documentation/registration-form.png) -->
 
-## What's Next? {#whats-next}
+## O que vem a seguir? {#whats-next}
 
-Congratulations! You've just created a free trial account. A browser window will automatically open your newly created account. You can see how many days remain in your free trial in the bottom-left corner of your browser window. Continue on to the next section to learn how to create users, configure important settings, install data collection agents, and begin to collect printer data.
+Parabéns! Você acabou de criar uma conta de avaliação gratuita. Uma janela do navegador abrirá automaticamente sua conta recém-criada. Você pode ver quantos dias restam em sua avaliação gratuita no canto inferior esquerdo da janela do navegador. Continue para a próxima seção para saber como criar usuários, definir configurações importantes, instalar agentes de coleta de dados e começar a coletar dados da impressora.
 
-## Frequently Asked Questions {#frequently-asked-questions}
+## Perguntas Frequentes {#frequently-asked-questions}
 
-### How long does my free trial last? {#how-long-does-my-free-trial-last}
+### Quanto tempo dura a minha avaliação gratuita? {#how-long-does-my-free-trial-last}
 
-Typically, a free trial will last for 30 days. An extension may be granted as needed. Please feel free to reach out to Print Tracker Support at **+1 (866) 629-3342** with any questions you might have.
+Normalmente, uma avaliação gratuita dura 30 dias. Uma prorrogação pode ser concedida conforme necessário. Por favor, sinta-se livre para entrar em contato com o Suporte do Print Tracker em **+1 (866) 629-3342** com quaisquer perguntas que você possa ter.
 
-### How do I upgrade my account? {#how-do-i-upgrade-my-account}
+### Como faço para atualizar minha conta? {#how-do-i-upgrade-my-account}
 
-Reach out to Print Tracker Support at **+1 (866) 629-3342** when you're ready to upgrade your account.
+Entre em contato com o Suporte Print Tracker em **+1 (866) 629-3342** quando estiver pronto para atualizar sua conta.
 
-### How much does it cost to upgrade my account? {#how-much-does-it-cost-to-upgrade-my-account}
+### Quanto custa atualizar minha conta? {#how-much-does-it-cost-to-upgrade-my-account}
 
-You can see how our pricing works by going to [https://printtrackerpro.com/pricing/](https://printtrackerpro.com/pricing/).
+Você pode ver como nossos preços funcionam acessando [https://printtrackerpro.com/pricing/](https://printtrackerpro.com/pricing/).
