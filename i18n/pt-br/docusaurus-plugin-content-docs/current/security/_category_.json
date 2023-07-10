@@ -1,8 +1,8 @@
 {
-  "label": "Security",
+  "label": "Segurança",
   "position": 10,
   "link": {
     "type": "generated-index",
-    "description": "At Print Tracker, we take your security seriously. We follow the latest security practices to ensure that your data and your cusotmers are safe and secure. Here you can find resources such as security whitepapers and other internal details about our security practices."
+    "description": "Na Print Tracker, levamos a sua segurança a sério. Seguimos as práticas de segurança mais recentes para garantir que seus dados e seus clientes estejam seguros e protegidos. Aqui você pode encontrar recursos como whitepapers de segurança e outros detalhes internos sobre nossas práticas de segurança."
   }
 }
