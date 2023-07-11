@@ -4,35 +4,43 @@
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Guides": {
-    "message": "Guides",
+    "message": "Manuais",
     "description": "The label for category Guides in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Guides.link.generated-index.description": {
-    "message": "Foobar",
-    "description": "The generated-index page description for category Guides in sidebar tutorialSidebar"
+    "message": "Escolha um dos tópicos abaixo para começar a usar o Print Tracker! Temos um conteúdo excelente para ajudá-lo a aproveitar ao máximo sua experiência com o Print Tracker e assumir o controle de sua frota de impressoras.",
+    "description": " "
   },
   "sidebar.tutorialSidebar.category.Troubleshooting": {
-    "message": "Troubleshooting",
+    "message": "Solução de Problemas",
     "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Troubleshooting.link.generated-index.description": {
-    "message": "Foobar",
-    "description": "The generated-index page description for category Troubleshooting in sidebar tutorialSidebar"
+    "message": " ",
+    "description": " "
   },
   "sidebar.tutorialSidebar.category.System Requirements": {
-    "message": "System Requirements",
-    "description": "The label for category System Requirements in sidebar tutorialSidebar"
+    "message": "Requisitos de Sistema",
+    "description": " "
   },
   "sidebar.tutorialSidebar.category.System Requirements.link.generated-index.description": {
-    "message": "At Print Tracker, we take your security seriously. We follow the latest security practices to ensure that your data and your cusotmers are safe and secure. Here you can find resources such as security whitepapers and other internal details about our security practices.",
-    "description": "The generated-index page description for category System Requirements in sidebar tutorialSidebar"
+    "message": " ",
+    "description": " "
   },
   "sidebar.tutorialSidebar.category.Security": {
-    "message": "Security",
-    "description": "The label for category Security in sidebar tutorialSidebar"
+    "message": "Segurança",
+    "description": " "
   },
   "sidebar.tutorialSidebar.category.Security.link.generated-index.description": {
-    "message": "At Print Tracker, we take your security seriously. We follow the latest security practices to ensure that your data and your cusotmers are safe and secure. Here you can find resources such as security whitepapers and other internal details about our security practices.",
-    "description": "The generated-index page description for category Security in sidebar tutorialSidebar"
+    "message": "Na Print Tracker, levamos a sua segurança a sério. Seguimos as práticas de segurança mais recentes para garantir que seus dados e seus clientes estejam seguros e protegidos. Aqui você pode encontrar recursos como whitepapers de segurança e outros detalhes internos sobre nossas práticas de segurança.",
+    "description": " "
+  },
+  "sidebar.tutorialSidebar.category.Training": {
+    "message": "Treinamento",
+    "description": " "
+  },
+  "sidebar.tutorialSidebar.category.Training.link.generated-index.description": {
+    "message": " ",
+    "description": " "
   }
 }
