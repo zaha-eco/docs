@@ -5,8 +5,8 @@ sidebar_position: 70
 
 # Gerenciando Alertas
 
-:::caution Under Construction
-This guide is currently under construction. Please check back soon for updates.
+:::caution Em Construção
+Este guia está atualmente em construção. Por favor, volte em breve para atualizações.
 :::
 
 ## Alert Types {#alert-types}
