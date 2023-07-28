@@ -13,7 +13,7 @@ This guide is currently under construction. Please check back soon for updates.
 Print Tracker invoices customers based on the number of managed devices that report meters in a given calendar month. Any managed device that reports a meter during that month will be included in the corresponding invoice, with the exception of newly discovered devices. When a device is first discovered, dealers have a 7-day window to mark it as "non-managed." If the device is still labeled as "managed" after this 7-day period, it will be included in that calendar month's invoice.
 
 ### What if I don’t want to monitor certain devices? {#what-if-i-dont-want-to-monitor-certain-devices}
-If Print Tracker discovers devices that a dealer does not want to monitor, dealers can [disable](./50-dicovering-devices.md#enablingdisabling-devices) the device. This will remove that device from all future invoices. Dealers receive a free meter read each quarter from all non-managed devices.
+If Print Tracker discovers devices that a dealer does not want to monitor, dealers can [disable](./50-discovering-devices.mdx#enablingdisabling-devices) the device. This will remove that device from all future invoices. Dealers receive a free meter read each quarter from all non-managed devices.
 
 ### I set a device to non-managed. Why was I billed for that device? {#i-set-a-device-to-non-managed-why-was-i-billed-for-that-device}
 If you have set a device to non-managed but were still billed for it, it may be because the device had already reported a meter during that month. In such cases, the device will be included in the current month's invoice but will not be billed in subsequent months.

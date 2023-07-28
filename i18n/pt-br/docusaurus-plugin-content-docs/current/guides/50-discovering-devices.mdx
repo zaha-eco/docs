@@ -3,6 +3,8 @@ slug: discovery
 sidebar_position: 50
 ---
 
+import VideoPlayer from "@site/src/components/VideoPlayer";
+
 # Descobrindo e gerenciando dispositivos
 O objetivo principal do Print Tracker é encontrar seus dispositivos e coletar [medidores](./60-meters-and-supplies.md). Uma vez encontrados, você pode visualizar e gerenciar seus dispositivos remotamente de qualquer lugar do mundo. O gerenciamento de seus dispositivos inclui a definição de configurações de dispositivos, a limpeza de dispositivos antigos, a revisão de estatísticas de dispositivos e muito mais.
 
@@ -77,12 +79,42 @@ Você pode visualizar o progresso da varredura, bem como os logs produzidos pela
 ### Remote Technician {#remote-technician}
 
 ## Managing Devices {#managing-devices}
+It's important to maintain your fleet in Print Tracker, for example, if you move devices from one location to another (from one contract to another) it's important to [disable](#enablingdisabling-devices) or [remove](removing-devices) the old device from Print Tracker. This is especially true if you're using a 3rd part integration like the [E-Automate data processor](./110-third-party-integrations.mdx#e-automate).
 
 ### Enabling/Disabling Devices {#enablingdisabling-devices}
+In some cases, Print Tracker may have discovered devices that you don't want to manage, and don't want to pay for in Print Tracker. These non-managed devices will continue to upload meter reads once per quarter. Non-managed devices offer an inexpensive way to get periodic snapshots throughout the year of your devices.
+
+<VideoPlayer url="https://www.cdn.printtrackerpro.com/images/documentation/discovering-devices-disable-devices.mp4"/>
+
+To disable a device.
+1. Using the side navigation bar, click **Devices > View devices**
+2. Select the devices you want to disable by click the checkboxes next to the devices
+3. At the top of the column, click the drop-down arrow
+4. Click **Disable selected**
+
+To enable a device.
+1. Using the side navigation bar, click **Devices > View devices**
+2. Select the devices you want to disable by click the checkboxes next to the devices
+3. At the top of the column, click the drop-down arrow
+4. Click **Enable selected**
 
 ### Removing Devices {#removing-devices}
+:::caution Warning
+Don't remove devices that are still on the network. Print Tracker may rediscover the devices next time it runs a network scan. Consider [disabling the device](#enablingdisabling-devices) instead.
+:::
+
+Remove devices that are no longer on the network, and that you don't care about seeing.
+
+<VideoPlayer url="https://www.cdn.printtrackerpro.com/images/documentation/discovering-devices-removing-devices.mp4"/>
+
+To remove a device.
+1. Using the side navigation bar, click **Devices > View devices**
+2. Select the devices you want to disable by click the checkboxes next to the devices
+3. At the top of the column, click the drop-down arrow
+4. Click **Remove selected**
 
 ## Non-Managed Devices {#non-managed-devices}
+Non-managed devices are devices free of charge, but only upload meters once per quarter. Non-managed devices are useful for getting periodic snapshots of your fleet throughout the year for devices where you don't need alerts, or frequent meter reads. See [Enabling/Disabling Devices](#enablingdisabling-devices) for more information.
 
 ## Network Topology Scanner {#network-topology-scanner}
 
